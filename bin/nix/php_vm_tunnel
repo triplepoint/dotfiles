@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+FIXED_ARGS='';
+for (( i = 1; i <= $# ; i++ )); do
+    eval ARG=\$$i
+    FIXED_ARGS="$FIXED_ARGS $(echo "$ARG" | awk '{gsub(".", "\\\\&");print}')"
+done
+ssh -l root 192.168.56.101 php $FIXED_ARGS
