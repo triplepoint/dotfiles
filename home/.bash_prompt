@@ -60,5 +60,5 @@ PS1+=' : ';
 PS1+='\w'; # Directory
 PS1+=$CLOSE_BRACKET;
 PS1+='$(parse_git_branch)'; # The literal command (evaluated each time)
-PS1+='$ ';
+PS1+='\$ ';
 export PS1;
