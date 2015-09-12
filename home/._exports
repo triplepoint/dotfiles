@@ -1,0 +1,10 @@
+# ######
+# This file is shell agnostic, and should be used to set
+# general purpose environment variables.  For security-
+# minded values like API keys and such, use a separate
+# ._local_exports file that won't be overwritten by this
+# repository.
+# ######
+
+# brew cask should always install globally
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
