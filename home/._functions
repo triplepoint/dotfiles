@@ -1,0 +1,34 @@
+# Given a directory, list all the first-level subdirectories with their git state.
+ls_workspace () {
+    # Require a parameter for the directory
+    local directory=$1
+    if [ ! $directory ]; then
+        echo "usage: ls_dir_git_status [directory]"
+        return
+    fi
+
+    # Remember the current working directory
+    local cwd=`pwd`
+
+    # Loop over all the subdirectories of the given target, and do the print job
+    for ls_line (`find ${directory} -type d -depth 1 | sort`); do
+        cd $ls_line
+        echo "${fg[green]}${ls_line}${reset_color}$(__ls_dir_git_prompt_info)"
+    done
+    unset ls_line
+
+    # Return to the original working directory
+    cd $cwd
+}
+
+# Shamelessly copied from oh-my-zsh/git.zsh and modified for formatting
+# Note that this still requires oh-my-zsh to be installed, for the parse_git_dirty() function
+function __ls_dir_git_prompt_info() {
+    local ZSH_THEME_GIT_PROMPT_PREFIX=" $fg[cyan]git:("
+    local ZSH_THEME_GIT_PROMPT_SUFFIX=")$reset_color"
+    if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
+        ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+        ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
+        echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    fi
+}

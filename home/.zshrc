@@ -52,7 +52,7 @@ CASE_SENSITIVE="true"
 plugins=(git brew)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 
 ### Custom Behavior
 # Load the optional dotfiles that may or may not be present
-for file in ~/._{exports,local_exports}; do
+for file in ~/._{exports,aliases,functions,local_exports}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
