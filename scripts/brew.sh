@@ -40,6 +40,7 @@ brew cask install google-chrome
 brew install      gnupg
 brew cask install keepassx
 brew cask install karabiner
+brew install      nmap
 brew install      zsh
 
 
