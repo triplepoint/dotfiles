@@ -26,7 +26,7 @@ brew cask install sublime-text3
 brew cask install sourcetree
 brew install      tree
 brew cask install vagrant # Also installs Virtualbox
-brew cask install totalterminal #test
+brew cask install totalterminal
 
 
 # General desktop stuff
