@@ -13,6 +13,7 @@ brew upgrade --all
 # Install cask (to manage OS X application installs)
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
+brew tap caskroom/fonts
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 
@@ -20,6 +21,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install      ansible
 brew cask install dockertoolbox
 brew install      git
+brew cask install font-inconsolata
+brew cask install font-inconsolata-dz
 brew install      python
 #brew cask install pycharm-ce
 brew install      ssh-copy-id
