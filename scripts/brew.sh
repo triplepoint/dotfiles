@@ -23,6 +23,7 @@ brew cask install dockertoolbox
 brew install      git
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
+brew cask install pgadmin3
 brew install      python
 #brew cask install pycharm-ce
 brew install      ssh-copy-id
