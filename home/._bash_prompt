@@ -1,6 +1,7 @@
 # Convenient defines for colored brackets
-BRACKET_COLOR="\e[1;34m";
-END_COLOR="\e[0m";
+BRACKET_COLOR="\[\033[1;34m\]";
+BRANCH_COLOR="\[\033[1;31m\]";
+END_COLOR="\[\033[0m\]";
 OPEN_BRACKET="$BRACKET_COLOR[$END_COLOR";
 CLOSE_BRACKET="$BRACKET_COLOR]$END_COLOR";
 
@@ -10,7 +11,7 @@ parse_git_branch () {
     if [ ! "${BRANCH}" == "" ]
     then
         STAT=`__parse_git_dirty`
-        printf "${OPEN_BRACKET}${BRANCH}${STAT}${CLOSE_BRACKET}"
+        printf "${BRANCH}${STAT}"
     else
         printf ""
     fi
@@ -59,6 +60,8 @@ PS1+='\h'; # Host name
 PS1+=' : ';
 PS1+='\w'; # Directory
 PS1+=$CLOSE_BRACKET;
+PS1+=$BRANCH_COLOR;
 PS1+='$(parse_git_branch)'; # The literal command (evaluated each time)
+PS1+=$END_COLOR;
 PS1+='\$ '; # '$' for regular users, and '#' for sudo/root
 export PS1;
