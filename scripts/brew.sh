@@ -21,6 +21,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install      ansible
 brew cask install dockertoolbox
 brew install      git
+brew install      htop
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
 brew cask install pgadmin3
@@ -31,7 +32,6 @@ brew cask install sublime-text3
 brew cask install sourcetree
 brew install      tree
 brew cask install vagrant  # Also installs Virtualbox
-brew cask install totalterminal
 
 
 # General desktop stuff
