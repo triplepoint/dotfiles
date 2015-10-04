@@ -44,6 +44,7 @@ brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew install      gnupg
+brew cask install iterm2-beta
 brew cask install keepassx0
 brew cask install karabiner
 brew install      nmap
