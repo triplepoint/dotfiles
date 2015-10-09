@@ -28,7 +28,7 @@ brew cask install pgadmin3
 brew install      python
 #brew cask install pycharm-ce
 brew install      ssh-copy-id
-brew cask install sublime-text3
+brew cask install sublime-text-dev
 brew cask install sourcetree
 brew install      tree
 brew cask install vagrant  # Also installs Virtualbox
