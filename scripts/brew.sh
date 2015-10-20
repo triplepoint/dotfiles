@@ -55,6 +55,7 @@ brew install      zsh
 brew cask install steam
 brew cask install spotify
 brew cask install github-desktop
+brew cask install xscreensaver
 
 
 # Clean up caches and such
