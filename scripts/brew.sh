@@ -49,6 +49,8 @@ brew cask install keepassx0
 brew cask install karabiner
 brew install      nmap
 brew install      zsh
+brew cask install functionflip
+brew cask install shades
 
 
 # Other stuff
