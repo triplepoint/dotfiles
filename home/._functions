@@ -11,7 +11,7 @@ ls_workspace () {
     local cwd=`pwd`
 
     # Loop over all the subdirectories of the given target, and do the print job
-    for ls_line (`find ${directory} -type d -depth 1 | sort`); do
+    for ls_line (`find ${directory} -type d -depth 1 \( -prune -perm -400 -not -iname ".*" \) | sort`); do
         cd $ls_line
         echo "${fg[green]}${ls_line}${reset_color}$(__ls_dir_git_prompt_info)"
     done
