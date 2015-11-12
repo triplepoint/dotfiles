@@ -31,7 +31,8 @@ brew install      ssh-copy-id
 brew cask install sublime-text-dev
 brew cask install sourcetree
 brew install      tree
-brew cask install vagrant  # Also installs Virtualbox
+brew cask install virtualbox
+brew cask install vagrant
 
 
 # General desktop stuff
