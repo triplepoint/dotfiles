@@ -21,6 +21,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install      ansible
 brew cask install dockertoolbox
 brew install      git
+brew install      git-annex
 brew install      htop
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
