@@ -33,6 +33,7 @@ brew cask install sublime-text-dev
 brew cask install sourcetree
 brew install      tree
 brew cask install virtualbox
+brew cask install virtualbox-extension-pack
 brew cask install vagrant
 
 
