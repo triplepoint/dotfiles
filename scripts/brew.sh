@@ -4,18 +4,17 @@
 # Install and/or update a collection of useful OSX applications
 ###
 
+# Install cask (to manage OS X application installs)
+brew tap caskroom/cask
+brew tap caskroom/versions
+brew tap caskroom/fonts
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Update known packages
 brew update
 
 # Upgrade all installed packages
 brew upgrade --all
-
-# Install cask (to manage OS X application installs)
-brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 
 # Development stuff
 brew install      ansible
