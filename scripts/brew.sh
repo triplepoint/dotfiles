@@ -26,7 +26,6 @@ brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
 brew cask install pgadmin3
 brew install      python
-#brew cask install pycharm-ce
 brew install      ssh-copy-id
 brew cask install sublime-text-dev
 brew cask install sourcetree
@@ -58,6 +57,7 @@ brew cask install shades
 # Other stuff
 brew cask install steam
 brew cask install spotify
+brew cask install pandora
 brew cask install github-desktop
 brew cask install xscreensaver
 
