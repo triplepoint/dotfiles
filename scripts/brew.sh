@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -ev
 
 ###
 # Install and/or update a collection of useful OSX applications
