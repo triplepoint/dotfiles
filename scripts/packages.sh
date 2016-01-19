@@ -1,7 +1,21 @@
 #!/usr/bin/env bash
-set -ev
 
-# Install and/or update a collection of useful OSX applications
+# Don't reinstall Vagrant plugins, if they're already installed
+# We can always call `vagrant plugin update` explicitly.
+vagrant_plugin_install () {
+  set +v
+  installed_packages=$(vagrant plugin list | cut -f1 -d' ')
+  if ! [[ $installed_packages =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
+    vagrant plugin install $1
+  else
+    echo $'\e[4m''Notice'$'\e[0m'": Vagrant plugin '$1' is already installed.  Use 'vagrant plugin update $1' to force an upgrade."
+  fi
+  set -v
+}
+
+# Stop on any error, print all commands
+set -ev
+# Install and/or update a collection of useful OSX packages
 
 ## Repository management
 ### Install brew taps
@@ -36,9 +50,9 @@ brew install      tree
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
-vagrant plugin install vagrant-vbguest
-vagrant plugin install vagrant-aws
-# vagrant plugin install vagrant-berkshelf
+vagrant_plugin_install vagrant-vbguest
+vagrant_plugin_install vagrant-aws
+# vagrant_plugin_install vagrant-berkshelf
 vagrant plugin update
 
 ### General desktop stuff
