@@ -36,6 +36,10 @@ brew install      tree
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
+vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-aws
+# vagrant plugin install vagrant-berkshelf
+vagrant plugin update
 
 ### General desktop stuff
 brew cask install adium
