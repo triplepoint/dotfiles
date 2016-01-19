@@ -23,6 +23,7 @@ brew install      ansible
 brew cask install dockertoolbox
 brew install      git
 brew install      git-annex
+brew cask install github-desktop
 brew install      htop
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
@@ -57,8 +58,6 @@ brew cask install shades
 ### "Other stuff"
 brew cask install steam
 brew cask install spotify
-brew cask install pandora
-brew cask install github-desktop
 brew cask install xscreensaver
 
 
