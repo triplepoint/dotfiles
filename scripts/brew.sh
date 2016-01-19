@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 set -ev
 
-###
 # Install and/or update a collection of useful OSX applications
-###
 
-# Install cask (to manage OS X application installs)
+## Repository management
+### Install brew taps
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap caskroom/fonts
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Update known packages
+### Update known packages
 brew update
 
-# Upgrade all installed packages
+### Upgrade all installed packages
 brew upgrade --all
 
-# Development stuff
+
+## Install/Update Packages
+### Development stuff
 brew install      ansible
 brew cask install dockertoolbox
 brew install      git
@@ -35,8 +36,7 @@ brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
 
-
-# General desktop stuff
+### General desktop stuff
 brew cask install adium
 brew install      bash-completion
 brew cask install deluge
@@ -54,8 +54,7 @@ brew install      zsh
 brew cask install functionflip
 brew cask install shades
 
-
-# Other stuff
+### "Other stuff"
 brew cask install steam
 brew cask install spotify
 brew cask install pandora
@@ -63,6 +62,6 @@ brew cask install github-desktop
 brew cask install xscreensaver
 
 
-# Clean up caches and such
+## Clean up package caches and such
 brew cask cleanup
 brew cleanup
