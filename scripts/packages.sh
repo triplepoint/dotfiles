@@ -35,12 +35,12 @@ brew upgrade --all
 ### Development stuff
 brew install      ansible
 brew cask install dockertoolbox
+brew cask install font-inconsolata
+brew cask install font-inconsolata-dz
 brew install      git
 brew install      git-annex
 brew cask install github-desktop
 brew install      htop
-brew cask install font-inconsolata
-brew cask install font-inconsolata-dz
 brew cask install pgadmin3
 brew install      python
 brew install      ssh-copy-id
@@ -58,20 +58,20 @@ vagrant plugin update
 ### General desktop stuff
 brew cask install adium
 brew install      bash-completion
+brew cask install crashplan
 brew cask install deluge
 brew cask install dropbox
-brew cask install crashplan
 brew cask install firefox
 brew cask install flux
+brew cask install functionflip
 brew cask install google-chrome
 brew install      gnupg
 brew cask install iterm2-beta
 brew cask install keepassx0
 brew cask install karabiner
 brew install      nmap
-brew install      zsh
-brew cask install functionflip
 brew cask install shades
+brew install      zsh
 
 ### "Other stuff"
 brew cask install steam
