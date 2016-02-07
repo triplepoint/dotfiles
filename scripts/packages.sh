@@ -32,7 +32,7 @@ brew upgrade --all
 
 
 ## Install/Update Packages
-### Development stuff
+### Software development stuff
 brew install      ansible
 brew cask install dockertoolbox
 brew cask install font-inconsolata
@@ -41,6 +41,7 @@ brew install      git
 brew install      git-annex
 brew cask install github-desktop
 brew install      htop
+brew cask install java
 brew cask install pgadmin3
 brew install      python
 brew install      ssh-copy-id
@@ -53,8 +54,10 @@ brew cask install virtualbox-extension-pack
 brew cask install vagrant
 vagrant_plugin_install vagrant-vbguest
 vagrant_plugin_install vagrant-aws
-# vagrant_plugin_install vagrant-berkshelf
 vagrant plugin update
+
+### Hardware development stuff
+brew cask install arduino
 
 ### General desktop stuff
 brew cask install adium
