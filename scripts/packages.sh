@@ -72,7 +72,7 @@ brew cask install functionflip
 brew cask install google-chrome
 brew install      gnupg
 brew cask install iterm2-beta
-brew cask install keepassx0
+brew cask install keepassx
 brew cask install karabiner
 brew install      nmap
 brew cask install shades
@@ -85,5 +85,5 @@ brew cask install xscreensaver
 
 
 ## Clean up package caches and such
-brew cask cleanup
 brew cleanup
+brew cask cleanup
