@@ -32,9 +32,9 @@ brew upgrade --all
 
 
 ## Install/Update Packages
-### Development stuff
-#brew install      ansible
-brew uninstall ansible || true; pip install ansible==1.9.4 # Temporarily roll back to a previous version, since 2.0.0 isn't tested.
+### Software development stuff
+brew install      ansible
+#brew uninstall ansible || true; pip install ansible==1.9.4 # Temporarily roll back to a previous version.
 brew cask install dockertoolbox
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
@@ -58,13 +58,13 @@ vagrant_plugin_install vagrant-aws
 vagrant plugin update
 
 ### Hardware development stuff
-#brew cask install arduino
+brew cask install arduino
 
 ### General desktop stuff
 brew cask install adium
 brew install      bash-completion
-#brew cask install crashplan
-#brew cask install deluge
+brew cask install crashplan
+brew cask install deluge
 brew cask install dropbox
 brew cask install firefox
 brew cask install flux
