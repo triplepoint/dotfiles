@@ -46,7 +46,7 @@ brew cask install java
 brew cask install pgadmin3
 brew install      python
 brew install      ssh-copy-id
-brew cask install sublime-text-dev
+brew cask install sublime-text3
 brew cask install sourcetree
 brew install      tree
 brew install      unison
