@@ -59,6 +59,7 @@ vagrant plugin update
 
 ### Hardware development stuff
 brew cask install arduino
+brew cask install openscad
 
 ### General desktop stuff
 brew cask install adium
