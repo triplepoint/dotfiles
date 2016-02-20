@@ -50,6 +50,7 @@ brew cask install sublime-text3
 brew cask install sourcetree
 brew install      tree
 brew install      unison
+brew install      vim --override-system-vim
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
