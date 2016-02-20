@@ -34,7 +34,7 @@ brew upgrade --all
 ## Install/Update Packages
 ### Software development stuff
 brew install      ansible
-#brew uninstall ansible || true; pip install ansible==1.9.4 # Temporarily roll back to a previous version.
+#brew install      ansible19
 brew cask install dockertoolbox
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
