@@ -19,6 +19,7 @@ set -ev
 
 ## Repository management
 ### Install brew taps
+brew tap homebrew/versions
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap caskroom/fonts
