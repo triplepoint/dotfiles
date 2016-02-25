@@ -79,6 +79,7 @@ brew cask install keepassx
 brew cask install karabiner
 brew install      nmap
 brew cask install shades
+brew cask install slack
 brew install      zsh
 
 ### "Other stuff"
