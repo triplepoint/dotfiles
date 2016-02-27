@@ -80,6 +80,7 @@ brew cask install karabiner
 brew install      nmap
 brew cask install shades
 brew cask install slack
+brwe cask install vox
 brew install      zsh
 
 ### "Other stuff"
