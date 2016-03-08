@@ -1,12 +1,12 @@
 # Introduction
 A collection of config files I find useful.  Obviously this is an opinionated collection, so be cautious before blanket-applying them in your own environment.
 
-The `brew.sh` script in particular installs utilities and applications I find useful.  Be sure and review it before you run it.
+The `packages.sh` script in particular installs utilities and applications I find useful.  Be sure and review it before you run it.
 
 # Usage
 Install and/or update installed applications with brew:
 ``` bash
-./scripts/brew.sh
+./scripts/packages.sh
 ```
 
 Copy the dotfiles to your home directory with:
