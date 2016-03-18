@@ -1,0 +1,125 @@
+#! /usr/bin/env zsh
+# -*- mode: bash -*-
+# vi: set ft=bash :
+
+###
+# Given a directory, list all the first-level subdirectories with their git state.
+###
+
+set -e
+set +v
+autoload -U colors && colors
+
+# Returns a 1 if the current directory is a git repository, 0 otherwise
+is_git_repository() {
+    if [[ $(command git rev-parse --is-inside-work-tree 2> /dev/null) != "true" ]]; then return 0; else return 1; fi
+}
+
+# Print the (formatted) ahead/behind state of the current branch against
+# it's tracked remote (if one exists)
+print_git_ahead_behind() {
+    working_copy="HEAD"
+    upstream_tracked_branch=$(command git rev-parse --abbrev-ref --symbolic-full-name @{u} 2> /dev/null)
+
+    if [[ $upstream_tracked_branch = "" ]]; then
+        echo "${fg[cyan]}(No Upstream Branch)${reset_color}"
+        return 0
+    fi
+
+    ahead=$(command git rev-list ${upstream_tracked_branch}..${working_copy} --count -- .)
+    behind=$(command git rev-list ${working_copy}..${upstream_tracked_branch} --count -- .)
+
+    if [[ $ahead != 0 && $behind != 0 ]]; then
+        echo "${fg[cyan]}(${reset_color}${fg[red]}${ahead}${reset_color}⇧ ${fg[red]}${behind}${reset_color}⇩ ${fg[cyan]})${reset_color}"
+    elif [[ $ahead != 0 ]]; then
+        echo "${fg[cyan]}(${reset_color}${fg[red]}${ahead}${reset_color}⇧ ${fg[cyan]})${reset_color}"
+    elif [[ $behind != 0 ]]; then
+        echo "${fg[cyan]}(${reset_color}${fg[red]}${behind}${reset_color}⇩ ${fg[cyan]})${reset_color}"
+    fi
+}
+
+# Shamelessly copied from oh-my-zsh and modified
+# Returns 1 if the current git repository has uncommitted changes or untracked files
+# Returns 0 otherwise.
+git_has_uncommitted_changes() {
+    FLAGS=('--porcelain')
+    FLAGS+='--ignore-submodules=dirty'  # Don't warn on submodules
+    #FLAGS+='--untracked-files=no'       # Don't warn on untracked files
+    if [[ -n $(command git status ${FLAGS} 2> /dev/null | tail -n1) ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+# Print the (formatted) current branch name and whether it has any uncommitted changes
+print_git_branch_and_dirtiness() {
+    ref=$(command git symbolic-ref HEAD 2> /dev/null) || ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
+    branch_name="${ref#refs/heads/}"
+
+    if git_has_uncommitted_changes; then
+        uncommitted="${fg[red]}*${reset_color}"
+    else
+        uncommitted=""
+    fi
+
+    echo "${fg[cyan]} git:(${branch_name}${uncommitted}${fg[cyan]})${reset_color}"
+}
+
+# Print out the help message for this tool
+print_usage() {
+    echo "usage: ls_workspace [-g | --git-fetch] [-h | --help] <directory>
+
+    -h, --help                      Print this help message.
+    -f, --git-fetch                 In each directory, do a fetch of all remotes and tags
+    <directory>                     The root directory in which to print the state of all
+                                    subdirectories.
+    -d, --directory                 Same as <directory>, just an alternate parameter style."
+}
+
+# Parse the input parameters
+GIT_FETCH=0
+while [ "$1" != "" ]; do
+    PARAM=`echo $1 | awk -F= '{print $1}'`
+    VALUE=`echo $1 | awk -F= '{print $2}'`
+    case $PARAM in
+        -h | --help)
+            print_usage
+            exit
+            ;;
+        -f | --git-fetch)
+            GIT_FETCH=1
+            ;;
+        -d | --directory)
+            DIRECTORY=$VALUE
+            ;;
+        *)
+            DIRECTORY=$PARAM
+            ;;
+    esac
+    shift
+done
+
+# If directory isn't passed, it's an error
+if [ -z "$DIRECTORY" ]; then
+    echo "Missing directory."
+    print_usage
+    exit 1
+fi
+
+# Loop over all the subdirectories of the given target, and do the print job
+find ${DIRECTORY} -type d -depth 1 \( -prune -perm -400 -not -iname ".*" \) | sort | while read ls_line; do
+    pushd $ls_line
+
+    if ! [[ is_git_repository ]]; then
+        echo "not git!"
+    fi
+
+    if [[ $GIT_FETCH = 1 ]]; then
+        git fetch --all --quiet &> /dev/null || true
+    fi
+
+    echo "${fg[green]}${ls_line}${reset_color}$(print_git_branch_and_dirtiness)$(print_git_ahead_behind)"
+
+    popd
+done
