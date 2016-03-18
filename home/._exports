@@ -1,3 +1,6 @@
+# -*- mode: bash -*-
+# vi: set ft=bash :
+
 # ######
 # This file is shell agnostic, and should be used to set
 # general purpose environment variables.  For security-

@@ -11,31 +11,31 @@ DOTFILES_PATH=$(dirname $0)/..
 
 ## Copy Over Standard Environment Files
 ### Bash prompt definition
-cp -f $DOTFILES_PATH/home/._bash_prompt ~
+cp -fp $DOTFILES_PATH/home/._bash_prompt ~
 
 ### Not-security-concerned environment variables
-cp -f $DOTFILES_PATH/home/._exports ~
+cp -fp $DOTFILES_PATH/home/._exports ~
 
 ### Collection of useful shell functions
-cp -f $DOTFILES_PATH/home/._functions ~
+cp -fp $DOTFILES_PATH/home/._functions ~
 
 ### Command aliases (if present)
-cp -f $DOTFILES_PATH/home/._aliases ~ || true
+cp -fp $DOTFILES_PATH/home/._aliases ~ || true
 
 ### Bash environment initialization
-cp -f $DOTFILES_PATH/home/.bash_profile ~
+cp -fp $DOTFILES_PATH/home/.bash_profile ~
 
 ### A shim bashrc that simply includes .bashprofile, for OSX terminal squirreliness
-cp -f $DOTFILES_PATH/home/.bashrc ~
+cp -fp $DOTFILES_PATH/home/.bashrc ~
 
 ### ZSH environment initialization
-cp -f $DOTFILES_PATH/home/.zshrc ~
+cp -fp $DOTFILES_PATH/home/.zshrc ~
 
 
 ## Execution Path
 ### Useful command-line utilities (if present)
 mkdir -p ~/bin
-cp -f $DOTFILES_PATH/home/bin/* ~/bin || true
+cp -fp $DOTFILES_PATH/home/bin/* ~/bin || true
 
 
 ## ZSH Profile Refresh

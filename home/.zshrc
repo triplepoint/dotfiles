@@ -1,3 +1,6 @@
+# -*- mode: bash -*-
+# vi: set ft=bash :
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -52,7 +55,7 @@ CASE_SENSITIVE="true"
 plugins=(git brew vagrant)
 
 # User configuration
-export PATH="~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 
 ### Custom Behavior
 # Load the optional dotfiles that may or may not be present
-for file in ~/._{exports,aliases,functions,local_exports}; do
+for file in ~/{._exports,._aliases,._functions,._local_exports}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

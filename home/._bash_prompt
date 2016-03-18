@@ -1,3 +1,6 @@
+# -*- mode: bash -*-
+# vi: set ft=bash :
+
 # Convenient defines for colored brackets
 BRACKET_COLOR="\[\033[1;34m\]";
 BRANCH_COLOR="\[\033[1;31m\]";
