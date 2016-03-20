@@ -68,7 +68,7 @@ print_git_branch_and_dirtiness() {
 
 # Print out the help message for this tool
 print_usage() {
-    echo "usage: ls_workspace [-g | --git-fetch] [-h | --help] <directory>
+    echo "usage: ls_workspace [-f | --git-fetch] [-h | --help] <directory>
 
     -h, --help                      Print this help message.
     -f, --git-fetch                 In each directory, do a fetch of all remotes and tags
@@ -111,15 +111,15 @@ fi
 find ${DIRECTORY} -type d -depth 1 \( -prune -perm -400 -not -iname ".*" \) | sort | while read ls_line; do
     pushd $ls_line
 
-    if ! [[ is_git_repository ]]; then
-        echo "not git!"
-    fi
+    if is_git_repository; then
+        echo "${fg[white]}${ls_line}${reset_color}"
+    else
+        if [[ $GIT_FETCH = 1 ]]; then
+            git fetch --all --quiet &> /dev/null || true
+        fi
 
-    if [[ $GIT_FETCH = 1 ]]; then
-        git fetch --all --quiet &> /dev/null || true
+        echo "${fg[green]}${ls_line}${reset_color}$(print_git_branch_and_dirtiness)$(print_git_ahead_behind)"
     fi
-
-    echo "${fg[green]}${ls_line}${reset_color}$(print_git_branch_and_dirtiness)$(print_git_ahead_behind)"
 
     popd
 done
