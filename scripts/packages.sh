@@ -86,6 +86,7 @@ brew install      zsh
 ### "Other stuff"
 brew install openssl
 brew cask install steam
+brew cask install battle-net
 brew cask install spotify
 brew cask install xscreensaver
 
