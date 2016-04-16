@@ -33,19 +33,15 @@ brew upgrade --all
 
 
 ## Install/Update Packages
-### Software development stuff
+### General Programming Stuff
 brew install      ansible
 #brew install      ansible19
 brew cask install dockertoolbox
-brew cask install font-inconsolata
-brew cask install font-inconsolata-dz
 brew install      git
 brew install      git-annex
 brew cask install github-desktop
 brew install      htop
-brew cask install java
 brew cask install pgadmin3
-brew install      python
 brew install      ssh-copy-id
 brew cask install sublime-text3
 brew cask install sourcetree
@@ -59,6 +55,12 @@ vagrant_plugin_install vagrant-vbguest
 vagrant_plugin_install vagrant-aws
 vagrant plugin update
 
+### Languages
+brew install      go --cross-compile-common
+brew cask install java
+brew install      python
+brew install      scala
+
 ### Hardware development stuff
 brew cask install arduino
 brew cask install openscad
@@ -71,6 +73,8 @@ brew cask install deluge
 brew cask install dropbox
 brew cask install firefox
 brew cask install flux
+brew cask install font-inconsolata
+brew cask install font-inconsolata-dz
 brew cask install functionflip
 brew cask install google-chrome
 brew install      gnupg
