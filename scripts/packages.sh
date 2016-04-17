@@ -59,6 +59,7 @@ vagrant plugin update
 brew install      go --cross-compile-common
 brew cask install java
 brew install      python
+brew install      rust
 brew install      scala
 
 ### Hardware development stuff
