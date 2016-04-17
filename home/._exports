@@ -11,3 +11,7 @@
 
 # brew cask should always install globally
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Go configuration
+export GOPATH=/Volumes/workspace/gocode
+export PATH=$PATH:$GOPATH/bin
