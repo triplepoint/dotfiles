@@ -45,6 +45,7 @@ brew cask install pgadmin3
 brew install      ssh-copy-id
 brew cask install sublime-text3
 brew cask install sourcetree
+brew install      terraform
 brew install      tree
 brew install      unison
 brew install      vim --override-system-vim
