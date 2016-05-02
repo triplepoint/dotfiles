@@ -33,6 +33,14 @@ brew upgrade --all
 
 
 ## Install/Update Packages
+### Languages
+brew install      go --cross-compile-common
+brew cask install java
+brew install      python
+brew install      ruby
+brew install      rust
+brew install      scala
+
 ### General Programming Stuff
 brew install      ansible
 #brew install      ansible19
@@ -41,6 +49,7 @@ brew install      git
 brew install      git-annex
 brew cask install github-desktop
 brew install      htop
+gem install       jekyll
 brew cask install pgadmin3
 brew install      ssh-copy-id
 brew cask install sublime-text3
@@ -55,13 +64,6 @@ brew cask install vagrant
 vagrant_plugin_install vagrant-vbguest
 vagrant_plugin_install vagrant-aws
 vagrant plugin update
-
-### Languages
-brew install      go --cross-compile-common
-brew cask install java
-brew install      python
-brew install      rust
-brew install      scala
 
 ### Hardware development stuff
 brew cask install arduino
