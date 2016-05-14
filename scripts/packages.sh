@@ -94,6 +94,7 @@ brew install      zsh
 brew install openssl
 brew cask install steam
 brew cask install battle-net
+brew install      pianobar
 brew cask install spotify
 brew cask install xscreensaver
 
