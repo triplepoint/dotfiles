@@ -48,6 +48,7 @@ brew install      ansible
 brew install      git
 brew install      git-annex
 brew cask install github-desktop
+brew install      homebrew/dupes/grep --with-default-names
 brew install      htop
 gem install       jekyll
 brew cask install pgadmin3
