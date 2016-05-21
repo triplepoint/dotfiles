@@ -33,10 +33,11 @@ brew upgrade --all
 
 
 ## Install/Update Packages
-### Languages
+### Languages and Language Tools
 brew install      go --cross-compile-common
 brew cask install java
 brew install      python
+pip install       pip --upgrade
 brew install      ruby
 brew install      rust
 brew install      scala
@@ -44,6 +45,8 @@ brew install      scala
 ### General Programming Stuff
 brew install      ansible
 #brew install      ansible19
+pip install       awscli --upgrade
+pip install       boto3 --upgrade
 #brew cask install dockertoolbox
 brew install      git
 brew install      git-annex
