@@ -47,6 +47,7 @@ brew install      ansible
 #brew install      ansible19
 pip install       awscli --upgrade
 pip install       boto3 --upgrade
+pip install       docker-py --upgrade
 #brew cask install dockertoolbox
 brew install      git
 brew install      git-annex
