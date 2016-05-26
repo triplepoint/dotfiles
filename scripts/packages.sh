@@ -62,7 +62,7 @@ brew cask install sourcetree
 brew install      terraform
 brew install      tree
 brew install      unison
-brew install      vim --override-system-vim
+brew install      vim
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
