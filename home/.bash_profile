@@ -10,9 +10,6 @@ for file in ~/{._bash_prompt,._exports,._local_exports}; do
 done;
 unset file;
 
-# Aliases
-alias vi='/usr/local/bin/vim'
-
 # Set up autocompletion (requires bash-completion be installed)
 # if which brew > /dev/null && [ -f `brew --prefix`/etc/bash_completion ]; then
 #     . `brew --prefix`/etc/bash_completion
