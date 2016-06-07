@@ -45,6 +45,7 @@ brew install      scala
 ### General Programming Stuff
 brew install      ansible
 #brew install      ansible19
+brew cask install atom
 pip install       awscli --upgrade
 pip install       boto3 --upgrade
 pip install       docker-py --upgrade
