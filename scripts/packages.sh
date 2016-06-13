@@ -69,7 +69,7 @@ brew cask install virtualbox-extension-pack
 brew cask install vagrant
 vagrant_plugin_install vagrant-vbguest
 vagrant_plugin_install vagrant-aws
-# vagrant plugin update
+vagrant plugin update
 
 ### Hardware development stuff
 brew cask install arduino
