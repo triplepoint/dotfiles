@@ -35,6 +35,7 @@ brew upgrade --all
 ## Install/Update Packages
 ### Languages and Language Tools
 brew install      go --cross-compile-common
+brew install      groovy
 brew cask install java
 brew install      python
 pip install       pip --upgrade
