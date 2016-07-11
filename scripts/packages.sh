@@ -54,6 +54,7 @@ pip install       docker-py --upgrade
 brew install      git
 brew install      git-annex
 brew cask install github-desktop
+brew install      gnu-sed
 brew install      homebrew/dupes/grep --with-default-names
 brew install      htop
 gem install       jekyll
