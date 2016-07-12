@@ -8,5 +8,4 @@ git config --global user.email "jonathan@jonathan-hanson.org"
 
 git config --global core.editor "subl -n -w"
 git config --global diff.compactionHeuristic true
-
-
+git config --global rerere.enabled true
