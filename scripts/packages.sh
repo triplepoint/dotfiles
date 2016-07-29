@@ -45,12 +45,11 @@ brew install      scala
 
 ### General Programming Stuff
 brew install      ansible
-#brew install      ansible19
 brew cask install atom
 pip install       awscli --upgrade
 pip install       boto3 --upgrade
 pip install       docker-py --upgrade
-#brew cask install dockertoolbox
+brew cask install docker
 brew install      git
 brew install      git-annex
 brew cask install github-desktop
@@ -58,6 +57,7 @@ brew install      gnu-sed --with-default-names
 brew install      homebrew/dupes/grep --with-default-names
 brew install      htop
 gem install       jekyll
+brew install      openssl
 brew cask install pgadmin3
 brew install      ssh-copy-id
 brew cask install sublime-text
@@ -80,7 +80,6 @@ brew cask install kicad
 
 ### General desktop stuff
 brew cask install adium
-brew install      bash-completion
 brew cask install crashplan
 brew cask install deluge
 brew cask install dropbox
@@ -88,22 +87,20 @@ brew cask install firefox
 brew cask install flux
 brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
-brew cask install functionflip
+brew cask install functionflip # To swap function keys on non-apple keyboards
 brew cask install google-chrome
 brew install      gnupg
 brew cask install iterm2-beta
 brew cask install keepassx
-brew cask install karabiner
+brew cask install karabiner # To try to handle the ctrl/alt/option windows keyboard issue
 brew install      nmap
-brew cask install shades
 brew cask install slack
 brew install      zsh
 
 ### "Other stuff"
-brew install openssl
 brew cask install steam
 brew cask install battle-net
-brew install      libao --HEAD
+brew install      libao --HEAD  # for pianobar
 brew install      pianobar
 brew cask install spotify
 brew cask install xscreensaver
