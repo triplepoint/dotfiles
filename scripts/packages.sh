@@ -72,6 +72,7 @@ brew cask install vagrant
 vagrant_plugin_install vagrant-vbguest
 vagrant_plugin_install vagrant-aws
 vagrant plugin update
+brew install      vault
 
 ### Hardware development stuff
 brew cask install arduino
