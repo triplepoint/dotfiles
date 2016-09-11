@@ -81,6 +81,7 @@ brew cask install kicad
 
 ### General desktop stuff
 brew cask install adium
+brew install      bash
 brew cask install crashplan
 brew cask install deluge
 brew cask install dropbox
