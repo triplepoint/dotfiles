@@ -91,7 +91,7 @@ brew cask install font-inconsolata
 brew cask install font-inconsolata-dz
 brew cask install functionflip # To swap function keys on non-apple keyboards
 brew cask install google-chrome
-brew install      gnupg
+brew install      gnupg2
 brew cask install iterm2-beta
 brew cask install keepassx
 brew cask install karabiner # To try to handle the ctrl/alt/option windows keyboard issue
