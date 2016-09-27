@@ -59,6 +59,7 @@ brew install      htop
 gem install       jekyll
 brew install      openssl
 brew cask install pgadmin3
+brew install      postgresql
 brew install      ssh-copy-id
 brew cask install sublime-text
 brew cask install sourcetree
