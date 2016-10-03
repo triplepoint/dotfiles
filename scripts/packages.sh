@@ -81,6 +81,7 @@ brew cask install openscad
 brew cask install kicad
 
 ### General desktop stuff
+brew install      ansiweather
 brew cask install adium
 brew install      bash
 brew cask install crashplan
