@@ -29,7 +29,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew update
 
 ### Upgrade all installed packages
-brew upgrade --all
+brew upgrade
 
 
 ## Install/Update Packages
@@ -38,7 +38,7 @@ brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
 brew install      python
-pip install       pip --upgrade
+pip install       pip setuptools --upgrade
 brew install      ruby
 brew install      rust
 brew install      scala
