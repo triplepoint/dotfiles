@@ -19,11 +19,11 @@ set -ev
 
 ## Repository management
 ### Install brew taps
-brew tap homebrew/versions
 brew tap caskroom/cask
-brew tap caskroom/versions
 brew tap caskroom/fonts
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+brew tap caskroom/versions
+brew tap homebrew/dupes
+brew tap homebrew/versions
 
 ### Update known packages
 brew update
@@ -109,7 +109,12 @@ brew install      pianobar
 brew cask install spotify
 brew cask install xscreensaver
 
+## Pin specific versions (often temporary)
+brew unlink ansible && brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/54bf24fbe302ad27f0eba4d6f7914d6a8ccc876d/Formula/ansible.rb && brew pin ansible
 
 ## Clean up package caches and such
 brew cleanup
 brew cask cleanup
+
+## Debug print the pinned packages
+brew list --pinned
