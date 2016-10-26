@@ -111,7 +111,7 @@ brew cask install spotify
 brew cask install xscreensaver
 
 ## Pin specific versions (often temporary)
-brew unlink ansible && brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/54bf24fbe302ad27f0eba4d6f7914d6a8ccc876d/Formula/ansible.rb && brew switch ansible 2.1.1.0 && brew pin ansible
+# brew unlink ansible && brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/54bf24fbe302ad27f0eba4d6f7914d6a8ccc876d/Formula/ansible.rb && brew switch ansible 2.1.1.0 && brew pin ansible
 
 ## Clean up package caches and such
 brew cleanup
