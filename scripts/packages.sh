@@ -38,10 +38,11 @@ brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
 brew install      python
-pip install       pip setuptools --upgrade
+pip install       pip setuptools wheel --upgrade
 brew install      ruby
 brew install      rust
 brew install      scala
+brew install      sbt
 
 ### General Programming Stuff
 brew install      ansible
