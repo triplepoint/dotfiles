@@ -85,7 +85,7 @@ brew install      git
 brew install      git-annex
 brew cask install github-desktop
 gem install       jekyll
-brew cask install pgadmin3
+brew cask install pgadmin4
 brew install      postgresql
 brew cask install sublime-text
 brew cask install sourcetree
