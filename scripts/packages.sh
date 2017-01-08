@@ -20,7 +20,6 @@ set -ev
 ## Repository management
 ### Install brew taps
 brew tap caskroom/cask
-brew tap caskroom/fonts
 
 ### Update known packages
 brew update
@@ -41,8 +40,8 @@ brew cask install deluge
 brew cask install dropbox
 brew cask install firefox
 brew cask install flux
-brew cask install font-inconsolata
-brew cask install font-inconsolata-dz
+brew cask install caskroom/fonts/font-inconsolata
+brew cask install caskroom/fonts/font-inconsolata-dz
 brew cask install functionflip # To swap function keys on non-apple keyboards
 brew cask install google-chrome
 brew install      gnupg2
