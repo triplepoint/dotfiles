@@ -49,6 +49,7 @@ brew install      gnu-sed --with-default-names
 brew install      homebrew/dupes/grep --with-default-names
 brew install      htop
 brew cask install iterm2
+brew install      iperf3
 brew cask install keepassx
 brew cask install karabiner # To try to handle the ctrl/alt/option windows keyboard issue
 brew install      nmap
