@@ -51,7 +51,6 @@ brew install      htop
 brew cask install iterm2
 brew install      iperf3
 brew cask install keepassx
-brew cask install karabiner # To try to handle the ctrl/alt/option windows keyboard issue
 brew install      nmap
 brew install      openssl
 brew install      openssh
