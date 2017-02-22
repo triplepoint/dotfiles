@@ -79,10 +79,9 @@ print_usage() {
 
 # Parse the input parameters
 GIT_FETCH=0
-while [ "$1" != "" ]; do
-    PARAM=`echo $1 | awk -F= '{print $1}'`
-    VALUE=`echo $1 | awk -F= '{print $2}'`
-    case $PARAM in
+while [[ $# -ge 1 ]]; do
+    PARAM="$1"
+    case ${PARAM} in
         -h | --help)
             print_usage
             exit
@@ -91,17 +90,18 @@ while [ "$1" != "" ]; do
             GIT_FETCH=1
             ;;
         -d | --directory)
-            DIRECTORY=$VALUE
+            DIRECTORY=$2
+            shift # Since we're eating two parameters, shift past #2
             ;;
         *)
-            DIRECTORY=$PARAM
+            DIRECTORY=${PARAM}
             ;;
     esac
     shift
 done
 
 # If directory isn't passed, it's an error
-if [ -z "$DIRECTORY" ]; then
+if [ -z "${DIRECTORY}" ]; then
     echo "Missing directory."
     print_usage
     exit 1
@@ -114,7 +114,7 @@ find ${DIRECTORY} -type d -depth 1 \( -prune -perm -400 -not -iname ".*" \) | so
     if is_git_repository; then
         echo "${fg[white]}${ls_line}${reset_color}"
     else
-        if [[ $GIT_FETCH = 1 ]]; then
+        if [[ ${GIT_FETCH} = 1 ]]; then
             git fetch --all --quiet &> /dev/null || true
         fi
 
