@@ -74,16 +74,17 @@ brew install      scala
 brew install      sbt
 
 ### Programming and Ops Stuff
-brew install      ansible
+pip install       ansible --upgrade
 brew cask install atom
 pip install       awscli --upgrade
 pip install       boto3 --upgrade
-pip install       docker-py --upgrade
+pip install       docker --upgrade
 brew cask install docker
 brew install      git
 brew install      git-annex
 brew cask install github-desktop
 gem install       jekyll
+pip install       molecule --upgrade
 brew cask install pgadmin4
 brew install      postgresql
 brew cask install sublime-text
