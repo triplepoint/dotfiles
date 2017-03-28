@@ -24,6 +24,9 @@ brew tap caskroom/cask
 ### Update known packages
 brew update
 
+### Call the "remove" file, to remove previously installed packages
+source "${BASH_SOURCE%/*}/clean_old_packages.sh"
+
 ### Upgrade all installed packages
 brew upgrade
 
@@ -39,10 +42,8 @@ brew cask install crashplan
 brew cask install deluge
 brew cask install dropbox
 brew cask install firefox
-brew cask install flux
 brew cask install caskroom/fonts/font-inconsolata
 brew cask install caskroom/fonts/font-inconsolata-dz
-brew cask install functionflip # To swap function keys on non-apple keyboards
 brew cask install google-chrome
 brew install      gnupg2
 brew install      gnu-sed --with-default-names
@@ -74,15 +75,15 @@ brew install      scala
 brew install      sbt
 
 ### Programming and Ops Stuff
-brew install      ansible
+pip install       ansible --upgrade
 brew cask install atom
 pip install       awscli --upgrade
+pip install       boto --upgrade
 pip install       boto3 --upgrade
-pip install       docker-py --upgrade
+pip install       docker --upgrade
 brew cask install docker
 brew install      git
 brew install      git-annex
-brew cask install github-desktop
 gem install       jekyll
 brew cask install pgadmin4
 brew install      postgresql
