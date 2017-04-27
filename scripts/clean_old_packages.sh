@@ -6,4 +6,4 @@
 # pip uninstall     docker-py         || true # Replaced with 'docker'
 # brew cask zap     github-desktop    || true # Never used this
 
-brew untap homebrew/dupes                     # migrated back to homebrew/core
+brew untap homebrew/dupes             || true # migrated back to homebrew/core
