@@ -36,7 +36,7 @@ brew upgrade
 brew cask install android-file-transfer
 brew install      ansiweather
 brew cask install adium
-brew install      homebrew/dupes/awk
+brew install      awk
 brew install      bash
 brew cask install crashplan
 brew cask install deluge
@@ -47,7 +47,7 @@ brew cask install caskroom/fonts/font-inconsolata-dz
 brew cask install google-chrome
 brew install      gnupg2
 brew install      gnu-sed --with-default-names
-brew install      homebrew/dupes/grep --with-default-names
+brew install      grep --with-default-names
 brew install      htop
 brew cask install iterm2
 brew install      iperf3
@@ -55,12 +55,12 @@ brew cask install keepassx
 brew install      nmap
 brew install      openssl
 brew install      openssh
-brew install      homebrew/dupes/rsync
+brew install      rsync
 brew cask install slack
 brew install      ssh-copy-id
 brew install      tree
 brew install      vim
-brew install      homebrew/dupes/whois
+brew install      whois
 brew install      zsh
 
 ### Languages and Language Tools
