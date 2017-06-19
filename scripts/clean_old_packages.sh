@@ -7,3 +7,4 @@
 # brew cask zap     github-desktop    || true # Never used this
 
 brew untap homebrew/dupes             || true # migrated back to homebrew/core
+brew cask zap     karabiner           || true
