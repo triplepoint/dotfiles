@@ -86,8 +86,8 @@ brew install      git
 brew install      git-annex
 gem install       jekyll
 pip install       molecule --upgrade
-brew cask install pgadmin4
 brew install      postgresql
+brew cask install pg-commander
 brew cask install sublime-text
 brew cask install sourcetree
 brew install      terraform
@@ -103,7 +103,6 @@ brew install      watch
 
 ### Hardware Development Stuff
 brew cask install arduino
-brew cask install openscad
 brew cask install kicad
 
 ### Recreational Stuff
