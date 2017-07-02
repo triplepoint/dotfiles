@@ -54,7 +54,6 @@ brew install      iperf3
 brew cask install keepassx
 brew install      nmap
 brew install      openssl
-brew install      openssh
 brew install      rsync
 brew cask install slack
 brew install      ssh-copy-id

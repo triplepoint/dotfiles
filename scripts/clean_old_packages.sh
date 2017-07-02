@@ -10,3 +10,4 @@ brew untap homebrew/dupes             || true # migrated back to homebrew/core
 brew cask zap     karabiner           || true
 brew cask zap     openscad            || true
 brew cask zap     pgadmin4            || true
+brew uninstall    openssh             || true
