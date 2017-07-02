@@ -31,6 +31,8 @@ cp -fp $DOTFILES_PATH/home/.bashrc ~
 ### ZSH environment initialization
 cp -fp $DOTFILES_PATH/home/.zshrc ~
 
+### TODO - maybe this should just copy all of home to ~
+
 
 ## Execution Path
 ### Useful command-line utilities (if present)

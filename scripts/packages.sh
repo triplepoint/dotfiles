@@ -52,6 +52,8 @@ brew install      htop
 brew cask install iterm2
 brew install      iperf3
 brew cask install keepassx
+brew install      mtr
+brew install      md5sha1sum
 brew install      nmap
 brew install      openssl
 brew install      rsync
