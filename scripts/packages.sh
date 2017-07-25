@@ -69,6 +69,7 @@ brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
 brew install      python
+brew install      python3
 pip2 install      pip setuptools wheel --upgrade
 brew install      ruby
 brew install      rust
