@@ -69,24 +69,24 @@ brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
 brew install      python
-pip install       pip setuptools wheel --upgrade
+pip2 install      pip setuptools wheel --upgrade
 brew install      ruby
 brew install      rust
 brew install      scala
 brew install      sbt
 
 ### Programming and Ops Stuff
-pip install       ansible --upgrade
+pip2 install      ansible --upgrade
 brew cask install atom
-pip install       awscli --upgrade
-pip install       boto --upgrade
-pip install       boto3 --upgrade
-pip install       docker --upgrade
+pip2 install      awscli --upgrade
+pip2 install      boto --upgrade
+pip2 install      boto3 --upgrade
+pip2 install      docker --upgrade
 brew cask install docker
 brew install      git
 brew install      git-annex
 gem install       jekyll
-pip install       molecule --upgrade
+pip2 install      molecule --upgrade
 brew install      postgresql
 brew cask install pg-commander
 brew cask install sublime-text
