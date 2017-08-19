@@ -31,6 +31,8 @@ cp -fp $DOTFILES_PATH/home/.bashrc ~
 ### ZSH environment initialization
 cp -fp $DOTFILES_PATH/home/.zshrc ~
 
+cp -fp $DOTFILES_PATH/home/.ansiweatherrc ~
+
 ### TODO - maybe this should just copy all of home to ~
 
 

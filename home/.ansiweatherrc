@@ -1,0 +1,4 @@
+location:San Francisco,CA
+fetch_cmd:ftp -V -o -
+units:imperial
+show_daylight:true
