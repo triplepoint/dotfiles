@@ -20,6 +20,7 @@ set -ev
 ## Repository management
 ### Install brew taps
 brew tap caskroom/cask
+brew tap homebrew/homebrew-php
 
 ### Update known packages
 brew update
@@ -68,6 +69,7 @@ brew install      zsh
 brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
+brew install      php71
 brew install      python
 brew install      python3
 pip2 install      pip setuptools wheel --upgrade
