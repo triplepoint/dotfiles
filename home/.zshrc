@@ -1,17 +1,19 @@
 # -*- mode: bash -*-
 # vi: set ft=bash :
 
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="maran"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -54,29 +56,39 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vagrant)
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export GOPATH=/Volumes/workspace/gocode
+export PATH="$GOPATH/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+# brew cask should always install globally
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Don't sent homebrew stats
+HOMEBREW_NO_ANALYTICS=1
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-export EDITOR="subl --new-window --wait"
+if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+  export EDITOR="subl --new-window --wait"
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -86,11 +98,3 @@ export EDITOR="subl --new-window --wait"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-### Custom Behavior
-# Load the optional dotfiles that may or may not be present
-for file in ~/{._exports,._aliases,._functions,._local_exports}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
