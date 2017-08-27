@@ -78,10 +78,9 @@ HOMEBREW_NO_ANALYTICS=1
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-#  export EDITOR='vim'
-  export EDITOR="subl --new-window --wait"
+  export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR="subl --new-window --wait"
 fi
 
 # Compilation flags
