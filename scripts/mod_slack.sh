@@ -65,4 +65,3 @@ EOM
 )
 
 echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/index.js
-
