@@ -80,7 +80,7 @@ HOMEBREW_NO_ANALYTICS=1
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR="subl --new-window --wait"
+  export EDITOR="atom --new-window --wait"
 fi
 
 # Compilation flags
