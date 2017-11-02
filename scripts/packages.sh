@@ -88,6 +88,7 @@ pip2 install      docker --upgrade
 brew cask install docker
 brew install      git
 brew install      git-annex
+brew install      git-lfs
 gem install       jekyll
 pip2 install      molecule --upgrade
 brew install      postgresql
