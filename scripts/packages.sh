@@ -81,6 +81,7 @@ brew install      sbt
 ### Programming and Ops Stuff
 pip2 install      ansible --upgrade
 brew cask install atom
+apm install       sync-settings
 pip2 install      awscli --upgrade
 pip2 install      boto --upgrade
 pip2 install      boto3 --upgrade
