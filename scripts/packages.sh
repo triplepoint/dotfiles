@@ -35,7 +35,6 @@ brew upgrade
 ## Install/Update Packages
 ### General Computer Stuff
 brew cask install android-file-transfer
-brew install      ansiweather
 brew cask install adium
 brew install      awk
 brew install      bash
