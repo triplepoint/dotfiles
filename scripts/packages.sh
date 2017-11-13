@@ -116,6 +116,7 @@ brew cask install battle-net
 brew install      libao --HEAD  # for pianobar
 brew install      pianobar
 brew cask install spotify
+brew cask install vox
 brew cask install xscreensaver
 
 ## Clean up package caches and such
