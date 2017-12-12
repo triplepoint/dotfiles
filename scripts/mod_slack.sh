@@ -64,4 +64,4 @@ document.addEventListener("DOMContentLoaded", function() {
 EOM
 )
 
-echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/index.js
+echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
