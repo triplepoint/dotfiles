@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 brew uninstall ansiweather              || true # this stopped working, and I wasn't using it
-
+brew cask zap     keepassx              || true # replaced with keepassxc
 
 #### DONE ####
 # brew cask zap     flux                || true # MacOS added their own feature

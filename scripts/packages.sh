@@ -52,7 +52,7 @@ brew install      grep --with-default-names
 brew install      htop
 brew cask install iterm2
 brew install      iperf3
-brew cask install keepassx
+brew cask install keepassxc
 brew install      mtr
 brew install      md5sha1sum
 brew install      nmap
