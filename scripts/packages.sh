@@ -49,7 +49,7 @@ brew cask install google-chrome
 brew install      gnupg2
 brew install      gnu-sed --with-default-names
 brew install      grep --with-default-names
-brew install      htop
+# brew install      htop  Temporarily disabled due to high sierra incompatiblity
 brew cask install iterm2
 brew install      iperf3
 brew cask install keepassxc
