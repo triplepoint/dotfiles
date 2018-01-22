@@ -38,7 +38,6 @@ brew cask install android-file-transfer
 brew cask install adium
 brew install      awk
 brew install      bash
-brew cask install crashplan
 brew cask install deluge
 brew cask install dropbox
 brew cask install firefox
