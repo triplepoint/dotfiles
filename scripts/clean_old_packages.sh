@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 brew uninstall ansiweather              || true # this stopped working, and I wasn't using it
+rm ~/.ansiweatherrc                     || true
 brew cask zap     keepassx              || true # replaced with keepassxc
 brew uninstall    htop                  || true # Turns out to be incompatible with high sierra.  Removing for now.
 brew cask zap     crashplan             || true # Screw these people

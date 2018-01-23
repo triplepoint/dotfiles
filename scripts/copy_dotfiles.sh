@@ -10,7 +10,6 @@ DOTFILES_PATH=$(dirname $0)/..
 
 ## Copy Over Standard Environment Files
 cp -fp $DOTFILES_PATH/home/.zshrc ~
-cp -fp $DOTFILES_PATH/home/.ansiweatherrc ~
 cp -fp $DOTFILES_PATH/home/.vimrc ~
 cp -fp $DOTFILES_PATH/home/.gitignore_global ~
 mkdir -p ~/.vagrant.d
