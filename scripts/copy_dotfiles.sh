@@ -13,6 +13,8 @@ cp -fp $DOTFILES_PATH/home/.zshrc ~
 cp -fp $DOTFILES_PATH/home/.ansiweatherrc ~
 cp -fp $DOTFILES_PATH/home/.vimrc ~
 cp -fp $DOTFILES_PATH/home/.gitignore_global ~
+mkdir -p ~/.vagrant.d
+cp -fp $DOTFILES_PATH/home/.vagrant.d/Vagrantfile ~/.vagrant.d/
 
 ## Execution Path
 ### Useful command-line utilities (if present)
