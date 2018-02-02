@@ -73,6 +73,7 @@ brew install      python
 brew install      python3
 pip2 install      pip setuptools wheel --upgrade
 pip2 install      pipenv --upgrade
+pip2 install      python-language-server --upgrade
 brew install      ruby
 brew install      rust
 brew install      scala
