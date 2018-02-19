@@ -12,6 +12,13 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="maran"
 
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -54,24 +61,16 @@ ZSH_THEME="maran"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant)
+plugins=(
+  git
+  vagrant
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export GOPATH=/Volumes/workspace/gocode
-export PATH="$GOPATH/bin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
-# brew cask should always install globally
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# Don't sent homebrew stats
-HOMEBREW_NO_ANALYTICS=1
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -97,3 +96,16 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export GOPATH=/Volumes/workspace/gocode
+export PATH="$GOPATH/bin:$PATH"
+
+# brew cask should always install globally
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Don't sent homebrew stats
+HOMEBREW_NO_ANALYTICS=1

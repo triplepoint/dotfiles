@@ -3,8 +3,9 @@
 # Stop on any error, print all commands
 set -ev
 
-git config --global user.name "Your Name"
-git config --global user.email "email@example.com"
+### Uncomment and edit these lines ###
+# git config --global user.name "Your Name"
+# git config --global user.email "email@example.com"
 
 git config --global core.editor "atom --new-window --wait"
 git config --global core.excludesfile ~/.gitignore_global
