@@ -35,7 +35,6 @@ brew upgrade
 ## Install/Update Packages
 ### General Computer Stuff
 brew cask install android-file-transfer
-brew cask install adium
 brew install      awk
 brew install      bash
 brew cask install deluge
@@ -51,6 +50,7 @@ brew install      grep --with-default-names
 # brew install      htop  Temporarily disabled due to high sierra incompatiblity
 brew cask install iterm2
 brew install      iperf3
+brew cask install limechat
 brew cask install keepassxc
 brew install      mtr
 brew install      md5sha1sum
