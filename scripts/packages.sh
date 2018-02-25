@@ -129,3 +129,5 @@ brew cask cleanup
 ## Debug print some information
 brew list --pinned
 brew doctor
+echo "Outdated cask packages (not super reliable):"
+brew cask outdated
