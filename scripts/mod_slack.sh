@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # Remove the previously existing mod content
+sed -i -n '/\/\/ MOD TO END OF FILE/q;p' /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/index.js
 sed -i -n '/\/\/ MOD TO END OF FILE/q;p' /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
 
 # Append the mod content
@@ -45,9 +46,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
   span.c-message__body,
   a.c-message__sender_link,
+  span.c-message_attachment__text,
+  .c-message_attachment__field_value,
   span.c-message_attachment__media_trigger.c-message_attachment__media_trigger--caption,
   div.p-message_pane__foreword__description span {
-    color: #afafaf !important;
+  	color: #afafaf !important;
+  }
+
+  .c-message_attachment__field_title {
+  	font-weight: bold;
+  	color: #afafaf !important;
   }
 
   pre.special_formatting {
@@ -87,4 +95,5 @@ document.addEventListener("DOMContentLoaded", function() {
 EOM
 )
 
+echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/index.js
 echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
