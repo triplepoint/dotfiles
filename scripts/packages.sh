@@ -70,7 +70,7 @@ brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
 brew install      php71
-brew install      python
+brew install      python@2
 brew install      python3
 pip2 install      pip setuptools wheel --upgrade
 pip2 install      pipenv --upgrade
