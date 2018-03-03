@@ -100,7 +100,6 @@ fi
 
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 export GOPATH=/Volumes/workspace/gocode
 export PATH="$GOPATH/bin:$PATH"

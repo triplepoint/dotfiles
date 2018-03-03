@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 brew cask zap       adium               || true # Switched out for limechat
+brew uninstall      php71               || true # replacing with php
+brew untap          homebrew/homebrew-php || true # No longer need this tap
 
 #### DONE ####
 # brew cask zap     flux                || true # MacOS added their own feature
