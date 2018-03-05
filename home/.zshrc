@@ -100,7 +100,7 @@ fi
 
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python@2/bin:$PATH"
 export GOPATH=/Volumes/workspace/gocode
 export PATH="$GOPATH/bin:$PATH"
 
