@@ -2,6 +2,7 @@
 brew cask zap       adium               || true # Switched out for limechat
 brew uninstall      php71               || true # replacing with php
 brew untap          homebrew/homebrew-php || true # No longer need this tap
+brew uninstall      git-annex           || true # Don't need this, except for work
 
 #### DONE ####
 # brew cask zap     flux                || true # MacOS added their own feature

@@ -69,8 +69,8 @@ brew install      go --cross-compile-common
 brew install      groovy
 brew cask install java
 brew install      php
-brew install      python
-brew install      python@2
+brew install      python     # Installs Python 3
+brew install      python@2   # Installs Python 2
 pip2 install      pip setuptools wheel --upgrade
 pip2 install      pipenv --upgrade
 pip2 install      python-language-server --upgrade
@@ -90,7 +90,7 @@ pip2 install      boto3 --upgrade
 pip2 install      docker --upgrade
 brew cask install docker
 brew install      git
-brew install      git-annex
+# brew install      git-annex
 brew install      git-lfs
 gem install       jekyll
 pip2 install      molecule --upgrade
