@@ -98,6 +98,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH="/usr/local/sbin:$PATH"
 export GOPATH=/Volumes/workspace/gocode
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
