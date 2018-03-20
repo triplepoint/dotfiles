@@ -10,4 +10,5 @@ set -ev
 git config --global core.editor "atom --new-window --wait"
 git config --global core.excludesfile ~/.gitignore_global
 git config --global diff.compactionHeuristic true
+git config --global diff.ansible-vault.textconv "ansible-vault view"
 git config --global rerere.enabled true
