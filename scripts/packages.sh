@@ -41,6 +41,7 @@ brew cask install dropbox
 brew cask install firefox
 brew cask install caskroom/fonts/font-inconsolata
 brew cask install caskroom/fonts/font-inconsolata-dz
+brew cask install discord
 brew cask install gimp
 brew cask install google-chrome
 brew install      gnupg2
