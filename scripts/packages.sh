@@ -97,6 +97,7 @@ gem install       jekyll
 pip2 install      molecule --upgrade
 brew install      postgresql
 brew cask install pg-commander
+pip2 install      pre-commit --upgrade
 brew cask install sourcetree
 brew install      terraform
 brew install      unison
