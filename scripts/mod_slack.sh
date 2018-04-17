@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
     border: solid;
     border-width: 1 px !important;
   }
+
+  .c-message, .c-virtual_list__item {
+    background-color: #222 !important;
+  }
   `
 
   // Insert a style tag into the wrapper view
