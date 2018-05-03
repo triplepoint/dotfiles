@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-brew cask zap       adium               || true # Switched out for limechat
-brew uninstall      php71               || true # replacing with php
-brew untap          homebrew/homebrew-php || true # No longer need this tap
-brew uninstall      git-annex           || true # Don't need this, except for work
+
 
 #### DONE ####
 # brew cask zap     flux                || true # MacOS added their own feature
@@ -20,3 +17,7 @@ brew uninstall      git-annex           || true # Don't need this, except for wo
 # brew cask zap     keepassx            || true # replaced with keepassxc
 # brew uninstall    htop                || true # Turns out to be incompatible with high sierra.  Removing for now.
 # brew cask zap     crashplan           || true # Screw these people
+# brew cask zap       adium               || true # Switched out for limechat
+# brew uninstall      php71               || true # replacing with php
+# brew untap          homebrew/homebrew-php || true # No longer need this tap
+# brew uninstall      git-annex           || true # Don't need this, except for work
