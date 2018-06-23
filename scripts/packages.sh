@@ -82,7 +82,6 @@ brew install      php
 brew install      python     # Installs Python 3
 brew install      python@2   # Installs Python 2
 pip2and3 install  pip setuptools wheel virtualenv --upgrade
-pip2and3 install  ansible --upgrade
 pip2and3 install  pipenv --upgrade
 pip2and3 install  python-language-server --upgrade
 pip2and3 install  isort --upgrade
@@ -92,6 +91,7 @@ brew install      scala
 brew install      sbt
 
 ### Programming and Ops Stuff
+pip2and3 install  ansible --upgrade
 brew cask install atom
 apm install       sync-settings
 brew cask install docker
