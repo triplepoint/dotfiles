@@ -21,7 +21,6 @@
 # brew uninstall    php71               || true # replacing with php
 # brew untap        homebrew/homebrew-php || true # No longer need this tap
 # brew uninstall    git-annex           || true # Don't need this, except for work
-pip2 uninstall -y ansible            || true # Starting to require everything be in a pipenv
 pip2 uninstall -y ansible-lint       || true # Starting to require everything be in a pipenv
 pip2 uninstall -y awscli             || true # Starting to require everything be in a pipenv
 pip2 uninstall -y boto               || true # Starting to require everything be in a pipenv
