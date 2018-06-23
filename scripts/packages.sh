@@ -113,6 +113,7 @@ brew install      watch
 ### Hardware Development Stuff
 brew cask install arduino
 brew cask install kicad
+brew cask install meshmixer
 
 ### Recreational Stuff
 brew cask install steam
