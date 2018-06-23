@@ -30,8 +30,6 @@ pip2 uninstall -y click-completion   || true # Starting to require everything be
 pip2 uninstall -y cookiecutter       || true # Starting to require everything be in a pipenv
 pip2 uninstall -y docker             || true # Starting to require everything be in a pipenv
 pip2 uninstall -y flake8             || true # Starting to require everything be in a pipenv
-pip2 uninstall -y jinja2             || true # Starting to require everything be in a pipenv
 pip2 uninstall -y jinja2-time        || true # Starting to require everything be in a pipenv
 pip2 uninstall -y molecule           || true # Starting to require everything be in a pipenv
-pip2 uninstall -y paramiko           || true # Starting to require everything be in a pipenv
 pip2 uninstall -y s3transfer         || true # Starting to require everything be in a pipenv
