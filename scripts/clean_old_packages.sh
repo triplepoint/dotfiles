@@ -17,7 +17,22 @@
 # brew cask zap     keepassx            || true # replaced with keepassxc
 # brew uninstall    htop                || true # Turns out to be incompatible with high sierra.  Removing for now.
 # brew cask zap     crashplan           || true # Screw these people
-# brew cask zap       adium               || true # Switched out for limechat
-# brew uninstall      php71               || true # replacing with php
-# brew untap          homebrew/homebrew-php || true # No longer need this tap
-# brew uninstall      git-annex           || true # Don't need this, except for work
+# brew cask zap     adium               || true # Switched out for limechat
+# brew uninstall    php71               || true # replacing with php
+# brew untap        homebrew/homebrew-php || true # No longer need this tap
+# brew uninstall    git-annex           || true # Don't need this, except for work
+pip2 uninstall -y ansible            || true # Starting to require everything be in a pipenv
+pip2 uninstall -y ansible-lint       || true # Starting to require everything be in a pipenv
+pip2 uninstall -y awscli             || true # Starting to require everything be in a pipenv
+pip2 uninstall -y boto               || true # Starting to require everything be in a pipenv
+pip2 uninstall -y boto3              || true # Starting to require everything be in a pipenv
+pip2 uninstall -y botocore           || true # Starting to require everything be in a pipenv
+pip2 uninstall -y click-completion   || true # Starting to require everything be in a pipenv
+pip2 uninstall -y cookiecutter       || true # Starting to require everything be in a pipenv
+pip2 uninstall -y docker             || true # Starting to require everything be in a pipenv
+pip2 uninstall -y flake8             || true # Starting to require everything be in a pipenv
+pip2 uninstall -y jinja2             || true # Starting to require everything be in a pipenv
+pip2 uninstall -y jinja2-time        || true # Starting to require everything be in a pipenv
+pip2 uninstall -y molecule           || true # Starting to require everything be in a pipenv
+pip2 uninstall -y paramiko           || true # Starting to require everything be in a pipenv
+pip2 uninstall -y s3transfer         || true # Starting to require everything be in a pipenv
