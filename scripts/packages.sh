@@ -133,7 +133,7 @@ brew cleanup
 brew cask cleanup
 
 ## Debug print some information
-brew list --pinned
-brew doctor
+brew list --pinned || true
+brew doctor        || true
 echo "Outdated cask packages (not super reliable):"
-brew cask outdated
+brew cask outdated || true
