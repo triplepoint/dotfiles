@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 
-set +v
-# Run an install with both pip2 and pip3
-pip2and3 () {
-    set +v
-    pip2 "$@"
-    pip3 "$@"
-    set -v
-}
-set -v
+### System level Python package management tools
+pip2 install pip setuptools wheel virtualenv pipenv --upgrade
+pip3 install pip setuptools wheel virtualenv --upgrade
 
-pip2and3 install  pip setuptools wheel virtualenv --upgrade
-pip2and3 install  pipenv --upgrade
-pip2and3 install  python-language-server --upgrade
-pip2and3 install  isort --upgrade
-pip2and3 install  ansible --upgrade
-pip2and3 install  pre-commit --upgrade
+pushd "${BASH_SOURCE%/*}"
+
+### Generate the package manifests for Python 2 and 3
+PIPENV_PIPFILE=Pipfile.py2 pipenv lock --two -r > requirements_py2.txt
+pipenv --rm
+PIPENV_PIPFILE=Pipfile.py3 pipenv lock --three -r > requirements_py3.txt
+pipenv --rm
+
+# ### Install Packages for the Python 2 and 3 environments
+pip2 install -r requirements_py2.txt
+pip3 install -r requirements_py3.txt
+
+popd

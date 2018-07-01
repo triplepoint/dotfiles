@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+[packages]
+python-language-server = "*"   # used by IDEs
+isort = "*"                    # used by IDEs
+ansible = "*"                  # used by IDEs
+pre-commit = "*"               # used by git repositories
+futures = "==3.1.1"  # This isn't actually a top-level ask, its a pinned dependency due to https://github.com/pypa/pipenv/issues/1586

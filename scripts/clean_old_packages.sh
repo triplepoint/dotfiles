@@ -21,15 +21,15 @@
 # brew uninstall    php71               || true # replacing with php
 # brew untap        homebrew/homebrew-php || true # No longer need this tap
 # brew uninstall    git-annex           || true # Don't need this, except for work
-pip2 uninstall -y ansible-lint       || true # Starting to require everything be in a pipenv
-pip2 uninstall -y awscli             || true # Starting to require everything be in a pipenv
-pip2 uninstall -y boto               || true # Starting to require everything be in a pipenv
-pip2 uninstall -y boto3              || true # Starting to require everything be in a pipenv
-pip2 uninstall -y botocore           || true # Starting to require everything be in a pipenv
-pip2 uninstall -y click-completion   || true # Starting to require everything be in a pipenv
-pip2 uninstall -y cookiecutter       || true # Starting to require everything be in a pipenv
-pip2 uninstall -y docker             || true # Starting to require everything be in a pipenv
-pip2 uninstall -y flake8             || true # Starting to require everything be in a pipenv
-pip2 uninstall -y jinja2-time        || true # Starting to require everything be in a pipenv
-pip2 uninstall -y molecule           || true # Starting to require everything be in a pipenv
-pip2 uninstall -y s3transfer         || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y ansible-lint       || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y awscli             || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y boto               || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y boto3              || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y botocore           || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y click-completion   || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y cookiecutter       || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y docker             || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y flake8             || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y jinja2-time        || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y molecule           || true # Starting to require everything be in a pipenv
+# pip2 uninstall -y s3transfer         || true # Starting to require everything be in a pipenv
