@@ -13,15 +13,6 @@ vagrant_plugin_install () {
   set -v
 }
 
-# Run an install with both pip2 and pip3
-pip2and3 () {
-    set +v
-    pip2 "$@"
-    pip3 "$@"
-    set -v
-}
-
-
 # Stop on any error, print all commands
 set -ev
 
@@ -81,17 +72,13 @@ brew cask install java
 brew install      php
 brew install      python     # Installs Python 3
 brew install      python@2   # Installs Python 2
-pip2and3 install  pip setuptools wheel virtualenv --upgrade
-pip2and3 install  pipenv --upgrade
-pip2and3 install  python-language-server --upgrade
-pip2and3 install  isort --upgrade
 brew install      ruby
 brew install      rust
 brew install      scala
 brew install      sbt
+source "${BASH_SOURCE%/*}/packages_python.sh"
 
 ### Programming and Ops Stuff
-pip2and3 install  ansible --upgrade
 brew cask install atom
 apm install       sync-settings
 brew cask install docker
@@ -101,7 +88,6 @@ brew install      git-lfs
 gem install       jekyll
 brew install      postgresql
 brew cask install pg-commander
-pip2and3 install  pre-commit --upgrade
 brew cask install sourcetree
 brew install      terraform
 brew install      unison
