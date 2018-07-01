@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set +v
 # Run an install with both pip2 and pip3
 pip2and3 () {
     set +v
@@ -7,6 +8,7 @@ pip2and3 () {
     pip3 "$@"
     set -v
 }
+set -v
 
 pip2and3 install  pip setuptools wheel virtualenv --upgrade
 pip2and3 install  pipenv --upgrade

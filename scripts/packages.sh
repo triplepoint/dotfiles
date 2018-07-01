@@ -119,8 +119,11 @@ brew cask install xscreensaver
 brew cleanup
 brew cask cleanup
 
-## Debug print some information
+## Any pinned brew packages, as a reminder to review them:
 brew list --pinned || true
+
+## Anything wrong with brew?
 brew doctor        || true
-echo "Outdated cask packages (not super reliable):"
+
+## Outdated cask packages (not super reliable):
 brew cask outdated || true
