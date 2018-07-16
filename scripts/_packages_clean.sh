@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Stop on any error, print all commands
+set -e
 
 #### DONE ####
 # brew cask zap     flux                || true # MacOS added their own feature

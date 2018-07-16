@@ -25,7 +25,7 @@ brew tap caskroom/cask
 brew update
 
 ### Call the "remove" file, to remove previously installed packages
-source "${BASH_SOURCE%/*}/clean_old_packages.sh"
+source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 ### Upgrade all installed packages
 brew upgrade
