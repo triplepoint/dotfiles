@@ -50,7 +50,6 @@ brew install      grep --with-default-names
 # brew install      htop  Temporarily disabled due to high sierra incompatiblity
 brew cask install iterm2
 brew install      iperf3
-brew cask install limechat
 brew cask install keepassxc
 brew install      mtr
 brew install      md5sha1sum
