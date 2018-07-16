@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Stop on any error, print all commands
+set -e
+
 ### System level Python package management tools
 pip2 install pip setuptools wheel virtualenv pipenv --upgrade
 pip3 install pip setuptools wheel virtualenv --upgrade

@@ -77,7 +77,7 @@ brew install      ruby
 brew install      rust
 brew install      scala
 brew install      sbt
-source "${BASH_SOURCE%/*}/packages_python.sh"
+source "${BASH_SOURCE%/*}/python/_packages_python.sh"
 
 ### Programming and Ops Stuff
 brew cask install atom
