@@ -74,10 +74,10 @@ brew install      python     # Installs Python 3
 brew switch python 3.6.5_1 && brew pin python  # temp for the python 3.7 errors
 brew install      python@2   # Installs Python 2
 brew install      ruby
-brew install      rust
 brew install      scala
 brew install      sbt
 source "${BASH_SOURCE%/*}/python/_packages_python.sh"
+source "${BASH_SOURCE%/*}/_packages_rust.sh"
 
 ### Programming and Ops Stuff
 brew cask install atom
