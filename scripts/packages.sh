@@ -70,7 +70,6 @@ brew install      groovy
 brew cask install java
 brew install      php
 brew install      python     # Installs Python 3
-brew switch python 3.6.5_1 && brew pin python  # temp for the python 3.7 errors
 brew install      python@2   # Installs Python 2
 brew install      ruby
 brew install      scala
