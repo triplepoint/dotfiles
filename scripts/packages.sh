@@ -34,7 +34,7 @@ brew upgrade
 ## Install/Update Packages
 ### General Computer Stuff
 brew cask install android-file-transfer
-brew install      awk
+brew install      gawk
 brew install      bash
 brew cask install deluge
 brew cask install dropbox
