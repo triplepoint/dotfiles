@@ -59,7 +59,7 @@ brew cask install vox
 brew install      bash
 brew install      gawk
 brew install      gnu-sed --with-default-names
-brew install      gnupg2
+brew install      gnupg
 brew install      grep --with-default-names
 brew install      iperf3
 brew cask install iterm2
