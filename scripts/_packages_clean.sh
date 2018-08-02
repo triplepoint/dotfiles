@@ -35,5 +35,5 @@ set -e
 # pip2 uninstall -y jinja2-time        || true # Starting to require everything be in a pipenv
 # pip2 uninstall -y molecule           || true # Starting to require everything be in a pipenv
 # pip2 uninstall -y s3transfer         || true # Starting to require everything be in a pipenv
-brew uninstall    rust               || true # Moving to native tooling for rust
-brew cask uninstall    limechat      || true # Only available through mac app store now, don't use it anyway
+# brew uninstall    rust               || true # Moving to native tooling for rust
+# brew cask uninstall    limechat      || true # Only available through mac app store now, don't use it anyway
