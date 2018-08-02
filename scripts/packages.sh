@@ -82,7 +82,6 @@ brew install      groovy
 brew install      php
 brew install      python     # Installs Python 3
 brew install      python@2   # Installs Python 2
-brew install      scala
 source "${BASH_SOURCE%/*}/python/_packages_python.sh"
 brew install      ruby
 source "${BASH_SOURCE%/*}/_packages_rust.sh"
