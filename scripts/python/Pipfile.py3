@@ -8,3 +8,7 @@ name = "pypi"
 
 
 [packages]
+python-language-server = "*"   # used by IDEs
+isort = "*"                    # used by IDEs
+ansible = "*"                  # used by IDEs
+pre-commit = "*"               # used by git repositories
