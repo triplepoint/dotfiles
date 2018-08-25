@@ -37,6 +37,4 @@ set -e
 # pip2 uninstall -y s3transfer         || true # Starting to require everything be in a pipenv
 # brew uninstall    rust               || true # Moving to native tooling for rust
 # brew cask uninstall    limechat      || true # Only available through mac app store now, don't use it anyway
-
-
-gem uninstall jekyll -a -x           || true # Can use docker containers for this much easier.
+# gem uninstall jekyll -a -x           || true # Can use docker containers for this much easier.
