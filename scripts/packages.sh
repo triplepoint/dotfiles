@@ -115,7 +115,6 @@ brew cask install meshmixer
 
 ## Clean up package caches and such
 brew cleanup
-brew cask cleanup
 
 
 ## Anything wrong with brew?
