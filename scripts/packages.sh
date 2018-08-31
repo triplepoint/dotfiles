@@ -111,6 +111,7 @@ brew install      watch
 brew cask install arduino
 brew cask install kicad
 brew cask install meshmixer
+brew cask install openscad
 
 
 ## Clean up package caches and such
