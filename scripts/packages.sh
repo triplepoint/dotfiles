@@ -74,6 +74,7 @@ brew install      rsync
 brew install      ssh-copy-id
 brew install      tree
 brew install      vim
+brew install      wget
 brew install      whois
 brew install      zsh
 brew install      zsh-completions
@@ -96,6 +97,7 @@ apm install       sync-settings    # Atom plugin, for storing settings in github
 brew cask install docker
 brew install      git
 brew install      git-lfs
+brew install      mosquitto
 brew install      postgresql
 brew cask install pg-commander
 brew cask install sourcetree
