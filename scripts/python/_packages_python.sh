@@ -8,8 +8,8 @@ export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Ensure python 2 and 3 are installed, and set as global
 brew install pyenv
-pyenv install 2.7.15
-pyenv install 3.7.0
+pyenv install -s 2.7.15
+pyenv install -s 3.7.0
 pyenv global 3.7.0 2.7.15
 
 ### Enable pyenv
