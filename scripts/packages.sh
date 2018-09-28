@@ -16,6 +16,9 @@ vagrant_plugin_install () {
 # Stop on any error, print all commands
 set -ev
 
+# Install x-code command-line developer tools, if they aren't already installed
+xcode-select --install || true
+
 # Install homebrew, if it isn't already installed
 command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -73,7 +76,7 @@ brew install      rename
 brew install      rsync
 brew install      ssh-copy-id
 brew install      tree
-brew install      vim
+brew install      vim --without-python
 brew install      wget
 brew install      whois
 brew install      zsh
@@ -84,8 +87,6 @@ brew install      go --cross-compile-common
 brew cask install java       # Should be installed before JVM languages like scala and groovy
 brew install      groovy
 brew install      php
-brew install      python     # Installs Python 3
-brew install      python@2   # Installs Python 2
 source "${BASH_SOURCE%/*}/python/_packages_python.sh"
 brew install      ruby
 source "${BASH_SOURCE%/*}/_packages_rust.sh"

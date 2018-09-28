@@ -3,6 +3,21 @@
 # Stop on any error, print all commands
 set -e
 
+### xcode's libraries need to be shown to command-line compilers
+export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+
+### Ensure python 2 and 3 are installed, and set as global
+brew install pyenv
+pyenv install 2.7.15
+pyenv install 3.7.0
+pyenv global 3.7.0 2.7.15
+
+### Enable pyenv
+### Note that these are also done in the .zshrc file, but are here in case that
+### file hasn't yet been installed
+export PATH="$HOME/.pyenv:$PATH"
+eval "$(pyenv init -)"
+
 ### System level Python package management tools
 pip3 install pip setuptools wheel virtualenv pipenv --upgrade
 pip2 install pip setuptools wheel virtualenv --upgrade
