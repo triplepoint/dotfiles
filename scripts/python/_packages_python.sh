@@ -4,6 +4,8 @@
 set -e
 
 ### xcode's libraries need to be shown to command-line compilers
+### Note that this is also done in the .zshrc file, but are here in case that
+### file hasn't yet been installed
 export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Ensure python 2 and 3 are installed, and set as global

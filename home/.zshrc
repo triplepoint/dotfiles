@@ -98,8 +98,12 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Some useful custom environment variables
+export WORKSPACE_ROOT="/Volumes/workspace"
+
+export GOPATH="$WORKSPACE_ROOT/gocode"
+
 export PATH="/usr/local/sbin:$PATH"
-export GOPATH=/Volumes/workspace/gocode
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
