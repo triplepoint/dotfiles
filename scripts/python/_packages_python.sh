@@ -21,8 +21,8 @@ export PATH="$HOME/.pyenv:$PATH"
 eval "$(pyenv init -)"
 
 ### System level Python package management tools
-pip3 install pip setuptools wheel virtualenv pipenv --upgrade
-pip2 install pip setuptools wheel virtualenv --upgrade
+pip3 install "pip!=18.1" setuptools wheel virtualenv pipenv --upgrade
+pip2 install "pip!=18.1" setuptools wheel virtualenv --upgrade
 
 pushd "${BASH_SOURCE%/*}"
 
