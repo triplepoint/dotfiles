@@ -112,7 +112,8 @@ export PATH="$HOME/.pyenv:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # xcode's libraries need to be shown to command-line compilers
-export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+# NOTE: disabled, seems to be unnecessary for now
+# export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 # Don't sent homebrew stats
 HOMEBREW_NO_ANALYTICS=1

@@ -6,7 +6,8 @@ set -e
 ### xcode's libraries need to be shown to command-line compilers
 ### NOTE: this is also done in the .zshrc file, but are here in case that
 ### file hasn't yet been installed
-export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+### NOTE: disabled, seems to be unnecessary for now
+# export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the versions of python to use as the global 2 and 3 versions
 GLOBAL_PY2="2.7.15"
