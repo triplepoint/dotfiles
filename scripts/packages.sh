@@ -80,7 +80,6 @@ brew install      vim --without-python
 brew install      wget
 brew install      whois
 brew install      zsh
-brew install      zsh-completions
 
 ### Languages and Language Tools
 brew install      go --cross-compile-common
