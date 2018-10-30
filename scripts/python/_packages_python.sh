@@ -22,8 +22,10 @@ pyenv global ${GLOBAL_PY3} ${GLOBAL_PY2}
 ### Enable pyenv
 ### NOTE: these are also done in the .zshrc file, but are here in case that
 ### file hasn't yet been installed
+set +v
 export PATH="$HOME/.pyenv:$PATH"
 eval "$(pyenv init -)"
+set -v
 
 ### System level Python package management tools
 pip3 install pip setuptools wheel virtualenv pipenv --upgrade
