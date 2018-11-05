@@ -66,6 +66,7 @@ brew install      bash
 brew install      gawk
 brew install      gnu-sed --with-default-names
 brew install      gnupg
+ln -s /usr/local/bin/gpg /usr/local/bin/gpg2
 brew install      grep --with-default-names
 brew install      iperf3
 brew cask install iterm2
