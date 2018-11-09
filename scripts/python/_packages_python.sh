@@ -55,4 +55,6 @@ pip3 install -r requirements_py3.txt
 #### Install Python 2 packages
 pip2 install -r requirements_py2.txt
 
+pyenv rehash
+
 popd
