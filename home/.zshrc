@@ -78,10 +78,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export VISUAL='vim'
 else
-  export EDITOR="atom --new-window --wait"
+  export VISUAL="atom --new-window --wait"
 fi
+export EDITOR="$VISUAL"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
