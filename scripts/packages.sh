@@ -98,6 +98,7 @@ apm install       sync-settings    # Atom plugin, for storing settings in github
 brew cask install docker
 brew install      git
 brew install      git-lfs
+brew install      graphviz
 brew install      mosquitto
 brew install      postgresql
 brew cask install pg-commander
