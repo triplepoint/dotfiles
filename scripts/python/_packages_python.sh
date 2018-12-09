@@ -32,7 +32,7 @@ set -v
 
 ### System level Python package management tools
 #### Python3 support packages
-pip3 install pip setuptools wheel virtualenv "pipenv==2018.10.13" --upgrade
+pip3 install pip setuptools wheel virtualenv pipenv --upgrade
 
 #### Python2 support packages
 pip2 install pip setuptools wheel virtualenv --upgrade
