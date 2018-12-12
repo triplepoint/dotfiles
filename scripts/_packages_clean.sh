@@ -39,4 +39,4 @@ set -e
 # brew cask uninstall    limechat         || true  # Only available through mac app store now, don't use it anyway
 # gem uninstall jekyll -a -x              || true  # Can use docker containers for this much easier.
 
-brew uninstall --force -y   zsh-completions     || true  # I don't think I ever used this
+brew uninstall --force zsh-completions  || true  # I don't think I ever used this
