@@ -49,9 +49,12 @@ def main():
 
     print("\n\nPackages that aren't dependencies of other packages:")
     for item in not_dependencies:
-        result = subprocess.run(['brew', 'info', item, '--json=v1'], capture_output=True)
-        json_info = json.loads(result.stdout)
-        print("{}: {}".format(item, json_info[0]['desc']))
+        try:
+            result = subprocess.run(['brew', 'info', item, '--json=v1'], capture_output=True)
+            json_info = json.loads(result.stdout)
+            print("{}: {}".format(item, json_info[0]['desc']))
+        except Exception as e:
+            print("{}: *** Error getting description: {}".format(item, e))
 
 
 if __name__ == "__main__":
