@@ -19,6 +19,9 @@ set -ev
 # Install x-code command-line developer tools, if they aren't already installed
 xcode-select --install || true
 
+# Run a MacOS software update
+softwareupdate --install --all
+
 # Install homebrew, if it isn't already installed
 command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
