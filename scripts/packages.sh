@@ -111,8 +111,9 @@ brew install      unison
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
-vagrant_plugin_install vagrant-vbguest
 vagrant_plugin_install vagrant-aws
+vagrant_plugin_install vagrant-hostmanager
+vagrant_plugin_install vagrant-vbguest
 vagrant plugin update
 brew install      vault
 brew install      watch
