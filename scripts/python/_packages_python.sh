@@ -11,7 +11,7 @@ set -e
 
 ### Define the versions of python to use as the global 2 and 3 versions
 GLOBAL_PY2="2.7.15"
-GLOBAL_PY3="3.7.1"
+GLOBAL_PY3="3.7.2"
 
 ### Ensure python 2 and 3 are installed, and set as global
 brew install pyenv
