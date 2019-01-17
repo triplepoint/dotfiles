@@ -98,6 +98,7 @@ brew install      sbt        # Tooling for scala, will source Scala itself
 ### Programming and Ops Stuff
 brew cask install atom
 apm install       sync-settings    # Atom plugin, for storing settings in github gists
+brew install      awscli
 brew cask install docker
 brew install      git
 brew install      git-lfs
