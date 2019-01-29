@@ -67,10 +67,10 @@ brew cask install vox
 ### Terminals, Shells, and Command Line Utilities
 brew install      bash
 brew install      gawk
-brew install      gnu-sed --with-default-names
+brew install      gnu-sed
 brew install      gnupg
 ln -s /usr/local/bin/gpg /usr/local/bin/gpg2   || true
-brew install      grep --with-default-names
+brew install      grep
 brew install      iperf3
 brew cask install iterm2
 brew install      md5sha1sum
@@ -80,13 +80,13 @@ brew install      rename
 brew install      rsync
 brew install      ssh-copy-id
 brew install      tree
-brew install      vim --without-python
+brew install      vim
 brew install      wget
 brew install      whois
 brew install      zsh
 
 ### Languages and Language Tools
-brew install      go --cross-compile-common
+brew install      go
 brew cask install java       # Should be installed before JVM languages like scala and groovy
 brew install      groovy
 brew install      php

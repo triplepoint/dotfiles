@@ -105,6 +105,8 @@ export WORKSPACE_ROOT="/Volumes/workspace"
 export GOPATH="$WORKSPACE_ROOT/gocode"
 
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
