@@ -63,6 +63,7 @@ brew install      libao --HEAD  # for pianobar
 brew install      pianobar
 brew cask install spotify
 brew cask install vox
+brew cask install vlc
 
 ### Terminals, Shells, and Command Line Utilities
 brew install      bash
