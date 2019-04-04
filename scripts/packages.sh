@@ -20,7 +20,7 @@ set -ev
 xcode-select --install || true
 
 # Install the SDK header files if they're not already installed (needed for building Python)
-if pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then 
+if ! pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then 
     sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 fi
 
