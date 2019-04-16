@@ -114,6 +114,7 @@ brew install      postgresql
 brew cask install pg-commander
 brew cask install sourcetree
 brew install      terraform
+brew install      terragrunt
 brew install      unison
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
