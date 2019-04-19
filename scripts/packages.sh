@@ -20,7 +20,7 @@ set -ev
 xcode-select --install || true
 
 # Install the SDK header files if they're not already installed (needed for building Python)
-if ! pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then 
+if ! pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then
     sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 fi
 
@@ -59,6 +59,7 @@ brew cask install google-chrome
 brew cask install keepassxc
 brew install      openssl
 brew cask install slack
+brew cask install tor-browser
 brew cask install xscreensaver
 
 ### Recreational Stuff
@@ -124,6 +125,7 @@ vagrant_plugin_install vagrant-hostmanager
 vagrant_plugin_install vagrant-vbguest
 vagrant plugin update
 brew install      vault
+brew cask install visual-studio-code
 brew install      watch
 
 ### Hardware Development Stuff
