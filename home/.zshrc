@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export VISUAL='vim'
 else
-  export VISUAL="atom --new-window --wait"
+  export VISUAL="code --new-window --wait"
 fi
 export EDITOR="$VISUAL"
 
