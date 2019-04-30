@@ -125,7 +125,8 @@ vagrant_plugin_install vagrant-hostmanager
 vagrant_plugin_install vagrant-vbguest
 vagrant plugin update
 brew install      vault
-source "${BASH_SOURCE%/*}/_packages_vscode.sh"
+brew cask install visual-studio-code
+code --install-extension shan.code-settings-sync # VS Code plugin, for storing settings in github gists
 brew install      watch
 
 ### Hardware Development Stuff
