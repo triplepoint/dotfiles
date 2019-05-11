@@ -78,6 +78,7 @@ brew install      gnu-sed
 brew install      gnupg
 ln -s /usr/local/bin/gpg /usr/local/bin/gpg2   || true
 brew install      grep
+brew install      htop
 brew install      iperf3
 brew cask install iterm2
 brew install      md5sha1sum
