@@ -30,6 +30,9 @@ softwareupdate --install --all
 # Install homebrew, if it isn't already installed
 command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Turn off homebrew analytics gathering
+brew analytics off
+
 # Install and/or update a collection of useful OSX packages
 ## Repository management
 ### Install brew taps

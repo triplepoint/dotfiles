@@ -62,8 +62,6 @@ ZSH_THEME="maran"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  docker
-  git
   vagrant
 )
 
@@ -111,15 +109,9 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
 
-# brew cask should always install globally
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 # xcode's libraries need to be shown to command-line compilers
 # NOTE: disabled, seems to be unnecessary for now
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
-
-# Don't sent homebrew stats
-HOMEBREW_NO_ANALYTICS=1
 
 # Enable pyenv
 eval "$(pyenv init -)"
