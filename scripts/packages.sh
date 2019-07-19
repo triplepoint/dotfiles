@@ -100,6 +100,7 @@ brew install      zsh
 brew install      go
 brew cask install java       # Should be installed before JVM languages like scala and groovy
 brew install      groovy
+brew install      npm
 brew install      php
 source "${BASH_SOURCE%/*}/python/_packages_python.sh"
 brew install      ruby
