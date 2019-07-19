@@ -1,10 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-# Remove the previously existing mod content
-sed -i -n '/\/\/ MOD TO END OF FILE/q;p' /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/index.js
-sed -i -n '/\/\/ MOD TO END OF FILE/q;p' /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
+# Where the slack resources directory is.  In this case, on macos.
+SLACK_RESOURCEDIR=/Applications/Slack.app/Contents/Resources
 
-# Append the mod content
+# Ensure npm is installed
+command -v npm >/dev/null 2>&1 || { echo "Install Node Package Manager (npm) first."; exit 1; }
+
+# Define the appended content
 APPENDSTRING=$(cat <<-'EOM'
 // MOD TO END OF FILE
 
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let webviews = document.querySelectorAll(".TeamView webview");
 
   // Fetch our CSS in parallel ahead of time
-  const cssPath = 'https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css';
+  const cssPath = 'https://raw.githubusercontent.com/widget-/slack-black-theme/master/custom.css';
   let cssPromise = fetch(cssPath).then(response => response.text());
 
   let customCustomCSS = `
@@ -99,5 +101,16 @@ document.addEventListener("DOMContentLoaded", function() {
 EOM
 )
 
-echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/index.js
-echo "${APPENDSTRING}" >> /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
+# Extract the asar archive file
+npx asar extract ${SLACK_RESOURCEDIR}/app.asar ${SLACK_RESOURCEDIR}/extracted-asar
+sleep 4
+
+# Remove the previously existing mod content
+sed -i -n '/\/\/ MOD TO END OF FILE/q;p' ${SLACK_RESOURCEDIR}/extracted-asar/dist/ssb-interop.bundle.js
+
+# Append the mod string to the javascript file
+echo "${APPENDSTRING}" >> ${SLACK_RESOURCEDIR}/extracted-asar/dist/ssb-interop.bundle.js
+
+# Repack the archive
+npx asar pack ${SLACK_RESOURCEDIR}/extracted-asar ${SLACK_RESOURCEDIR}/app.asar
+rm -r ${SLACK_RESOURCEDIR}/extracted-asar
