@@ -53,6 +53,7 @@ brew upgrade
 brew cask install android-file-transfer
 brew cask install caskroom/fonts/font-inconsolata
 brew cask install caskroom/fonts/font-inconsolata-dz
+brew cask install caskroom/fonts/font-muli
 brew cask install deluge
 brew cask install discord
 brew cask install dropbox
