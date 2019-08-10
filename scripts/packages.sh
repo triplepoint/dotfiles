@@ -135,6 +135,7 @@ brew install      watch
 
 ### Hardware Development Stuff
 brew cask install arduino
+brew cask install freecad
 brew cask install kicad
 brew cask install meshmixer
 brew cask install openscad
