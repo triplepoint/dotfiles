@@ -132,6 +132,7 @@ brew install      vault
 brew cask install visual-studio-code
 code --install-extension shan.code-settings-sync # VS Code plugin, for storing settings in github gists
 brew install      watch
+brew cask install wireshark
 
 ### Hardware Development Stuff
 brew cask install arduino
