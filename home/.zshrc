@@ -115,6 +115,11 @@ export PATH="$HOME/.pyenv:$PATH"
 # NOTE: disabled, seems to be unnecessary for now
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
+# Some python libraries (like psycopg2) have compiler
+# trouble finding the openssl libraries.
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
 # Enable pyenv
 eval "$(pyenv init -)"
 
