@@ -140,6 +140,7 @@ brew cask install freecad
 brew cask install kicad
 brew cask install meshmixer
 brew cask install openscad
+brew cask install blender
 
 
 ## Clean up package caches and such
