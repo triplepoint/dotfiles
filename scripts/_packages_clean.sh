@@ -40,4 +40,4 @@ set -e
 # gem uninstall jekyll -a -x              || true  # Can use docker containers for this much easier.
 # brew uninstall --force zsh-completions  || true  # I don't think I ever used this
 # brew cask uninstall    atom             || true  # replaced with vscode
-
+brew cask uninstall pg-commander        || true  # unmaintained, letting it go

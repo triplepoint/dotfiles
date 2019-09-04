@@ -67,13 +67,13 @@ brew cask install tor-browser
 brew cask install xscreensaver
 
 ### Recreational Stuff
-brew cask install steam
 brew cask install battle-net
 brew install      libao --HEAD  # for pianobar
 brew install      pianobar
 brew cask install spotify
-brew cask install vox
+brew cask install steam
 brew cask install vlc
+brew cask install vox
 
 ### Terminals, Shells, and Command Line Utilities
 brew install      bash
@@ -106,17 +106,17 @@ brew install      php
 source "${BASH_SOURCE%/*}/python/_packages_python.sh"
 brew install      ruby
 source "${BASH_SOURCE%/*}/_packages_rust.sh"
-brew install      sbt        # Tooling for scala, will source Scala itself
+brew install      sbt        # Tooling for Scala, will source Scala itself
 
 ### Programming and Ops Stuff
 brew install      awscli
+brew cask install dbeaver-community
 brew cask install docker
 brew install      git
 brew install      git-lfs
 brew install      graphviz
 brew install      mosquitto
 brew install      postgresql
-brew cask install pg-commander
 brew cask install sourcetree
 brew install      terraform
 brew install      terragrunt
