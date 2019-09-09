@@ -41,3 +41,5 @@ set -e
 # brew uninstall --force zsh-completions  || true  # I don't think I ever used this
 # brew cask uninstall    atom             || true  # replaced with vscode
 brew cask uninstall pg-commander        || true  # unmaintained, letting it go
+brew uninstall    md5sha1sum            || true  # replacing this with coreutils
+

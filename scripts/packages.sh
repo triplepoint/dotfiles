@@ -77,6 +77,7 @@ brew cask install vox
 
 ### Terminals, Shells, and Command Line Utilities
 brew install      bash
+brew install      coreutils
 brew install      gawk
 brew install      gnu-sed
 brew install      gnupg
@@ -85,7 +86,6 @@ brew install      grep
 brew install      htop
 brew install      iperf3
 brew cask install iterm2
-brew install      md5sha1sum
 brew install      mtr
 brew install      nmap
 brew install      rename
