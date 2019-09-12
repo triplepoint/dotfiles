@@ -40,7 +40,7 @@ sleep 4
 sed -i -n '/\/\/ MOD TO END OF FILE/q;p' ${SLACK_FILE_PATH}
 
 # Append the mod string to the javascript file
-echo "${APPENDSTRING}" >> ${SLACK_FILE_PATH}
+# echo "${APPENDSTRING}" >> ${SLACK_FILE_PATH}
 
 # Repack the archive and delete the working copy
 npx asar pack ${SLACK_EXTRACT_PATH} ${SLACK_RESOURCEDIR}/app.asar
