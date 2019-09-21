@@ -7,15 +7,16 @@ retval=$?
 # If nothing went wrong that's fine, echo the result and we're done.
 if [ $retval -eq 0 ]; then
     echo -e "${RESULT}"
+    exit $retval
 
 else
     # If the vault error was that the file wasn't encrypted, just cat the file.
     # Otherwise, yea, it's a legit error, just print the error message to stdout
     if [[ $RESULT == *"ERROR! input is not vault encrypted"* ]]; then
         cat $1
+        exit 0
     else
         >&2 echo -e "${RESULT}"
+        exit $retval
     fi
 fi
-
-exit $retval
