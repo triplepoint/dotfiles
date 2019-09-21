@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Try to decrypt and view the vaulted file
+RESULT="$(ansible-vault view $1 2>&1)"
+retval=$?
+
+# If nothing went wrong that's fine, echo the result and we're done.
+if [ $retval -eq 0 ]; then
+    echo -e "${RESULT}"
+
+else
+    # If the vault error was that the file wasn't encrypted, just cat the file.
+    # Otherwise, yea, it's a legit error, just print the error message to stdout
+    if [[ $RESULT == *"ERROR! input is not vault encrypted"* ]]; then
+        cat $1
+    else
+        >&2 echo -e "${RESULT}"
+    fi
+fi
+
+exit $retval
