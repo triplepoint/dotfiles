@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Get the repository root and set the ANSIBLE_CONFIG environment var,
+# so ansible-vault can make use of the project's ansible config.
+# Here we're just assuming that the ansible.cfg file is in the repo
+# root. YMMV.
+TARGET_FILE_DIR=$(dirname "$1")
+GIT_ROOT="$(git -C ${TARGET_FILE_DIR} rev-parse --show-toplevel)"
+export ANSIBLE_CONFIG=${GIT_ROOT}/ansible.cfg
+
 # Try to decrypt and view the vaulted file
 RESULT="$(ansible-vault view $1 2>&1)"
 retval=$?
