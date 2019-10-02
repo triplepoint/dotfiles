@@ -76,7 +76,9 @@ brew cask install vlc
 brew cask install vox
 
 ### Terminals, Shells, and Command Line Utilities
+brew install      automake
 brew install      bash
+brew install      binutils
 brew install      coreutils
 brew install      gawk
 brew install      gnu-sed
