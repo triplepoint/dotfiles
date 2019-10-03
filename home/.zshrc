@@ -117,8 +117,12 @@ export PATH="$HOME/.pyenv:$PATH"
 
 # Some python libraries (like psycopg2) have compiler
 # trouble finding the openssl libraries.
-export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/binutils/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/binutils/include"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+# Add binutils for building
+# export LDFLAGS="$LDFLAGS -L/usr/local/opt/binutils/lib"
+# export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/binutils/include"
 
 # Enable pyenv
 eval "$(pyenv init -)"
