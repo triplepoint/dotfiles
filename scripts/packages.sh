@@ -106,7 +106,7 @@ brew install      groovy
 brew install      npm
 brew install      php
 source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
-source "${BASH_SOURCE%/*}/python/_packages_python2.sh"
+source "${BASH_SOURCE%/*}/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
 brew install      ruby
 source "${BASH_SOURCE%/*}/_packages_rust.sh"
 brew install      sbt        # Tooling for Scala, will source Scala itself

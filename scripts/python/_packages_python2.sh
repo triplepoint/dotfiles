@@ -15,7 +15,7 @@ GLOBAL_PY2="2.7.16"
 ### Ensure python is installed, and set as global
 brew install pyenv
 pyenv install -s ${GLOBAL_PY2}
-pyenv global ${GLOBAL_PY2}
+pyenv global ${GLOBAL_PY3} ${GLOBAL_PY2}
 
 ### Enable pyenv
 ### NOTE: these are also done in the .zshrc file, but are here in case that
