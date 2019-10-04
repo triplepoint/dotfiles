@@ -36,7 +36,7 @@ brew analytics off
 # Install and/or update a collection of useful OSX packages
 ## Repository management
 ### Install brew taps
-brew tap caskroom/cask
+brew tap homebrew/cask
 
 ### Update known packages
 brew update
@@ -51,9 +51,9 @@ brew upgrade
 ## Install/Update Packages
 ### General Computer Stuff
 brew cask install android-file-transfer
-brew cask install caskroom/fonts/font-inconsolata
-brew cask install caskroom/fonts/font-inconsolata-dz
-brew cask install caskroom/fonts/font-muli
+brew cask install homebrew/cask-fonts/font-inconsolata
+brew cask install homebrew/cask-fonts/font-inconsolata-dz
+brew cask install homebrew/cask-fonts/font-muli
 brew cask install deluge
 brew cask install discord
 brew cask install dropbox
