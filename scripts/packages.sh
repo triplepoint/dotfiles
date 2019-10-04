@@ -105,7 +105,8 @@ brew cask install java       # Should be installed before JVM languages like sca
 brew install      groovy
 brew install      npm
 brew install      php
-source "${BASH_SOURCE%/*}/python/_packages_python.sh"
+source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
+source "${BASH_SOURCE%/*}/python/_packages_python2.sh"
 brew install      ruby
 source "${BASH_SOURCE%/*}/_packages_rust.sh"
 brew install      sbt        # Tooling for Scala, will source Scala itself
