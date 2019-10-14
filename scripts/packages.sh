@@ -118,6 +118,7 @@ brew cask install docker
 brew install      git
 brew install      git-lfs
 brew install      graphviz
+brew install      kubernetes-helm #kubernetes needs to be enabled in Docker manually
 brew install      mosquitto
 brew install      postgresql
 brew cask install sourcetree
