@@ -14,7 +14,7 @@ GLOBAL_PY3="3.8.0"
 
 ### Ensure python is installed, and set as global
 brew install pyenv
-pyenv install -s ${GLOBAL_PY3}
+pyenv install --skip-existing ${GLOBAL_PY3}
 pyenv global ${GLOBAL_PY3}
 
 ### Enable pyenv
@@ -26,7 +26,7 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-pip3 install pip setuptools wheel virtualenv pipenv --upgrade
+pip3 install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
@@ -35,7 +35,7 @@ rm -f Pipfile.py3.lock
 PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${GLOBAL_PY3} -r > requirements_py3.txt
 
 ### Install packages
-pip3 install -r requirements_py3.txt
+pip3 install -r requirements_py3.txt --no-deps --progress-bar off
 
 pyenv rehash
 

@@ -14,7 +14,7 @@ GLOBAL_PY2="2.7.16"
 
 ### Ensure python is installed, and set as global
 brew install pyenv
-pyenv install -s ${GLOBAL_PY2}
+pyenv install --skip-existing ${GLOBAL_PY2}
 pyenv global ${GLOBAL_PY3} ${GLOBAL_PY2}
 
 ### Enable pyenv
@@ -26,7 +26,7 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-pip2 install pip setuptools wheel virtualenv --upgrade
+pip2 install pip setuptools wheel virtualenv --upgrade --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
@@ -35,7 +35,7 @@ rm -f Pipfile.py2.lock
 PIPENV_PIPFILE=Pipfile.py2 pipenv lock --python ${GLOBAL_PY2} -r > requirements_py2.txt
 
 ### Install packages
-pip2 install -r requirements_py2.txt
+pip2 install -r requirements_py2.txt --no-deps --progress-bar off
 
 pyenv rehash
 
