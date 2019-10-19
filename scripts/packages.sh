@@ -21,6 +21,7 @@ xcode-select --install || true
 
 # Install the SDK header files if they're not already installed (needed for building Python)
 # Note the version of the package file should be adjusted for the MacOS version on the machine.
+# This may be entirely wrong as of Catalina. for example: https://superuser.com/questions/1488979/macos-catalina-cannot-find-usr-include-file
 if ! pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then
     sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.15.pkg -target /
 fi
@@ -130,6 +131,7 @@ brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install vagrant
 vagrant_plugin_install vagrant-hostmanager
+vagrant_plugin_install vagrant-vbguest
 vagrant plugin update
 brew install      vault
 brew cask install visual-studio-code
