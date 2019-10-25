@@ -65,6 +65,7 @@ brew cask install google-chrome
 brew cask install keepassxc
 brew install      openssl
 brew cask install slack
+brew cask install thunderbird
 brew cask install tor-browser
 brew cask install xscreensaver
 
@@ -105,7 +106,7 @@ brew install      zsh
 brew install      go
 brew cask install java       # Should be installed before JVM languages like scala and groovy
 brew install      groovy
-brew install      npm
+brew install      node
 brew install      php
 source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
 source "${BASH_SOURCE%/*}/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
