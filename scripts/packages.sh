@@ -20,11 +20,13 @@ set -ev
 xcode-select --install || true
 
 # Install the SDK header files if they're not already installed (needed for building Python)
-# Note the version of the package file should be adjusted for the MacOS version on the machine.
-# This may be entirely wrong as of Catalina. for example: https://superuser.com/questions/1488979/macos-catalina-cannot-find-usr-include-file
-if ! pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then
-    sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.15.pkg -target /
-fi
+# This is currently set up for Catalina, but it doesn't actually work.  Without formatting a new Mac and trying
+# to get to the bottom of the Right Way to do this, I don't see a way to properly test building Python and
+# determining which dependency headers need to be in place.  For now, I'll just disable this, and I'll fix it
+# if and when I have trouble with another fresh Mac install.
+# if ! pkgutil --pkgs | grep -q 'com.apple.pkg.CLTools_Executables'; then
+#     sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.15.pkg -target /
+# fi
 
 # Run a MacOS software update
 softwareupdate --install --all
