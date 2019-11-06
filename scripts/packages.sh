@@ -65,6 +65,7 @@ brew cask install firefox
 brew cask install gimp
 brew cask install google-chrome
 brew cask install keepassxc
+brew cask install libreoffice
 brew install      openssl
 brew cask install slack
 brew cask install thunderbird
