@@ -106,8 +106,8 @@ brew install      whois
 brew install      zsh
 
 ### Languages and Language Tools
+brew cask install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
 brew install      go
-brew cask install java       # Should be installed before JVM languages like scala and groovy
 brew install      groovy
 brew install      node
 brew install      php

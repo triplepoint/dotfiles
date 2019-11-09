@@ -42,3 +42,4 @@ set -e
 # brew cask uninstall    atom             || true  # replaced with vscode
 # brew cask uninstall pg-commander        || true  # unmaintained, letting it go
 # brew uninstall    md5sha1sum            || true  # replacing this with coreutils
+brew cask uninstall java                || true  # Should be installed before JVM languages like scala and groovy
