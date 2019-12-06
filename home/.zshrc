@@ -100,19 +100,18 @@ export EDITOR="$VISUAL"
 # Some useful custom environment variables
 export WORKSPACE_ROOT="/Volumes/workspace"
 
-# export GOPATH="$WORKSPACE_ROOT/gocode"
+export GOPATH="$WORKSPACE_ROOT/gocode"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-# export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
 
 # xcode's libraries need to be shown to command-line compilers
-# NOTE: disabled, seems to be unnecessary for now
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 # Some python libraries (like psycopg2) have compiler
