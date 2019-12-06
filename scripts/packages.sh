@@ -68,6 +68,7 @@ brew cask install keepassxc
 brew cask install libreoffice
 brew install      openssl
 brew cask install slack
+brew install      tcl-tk
 brew cask install thunderbird
 brew cask install tor-browser
 brew cask install xscreensaver
