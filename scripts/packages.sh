@@ -118,8 +118,9 @@ brew cask install docker
 brew install      git
 brew install      git-lfs
 brew install      graphviz
-brew install      kubernetes-helm #kubernetes needs to be enabled in Docker manually
+brew install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
 brew install      mosquitto
+brew install      postgresql  # python's psycopg2 expects this to be here
 brew cask install sourcetree
 brew install      terraform
 brew install      terragrunt

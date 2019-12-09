@@ -49,5 +49,4 @@ set -e
 # brew uninstall      go                  || true
 # brew uninstall      groovy              || true
 # brew uninstall      sbt                 || true
-# brew uninstall      postgresql          || true
 # brew cask uninstall homebrew/cask-fonts/font-muli || true
