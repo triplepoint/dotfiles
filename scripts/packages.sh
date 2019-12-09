@@ -77,7 +77,6 @@ brew cask install xscreensaver
 brew cask install battle-net
 brew install      libao --HEAD  # for pianobar
 brew install      pianobar
-brew cask install spotify
 brew cask install steam
 brew cask install vlc
 brew cask install vox
@@ -108,15 +107,10 @@ brew install      zsh
 
 ### Languages and Language Tools
 brew cask install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
-brew install      go
-brew install      groovy
-brew install      node
-brew install      php
 source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
-source "${BASH_SOURCE%/*}/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
-brew install      ruby
-source "${BASH_SOURCE%/*}/_packages_rust.sh"
-brew install      sbt        # Tooling for Scala, will source Scala itself
+# source "${BASH_SOURCE%/*}/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
+# source "${BASH_SOURCE%/*}/_packages_rust.sh"
+
 
 ### Programming and Ops Stuff
 brew install      awscli
@@ -127,7 +121,6 @@ brew install      git-lfs
 brew install      graphviz
 brew install      kubernetes-helm #kubernetes needs to be enabled in Docker manually
 brew install      mosquitto
-brew install      postgresql
 brew cask install sourcetree
 brew install      terraform
 brew install      terragrunt

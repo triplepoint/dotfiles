@@ -43,3 +43,11 @@ set -e
 # brew cask uninstall pg-commander        || true  # unmaintained, letting it go
 # brew uninstall    md5sha1sum            || true  # replacing this with coreutils
 # brew cask uninstall java                || true  # Should be installed before JVM languages like scala and groovy
+
+brew cask uninstall spotify             || true
+brew uninstall      node                || true
+brew uninstall      php                 || true
+brew uninstall      go                  || true
+brew uninstall      groovy              || true
+brew uninstall      sbt                 || true
+brew uninstall      postgresql          || true

@@ -100,14 +100,14 @@ export EDITOR="$VISUAL"
 # Some useful custom environment variables
 export WORKSPACE_ROOT="/Volumes/workspace"
 
-export GOPATH="$WORKSPACE_ROOT/gocode"
+# export GOPATH="$WORKSPACE_ROOT/gocode"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
+# export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.pyenv:$PATH"
 
