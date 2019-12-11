@@ -138,6 +138,7 @@ brew cask install wireshark
 
 ### Hardware Development Stuff
 brew cask install arduino
+brew cask install autodesk-fusion360
 brew cask install blender
 brew cask install freecad
 brew cask install kicad
