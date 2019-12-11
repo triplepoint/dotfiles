@@ -50,3 +50,4 @@ set -e
 # brew uninstall      groovy              || true
 # brew uninstall      sbt                 || true
 # brew cask uninstall homebrew/cask-fonts/font-muli || true
+# brew cask uninstall homebrew/cask-fonts/font-inconsolata-dz || true
