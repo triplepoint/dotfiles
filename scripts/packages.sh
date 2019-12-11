@@ -138,11 +138,12 @@ brew cask install wireshark
 
 ### Hardware Development Stuff
 brew cask install arduino
+brew cask install blender
 brew cask install freecad
 brew cask install kicad
 brew cask install meshmixer
 brew cask install openscad
-brew cask install blender
+brew cask install prusaslicer
 
 
 ## Clean up package caches and such
