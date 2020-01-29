@@ -51,3 +51,5 @@ set -e
 # brew uninstall      sbt                 || true
 # brew cask uninstall homebrew/cask-fonts/font-muli || true
 # brew cask uninstall homebrew/cask-fonts/font-inconsolata-dz || true
+brew cask uninstall wireshark           || true
+
