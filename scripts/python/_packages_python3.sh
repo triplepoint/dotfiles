@@ -31,6 +31,7 @@ pip3 install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
 pushd "${BASH_SOURCE%/*}"
 
 ### Generate intermediate requirements.txt file
+PIPENV_PIPFILE=Pipfile.py3 pipenv --rm || true
 rm -f Pipfile.py3.lock
 PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${GLOBAL_PY3} -r > requirements_py3.txt
 

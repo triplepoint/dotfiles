@@ -10,7 +10,7 @@ set -e
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the version of python to use as the global version
-GLOBAL_PY2="2.7.16"
+GLOBAL_PY2="2.7.17"
 
 ### Ensure python is installed, and set as global
 brew install pyenv
@@ -31,6 +31,7 @@ pip2 install pip setuptools wheel virtualenv --upgrade --progress-bar off
 pushd "${BASH_SOURCE%/*}"
 
 ### Generate intermediate requirements.txt file
+PIPENV_PIPFILE=Pipfile.py2 pipenv --rm || true
 rm -f Pipfile.py2.lock
 PIPENV_PIPFILE=Pipfile.py2 pipenv lock --python ${GLOBAL_PY2} -r > requirements_py2.txt
 
