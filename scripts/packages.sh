@@ -40,6 +40,8 @@ source "${BASH_SOURCE%/*}/_packages_clean.sh"
 ### Upgrade all installed packages
 brew upgrade
 
+### Snapshot the names of installed packages in the various packaging tools
+cache_installed_packages
 
 ## Install/Update Packages
 ### General Computer Stuff

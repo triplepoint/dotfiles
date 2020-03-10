@@ -1,2 +1,3 @@
 Pipfile.py*.lock
 requirements_py*.txt
+*_installed_packages.txt
