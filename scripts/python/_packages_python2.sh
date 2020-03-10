@@ -13,7 +13,7 @@ set -e
 GLOBAL_PY2="2.7.17"
 
 ### Ensure python is installed, and set as global
-brew install pyenv
+brew_install pyenv
 pyenv install --skip-existing ${GLOBAL_PY2}
 pyenv global ${GLOBAL_PY3} ${GLOBAL_PY2}
 

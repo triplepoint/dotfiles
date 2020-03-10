@@ -13,7 +13,7 @@ set -e
 GLOBAL_PY3="3.8.1"
 
 ### Ensure python is installed, and set as global
-brew install pyenv
+brew_install pyenv
 pyenv install --skip-existing ${GLOBAL_PY3}
 pyenv global ${GLOBAL_PY3}
 

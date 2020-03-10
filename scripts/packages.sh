@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-# Don't reinstall Vagrant plugins, if they're already installed
-# We can always call `vagrant plugin update` explicitly.
-vagrant_plugin_install () {
-  set +v
-  installed_packages=$(vagrant plugin list | cut -f1 -d' ')
-  if ! [[ $installed_packages =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
-    vagrant plugin install $1
-  else
-    echo $'\e[4m''Notice'$'\e[0m'": Vagrant plugin '$1' is already installed.  Use 'vagrant plugin update $1' to force an upgrade."
-  fi
-  set -v
-}
+source "${BASH_SOURCE%/*}/_functions.sh"
 
 # Stop on any error, print all commands
 set -ev
@@ -31,10 +20,10 @@ xcode-select --install || true
 # Run a MacOS software update
 softwareupdate --install --all
 
-# Install homebrew, if it isn't already installed
+# Install Homebrew, if it isn't already installed
 command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Turn off homebrew analytics gathering
+# Turn off Homebrew analytics gathering
 brew analytics off
 
 # Install and/or update a collection of useful OSX packages
@@ -54,97 +43,97 @@ brew upgrade
 
 ## Install/Update Packages
 ### General Computer Stuff
-brew cask install android-file-transfer
-brew cask install homebrew/cask-fonts/font-inconsolata
-brew cask install deluge
-brew cask install discord
-brew cask install dropbox
-brew cask install firefox
-brew cask install gimp
-brew cask install google-chrome
-brew cask install keepassxc
-brew cask install libreoffice
-brew install      openssl
-brew cask install slack
-brew install      tcl-tk
-brew cask install thunderbird
-brew cask install tor-browser
-brew cask install xscreensaver
+brew_cask_install android-file-transfer
+brew_cask_install homebrew/cask-fonts/font-inconsolata
+brew_cask_install deluge
+brew_cask_install discord
+brew_cask_install dropbox
+brew_cask_install firefox
+brew_cask_install gimp
+brew_cask_install google-chrome
+brew_cask_install keepassxc
+brew_cask_install libreoffice
+brew_install      openssl
+brew_cask_install slack
+brew_install      tcl-tk
+brew_cask_install thunderbird
+brew_cask_install tor-browser
+brew_cask_install xscreensaver
 
 ### Recreational Stuff
-brew cask install battle-net
-brew install      libao --HEAD  # for pianobar
-brew install      pianobar
-brew cask install steam
-brew cask install vlc
-brew cask install vox
+brew_cask_install battle-net
+brew_install      libao --HEAD  # for pianobar
+brew_install      pianobar
+brew_cask_install steam
+brew_cask_install vlc
+brew_cask_install vox
 
 ### Terminals, Shells, and Command Line Utilities
-brew install      automake
-brew install      bash
-brew install      binutils
-brew install      coreutils
-brew install      gawk
-brew install      gnu-sed
-brew install      gnupg
+brew_install      automake
+brew_install      bash
+brew_install      binutils
+brew_install      coreutils
+brew_install      gawk
+brew_install      gnu-sed
+brew_install      gnupg
 ln -s /usr/local/bin/gpg /usr/local/bin/gpg2   || true
-brew install      grep
-brew install      htop
-brew install      iperf3
-brew cask install iterm2
-brew install      mtr
-brew install      nmap
-brew install      rename
-brew install      rsync
-brew install      ssh-copy-id
-brew install      tree
-brew install      vim
-brew install      wget
-brew install      whois
-brew install      zsh
+brew_install      grep
+brew_install      htop
+brew_install      iperf3
+brew_cask_install iterm2
+brew_install      mtr
+brew_install      nmap
+brew_install      rename
+brew_install      rsync
+brew_install      ssh-copy-id
+brew_install      tree
+brew_install      vim
+brew_install      wget
+brew_install      whois
+brew_install      zsh
 
 ### Languages and Language Tools
-brew cask install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
+brew_cask_install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
 source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
 # source "${BASH_SOURCE%/*}/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
 # source "${BASH_SOURCE%/*}/_packages_rust.sh"
 
 
 ### Programming and Ops Stuff
-brew install      awscli
-brew cask install dbeaver-community
-brew cask install docker
-brew install      git
-brew install      git-lfs
-brew install      graphviz
-brew install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
-brew install      mosquitto
-brew install      postgresql  # python's psycopg2 expects this to be here
-brew cask install sourcetree
-brew install      terraform
-brew install      terragrunt
-brew install      unison
-brew cask install virtualbox
-brew cask install virtualbox-extension-pack
-brew cask install vagrant
+brew_install      awscli
+brew_cask_install dbeaver-community
+brew_cask_install docker
+brew_install      git
+brew_install      git-lfs
+brew_install      graphviz
+brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
+brew_install      mosquitto
+brew_install      postgresql  # python's psycopg2 expects this to be here
+brew_cask_install sourcetree
+brew_install      terraform
+brew_install      terragrunt
+brew_install      unison
+brew_cask_install virtualbox
+brew_cask_install virtualbox-extension-pack
+brew_cask_install vagrant
 vagrant_plugin_install vagrant-hostmanager
 vagrant_plugin_install vagrant-vbguest
 vagrant plugin update
-brew install      vault
-brew cask install visual-studio-code
+brew_install      vault
+brew_cask_install visual-studio-code
 code --install-extension shan.code-settings-sync # VS Code plugin, for storing settings in github gists
-brew install      watch
+brew_install      watch
 
 ### Hardware Development Stuff
-brew cask install arduino
-brew install arduino-cli
-brew cask install autodesk-fusion360
-brew cask install blender
-brew cask install freecad
-brew cask install kicad
-brew cask install meshmixer
-brew cask install openscad
-brew cask install prusaslicer
+brew_cask_install arduino
+brew_install arduino-cli
+brew_cask_install autodesk-fusion360
+brew_cask_install blender
+brew_cask_install freecad
+brew_cask_install kicad
+brew_cask_install meshmixer
+brew_cask_install openscad
+brew_cask_install prusaslicer
 
 
 ## Clean up package caches and such
