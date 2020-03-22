@@ -39,6 +39,7 @@ source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 ### Upgrade all installed packages
 brew upgrade
+brew cask upgrade
 
 ### Snapshot the names of installed packages in the various packaging tools
 cache_installed_packages
