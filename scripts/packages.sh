@@ -57,11 +57,13 @@ brew_cask_install google-chrome
 brew_cask_install keepassxc
 brew_cask_install libreoffice
 brew_install      openssl
+brew_cask_install skype
 brew_cask_install slack
 brew_install      tcl-tk
 brew_cask_install thunderbird
 brew_cask_install tor-browser
 brew_cask_install xscreensaver
+brwe_cask_install zoomus
 
 ### Recreational Stuff
 brew_cask_install battle-net
