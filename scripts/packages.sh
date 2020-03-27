@@ -92,6 +92,7 @@ brew_install      rename
 brew_install      rsync
 brew_install      ssh-copy-id
 brew_install      tree
+brew_install      tmux
 brew_install      vim
 brew_install      wget
 brew_install      whois
