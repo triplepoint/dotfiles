@@ -96,6 +96,7 @@ brew_install      tmux
 brew_install      vim
 brew_install      wget
 brew_install      whois
+brew_install      wireguard-tools
 brew_install      zsh
 
 ### Languages and Language Tools
