@@ -63,7 +63,6 @@ brew_install      tcl-tk
 brew_cask_install thunderbird
 brew_cask_install tor-browser
 brew_cask_install xscreensaver
-brew_cask_install zoomus
 
 ### Recreational Stuff
 brew_cask_install battle-net
