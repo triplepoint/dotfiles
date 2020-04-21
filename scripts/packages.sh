@@ -107,6 +107,7 @@ source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
 
 ### Programming and Ops Stuff
 brew_install      awscli
+brew_cask_install balenaetcher
 brew_cask_install dbeaver-community
 brew_cask_install docker
 brew_install      git
