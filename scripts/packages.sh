@@ -48,6 +48,7 @@ cache_installed_packages
 ### General Computer Stuff
 brew_cask_install android-file-transfer
 brew_cask_install homebrew/cask-fonts/font-inconsolata
+brew_cask_install calibre
 brew_cask_install deluge
 brew_cask_install discord
 brew_cask_install dropbox
