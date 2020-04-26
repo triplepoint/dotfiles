@@ -10,12 +10,11 @@ set -e
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the version of python to use as the global version
-GLOBAL_PY2="2.7.17"
+GLOBAL_PY3="3.8.2"
 
 ### Ensure python is installed, and set as global
-brew_install pyenv
-pyenv install --skip-existing ${GLOBAL_PY2}
-pyenv global ${GLOBAL_PY3} ${GLOBAL_PY2}
+pyenv install --skip-existing ${GLOBAL_PY3}
+pyenv global ${GLOBAL_PY3}
 
 ### Enable pyenv
 ### NOTE: these are also done in the .zshrc file, but are here in case that
@@ -26,17 +25,17 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-pip2 install pip setuptools wheel virtualenv --upgrade --progress-bar off
+pip3 install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
 ### Generate intermediate requirements.txt file
-PIPENV_PIPFILE=Pipfile.py2 pipenv --rm || true
-rm -f Pipfile.py2.lock
-PIPENV_PIPFILE=Pipfile.py2 pipenv lock --python ${GLOBAL_PY2} -r > requirements_py2.txt
+PIPENV_PIPFILE=Pipfile.py3 pipenv --rm || true
+rm -f Pipfile.py3.lock
+PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${GLOBAL_PY3} -r > requirements_py3.txt
 
 ### Install packages
-pip2 install -r requirements_py2.txt --no-deps --progress-bar off
+pip3 install -r requirements_py3.txt --no-deps --progress-bar off
 
 pyenv rehash
 

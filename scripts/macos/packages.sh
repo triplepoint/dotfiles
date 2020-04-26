@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source "${BASH_SOURCE%/*}../global/_functions.sh"
 source "${BASH_SOURCE%/*}/_functions.sh"
 
 # Stop on any error, print all commands
@@ -101,9 +102,10 @@ brew_install      zsh
 
 ### Languages and Language Tools
 brew_cask_install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
-source "${BASH_SOURCE%/*}/python/_packages_python3.sh"
-# source "${BASH_SOURCE%/*}/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
-# source "${BASH_SOURCE%/*}/_packages_rust.sh"
+brew_install pyenv
+source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
+# source "${BASH_SOURCE%/*}/../global/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
+# source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
 
 
 ### Programming and Ops Stuff
