@@ -11,8 +11,9 @@ OS_DF_HOME_PATH=$(dirname $0)/../../home/linux
 
 ## Copy Over Standard Environment Files
 cp -fp $GLOBAL_DF_HOME_PATH/.gitignore_global ~
+cp -fp $GLOBAL_DF_HOME_PATH/.gitconfig ~
 cp -fp $GLOBAL_DF_HOME_PATH/.vimrc ~
-cp -fp $GLOBAL_DF_HOME_PATH/.zshrc ~
+cp -fp $OS_DF_HOME_PATH/.zshrc ~
 
 mkdir -p ~/.vagrant.d
 cp -fp $GLOBAL_DF_HOME_PATH/.vagrant.d/Vagrantfile ~/.vagrant.d/

@@ -27,10 +27,11 @@ sudo snap install         discord
 sudo apt-get install -y   dropbox
         # brew_cask_install firefox
 sudo snap install         gimp
-# brew_cask_install google-chrome
+sudo apt-get install -y   gnome-tweak-tool
+# sudo snap install         chromium
 sudo snap install         keepassxc
 # apt-get install libreoffice            # sorta already installed, but not as a single package?
-# brew_cask_install skype
+sudo snap install         skype --classic
 sudo snap install         slack --classic
         # brew_cask_install thunderbird
 # brew_cask_install tor-browser
@@ -45,6 +46,7 @@ sudo apt-get install -y   steam
 
 # ### Terminals, Shells, and Command Line Utilities
 sudo apt-get install -y   curl
+sudo apt-get install -y   guake
 sudo apt-get install -y   htop
 sudo apt-get install -y   iperf3
 sudo apt-get install -y   nmap
@@ -57,29 +59,29 @@ sudo apt-get install -y   zsh
 
 # ### Languages and Language Tools
 # brew_cask_install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
-# brew_install pyenv
-# source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
-# # source "${BASH_SOURCE%/*}/../global/python/_packages_python2.sh"  # Be sure to run this after the python3 setup above, since it sets up pyenv globals for both languages
+# curl https://pyenv.run | bash   # Like a fool
+# sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git  # Needed for python to build
+source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 # # source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
 
 
 # ### Programming and Ops Stuff
-# brew_install      awscli
+sudo apt-get install -y   awscli
 sudo snap install         dbeaver-ce
-sudo snap install         docker
+sudo apt-get install -y   docker.io
         # brew_install      git
         # brew_install      git-lfs
 # brew_install      graphviz
 # brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
-# brew_install      mosquitto
+sudo apt-get install -y   mosquitto-clients
 # brew_install      postgresql  # python's psycopg2 expects this to be here
-# brew_cask_install sourcetree
+        # brew_cask_install sourcetree
 # brew_install      terraform
 # brew_install      terragrunt
 # brew_install      unison
-# brew_cask_install virtualbox
-# brew_cask_install virtualbox-extension-pack
-# brew_cask_install vagrant
+# sudo apt-get install -y  virtualbox
+# sudo apt-get install -y  virtualbox-ext-pack
+# sudo apt-get install -y  vagrant
 # vagrant_plugin_install vagrant-hostmanager
 # vagrant_plugin_install vagrant-vbguest
 # vagrant plugin update
@@ -91,9 +93,9 @@ code --install-extension shan.code-settings-sync # VS Code plugin, for storing s
 # ### Hardware Development Stuff
 # brew_cask_install arduino
 # brew_install arduino-cli
-# brew_cask_install autodesk-fusion360
-# brew_cask_install blender
-# brew_cask_install freecad
+        # brew_cask_install autodesk-fusion360
+# sudo snap install blender --classic
+sudo snap install        freecad
 sudo apt-get install -y  kicad
 # brew_cask_install meshmixer
 sudo apt-get install -y  openscad

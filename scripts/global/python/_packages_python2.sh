@@ -20,7 +20,7 @@ pyenv global ${GLOBAL_PY3} ${GLOBAL_PY2}
 ### NOTE: these are also done in the .zshrc file, but are here in case that
 ### file hasn't yet been installed
 set +v
-export PATH="$HOME/.pyenv:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 set -v
 

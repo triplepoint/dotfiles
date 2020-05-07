@@ -109,7 +109,7 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 # export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.pyenv:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # xcode's libraries need to be shown to command-line compilers
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
@@ -125,6 +125,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 # Enable pyenv
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Make sure LESS only gets involved if output is longer than a page
 export LESS="${LESS} -FX"
