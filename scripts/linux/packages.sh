@@ -29,7 +29,7 @@ sudo apt-get install -y   dropbox
 sudo snap install         gimp
 sudo apt-get install -y   gnome-tweak-tool
 # sudo snap install         chromium
-sudo snap install         keepassxc
+sudo apt-get install -y   keepassxc
 # apt-get install libreoffice            # sorta already installed, but not as a single package?
 sudo snap install         skype --classic
 sudo snap install         slack --classic
@@ -86,7 +86,7 @@ sudo apt-get install -y   mosquitto-clients
 # vagrant_plugin_install vagrant-vbguest
 # vagrant plugin update
 # brew_install      vault
-sudo snap install        code  # visual-studio-code
+sudo apt-get install -y  code  # visual-studio-code
 code --install-extension shan.code-settings-sync # VS Code plugin, for storing settings in github gists
         # brew_install      watch
 
