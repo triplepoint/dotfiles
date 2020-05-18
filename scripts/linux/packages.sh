@@ -99,4 +99,4 @@ sudo snap install        freecad
 sudo apt-get install -y  kicad
 # brew_cask_install meshmixer
 sudo apt-get install -y  openscad
-sudo apt-get install -y  prusa-slicer
+# sudo apt-get install -y  prusa-slicer  # This was out of date.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
