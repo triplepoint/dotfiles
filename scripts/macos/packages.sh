@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "${BASH_SOURCE%/*}../global/_functions.sh"
+source "${BASH_SOURCE%/*}/../global/_functions.sh"
 source "${BASH_SOURCE%/*}/_functions.sh"
 
 # Stop on any error, print all commands
