@@ -125,7 +125,6 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 # Enable pyenv
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # Make sure LESS only gets involved if output is longer than a page
 export LESS="${LESS} -FX"
