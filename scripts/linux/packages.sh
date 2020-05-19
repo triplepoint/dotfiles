@@ -25,15 +25,15 @@ sudo apt-get dist-upgrade
 sudo apt-get install -y   deluge
 sudo snap install         discord
 sudo apt-get install -y   dropbox
-        # brew_cask_install firefox
+        # brew_cask_install firefox      # already installed by default
 sudo snap install         gimp
 sudo apt-get install -y   gnome-tweak-tool
 # sudo snap install         chromium
-sudo apt-get install -y   keepassxc
-# apt-get install libreoffice            # sorta already installed, but not as a single package?
+sudo snap install         keepassxc
+        # apt-get install libreoffice            # sorta already installed, but not as a single package?
 sudo snap install         skype --classic
 sudo snap install         slack --classic
-        # brew_cask_install thunderbird
+        # brew_cask_install thunderbird   # already installed by default
 # brew_cask_install tor-browser
 sudo apt-get install -y   xscreensaver
 
