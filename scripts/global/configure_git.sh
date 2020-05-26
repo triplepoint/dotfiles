@@ -5,7 +5,7 @@ set -ev
 
 ### Uncomment and edit these lines ###
 git config --global user.name "Jonathan Hanson"
-git config --global user.email "jonathan@jonathan-hanson.com"
+git config --global user.email "jonathan@jonathan-hanson.org"
 
 git config --global core.editor vim
 git config --global core.excludesfile ~/.gitignore_global
