@@ -34,7 +34,7 @@ sudo snap install         skype --classic
 sudo snap install         slack --classic
         # brew_cask_install thunderbird   # already installed by default
 # brew_cask_install tor-browser
-sudo apt-get install -y   xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
+sudo apt-get install -y   xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
