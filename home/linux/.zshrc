@@ -103,7 +103,7 @@ export EDITOR="$VISUAL"
 
 # ### CUSTOM DEFINES ###
 # Some useful custom environment variables
-export WORKSPACE_ROOT="~/workspace"
+export WORKSPACE_ROOT="$HOME/workspace"
 
 # export GOPATH="$WORKSPACE_ROOT/gocode"
 
