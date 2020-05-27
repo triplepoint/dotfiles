@@ -1,12 +1,12 @@
 # Git Fetch, Pull, and Submodule Updates
 ## Git fetch and update submodules for all projects in this directory
-find $WORKSPACE_ROOT -type d -depth 1 -not -name ".*" -print0 | \
+find $WORKSPACE_ROOT -maxdepth 1 -type d -not -name ".*" -not -wholename "$WORKSPACE_ROOT" -print0 | \
 xargs -0 -I% -P 8 bash -c \
 'echo -e "\n\n" && cd % && pwd && \
 git fetch --all --prune --tags && git submodule foreach git fetch --all --prune --tags'
 
 ## Git pull and update submodules for all projects in this directory
-find $WORKSPACE_ROOT -type d -depth 1 -not -name ".*" -print0 | \
+find $WORKSPACE_ROOT -maxdepth 1 -type d -not -name ".*" -not -wholename "$WORKSPACE_ROOT" -print0 | \
 xargs -0 -I% -P 8 bash -c \
 'echo -e "\n\n" && cd % && pwd && \
 git pull && git submodule update --recursive --init'
