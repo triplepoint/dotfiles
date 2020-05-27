@@ -107,8 +107,8 @@ if [ -z "${DIRECTORY}" ]; then
     exit 1
 fi
 
-# Loop over all the subdirectories of the given target, and do the print job
-find ${DIRECTORY} -type d -depth 1 \( -prune -perm -400 -not -iname ".*" \) | sort | while read ls_line; do
+# Loop over all the visible subdirectories of the given target, and do the print job
+find ${DIRECTORY} -maxdepth 1 -type d -not -iname ".*" | sort | while read ls_line; do
     pushd $ls_line
 
     if is_git_repository; then
