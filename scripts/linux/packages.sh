@@ -66,12 +66,13 @@ source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 sudo apt-get install -y   awscli
 sudo snap install         dbeaver-ce
 sudo apt-get install -y   docker.io
+sudo apt-get install -y   docker-compose
         # brew_install      git
         # brew_install      git-lfs
 # brew_install      graphviz
 # brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
 sudo apt-get install -y   mosquitto-clients
-# brew_install      postgresql  # python's psycopg2 expects this to be here
+sudo apt-get install -u   postgresql-client
         # brew_cask_install sourcetree
 # brew_install      terraform
 # brew_install      terragrunt
