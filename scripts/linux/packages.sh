@@ -72,7 +72,7 @@ sudo apt-get install -y   docker-compose
 # brew_install      graphviz
 # brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
 sudo apt-get install -y   mosquitto-clients
-sudo apt-get install -u   postgresql-client
+# sudo apt-get install -u   postgresql-client
         # brew_cask_install sourcetree
 # brew_install      terraform
 # brew_install      terragrunt
