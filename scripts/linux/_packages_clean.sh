@@ -4,3 +4,5 @@
 set -e
 
 #### DONE ####
+
+sudo apt-get autoremove
