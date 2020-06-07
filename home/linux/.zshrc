@@ -114,6 +114,7 @@ export WORKSPACE_ROOT="$HOME/workspace"
 # export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 # export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/Applications:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 
 # xcode's libraries need to be shown to command-line compilers
