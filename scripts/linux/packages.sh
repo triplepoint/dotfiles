@@ -48,6 +48,7 @@ sudo apt-get install -y   curl
 sudo apt-get install -y   guake
 sudo apt-get install -y   htop
 sudo apt-get install -y   iperf3
+sudo apt-get install -y   nfs-common
 sudo apt-get install -y   nmap
 sudo apt-get install -y   tree
 sudo apt-get install -y   tmux
@@ -56,7 +57,7 @@ sudo apt-get install -y   whois
 source "${BASH_SOURCE%/*}/_zsh.sh"
 
 # ### Languages and Language Tools
-# brew_cask_install adoptopenjdk       # Should be installed before JVM languages like scala and groovy
+sudo apt-get install -y   openjdk-14-jdk       # Should be installed before JVM languages like scala and groovy
 source "${BASH_SOURCE%/*}/_pyenv.sh"
 source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 # source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
