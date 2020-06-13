@@ -21,23 +21,21 @@ sudo apt-get dist-upgrade
 # ## Install/Update Packages
 # ### General Computer Stuff
 # brew_cask_install android-file-transfer
-# brew_cask_install homebrew/cask-fonts/font-inconsolata
+sudo apt-get install -y   fonts-inconsolata
 # brew_cask_install calibre
 sudo apt-get install -y   deluge
 sudo snap install         discord
 sudo apt-get install -y   dropbox
-        # brew_cask_install firefox      # already installed by default
+sudo apt-get install -y   firefox
 sudo snap install         gimp
 sudo apt-get install -y   gnome-tweak-tool
-# sudo snap install         chromium
 sudo snap install         keepassxc
-        # sudo apt-get install libreoffice            # sorta already installed, but not as a single package?
 sudo apt-get install signal-desktop
 sudo snap install         skype --classic
 sudo snap install         slack --classic
-        # brew_cask_install thunderbird   # already installed by default
+sudo apt-get install -y   thunderbird
 # brew_cask_install tor-browser
-# sudo apt-get install -y   xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
+sudo apt-get install -y   ubuntu-restricted-extras
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
@@ -71,13 +69,13 @@ sudo apt-get install -y   awscli
 sudo snap install         dbeaver-ce
 sudo apt-get install -y   docker.io
 sudo apt-get install -y   docker-compose
-        # brew_install      git
-        # brew_install      git-lfs
+sudo apt-get install -y   git
+sudo apt-get install -y   git-lfs
 # brew_install      graphviz
 # brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
 sudo apt-get install -y   mosquitto-clients
 # sudo apt-get install -u   postgresql-client
-        # brew_cask_install sourcetree
+sudo apt-get install -y   git-cola
 # brew_install      terraform
 # brew_install      terragrunt
 # brew_install      unison
