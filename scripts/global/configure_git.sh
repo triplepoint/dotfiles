@@ -2,8 +2,8 @@
 set -ev
 
 ### Uncomment and edit these lines ###
-# git config --global user.name "Your Name"
-# git config --global user.email "email@example.com"
+git config --global user.name "Jonathan Hanson"
+git config --global user.email "jonathan@jonathan-hanson.org"
 
 
 git config --global core.editor vim                         # Use VIM to handle commit messages
