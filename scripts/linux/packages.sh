@@ -8,7 +8,7 @@ set -ev
 
 # Set up some additional package repositories
 apt-key list|grep "1C61 A265 6FB5 7B7E 4DE0  F4C1 FC91 8B33 5044 912E" || curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
-echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 echo "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main" | sudo tee /etc/apt/sources.list.d/dropbox.list
 
 sudo apt-get update
