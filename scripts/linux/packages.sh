@@ -18,6 +18,9 @@ source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 sudo apt-get dist-upgrade
 
+### Snapshot the names of installed packages in the various packaging tools
+cache_installed_packages
+
 # ## Install/Update Packages
 # ### General Computer Stuff
 # brew_cask_install android-file-transfer
@@ -79,15 +82,15 @@ sudo apt-get install -y   git-cola
 # brew_install      terraform
 # brew_install      terragrunt
 # brew_install      unison
-# sudo apt-get install -y  virtualbox
-# sudo apt-get install -y  virtualbox-ext-pack
-# sudo apt-get install -y  vagrant
-# vagrant_plugin_install vagrant-hostmanager
-# vagrant_plugin_install vagrant-vbguest
-# vagrant plugin update
+sudo apt-get install -y   virtualbox
+sudo apt-get install -y   virtualbox-ext-pack
+sudo apt-get install -y   vagrant
+vagrant_plugin_install    vagrant-hostmanager
+vagrant_plugin_install    vagrant-vbguest
+vagrant plugin update
 # brew_install      vault
-sudo snap install        code --classic  # visual-studio-code
-code --install-extension shan.code-settings-sync # VS Code plugin, for storing settings in github gists
+sudo snap install         code --classic  # visual-studio-code
+code --install-extension  shan.code-settings-sync # VS Code plugin, for storing settings in github gists
         # brew_install      watch
 
 # ### Hardware Development Stuff
@@ -95,8 +98,8 @@ code --install-extension shan.code-settings-sync # VS Code plugin, for storing s
 # brew_install arduino-cli
         # brew_cask_install autodesk-fusion360
 # sudo snap install blender --classic
-sudo snap install        freecad
-sudo apt-get install -y  kicad
+sudo snap install         freecad
+sudo apt-get install -y   kicad
 # brew_cask_install meshmixer
-sudo apt-get install -y  openscad
-# sudo apt-get install -y  prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
+sudo apt-get install -y   openscad
+# sudo apt-get install -y   prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead

@@ -4,17 +4,17 @@
 # so we can speed up the "do we need to reinstall this"
 # process.
 cache_installed_packages () {
+  cache_installed_vagrant_plugins
+
   set +v
   pushd "${BASH_SOURCE%/*}"
 
   rm -f \
     brew_installed_packages.txt \
-    brew_cask_installed_packages.txt \
-    vagrant_installed_packages.txt
+    brew_cask_installed_packages.txt
 
   brew list | tr " " "\n" | sort | uniq > brew_installed_packages.txt
   brew cask list | tr " " "\n" | sort | uniq > brew_cask_installed_packages.txt
-  vagrant plugin list | cut -f1 -d' ' | sort | uniq > vagrant_installed_packages.txt
 
   popd
   set -v

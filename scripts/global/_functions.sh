@@ -1,5 +1,22 @@
 #!/usr/bin/env bash
 
+# Dump the list of installed vagrant plugins to a cache file,
+# so we can speed up the "do we need to reinstall this"
+# process.  Note that the file gets written here, in the scripts/global/
+# directory.
+cache_installed_vagrant_plugins () {
+  set +v
+  pushd "${BASH_SOURCE%/*}"
+
+  rm -f \
+    vagrant_installed_packages.txt
+
+  vagrant plugin list | cut -f1 -d' ' | sort | uniq > vagrant_installed_packages.txt
+
+  popd
+  set -v
+}
+
 # Don't reinstall Vagrant plugins, if they're already installed
 # We can always call `vagrant plugin update` explicitly.
 vagrant_plugin_install () {
