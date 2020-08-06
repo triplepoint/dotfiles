@@ -17,6 +17,7 @@ sudo apt-get update
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 sudo apt-get dist-upgrade
+sudo snap refresh
 
 ### Snapshot the names of installed packages in the various packaging tools
 cache_installed_packages
