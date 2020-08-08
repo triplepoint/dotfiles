@@ -7,9 +7,11 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-apt-key list|grep "1C61 A265 6FB5 7B7E 4DE0  F4C1 FC91 8B33 5044 912E" || curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+apt-key list|grep "1C61 A265 6FB5 7B7E 4DE0  F4C1 FC91 8B33 5044 912E" || curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+apt-key list|grep "E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B" || curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 echo "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main" | sudo tee /etc/apt/sources.list.d/dropbox.list
+echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 sudo apt-get update
 
@@ -80,7 +82,7 @@ sudo apt-get install -y   git-lfs
 sudo apt-get install -y   mosquitto-clients
 # sudo apt-get install -u   postgresql-client
 sudo apt-get install -y   gitg
-# brew_install      terraform
+sudo apt-get install -y   terraform
 # brew_install      terragrunt
 # brew_install      unison
 sudo apt-get install -y   virtualbox
