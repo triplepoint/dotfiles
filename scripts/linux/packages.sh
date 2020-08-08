@@ -83,7 +83,7 @@ sudo apt-get install -y   mosquitto-clients
 # sudo apt-get install -u   postgresql-client
 sudo apt-get install -y   gitg
 sudo apt-get install -y   terraform
-# brew_install      terragrunt
+sudo snap install         terragrunt
 # brew_install      unison
 sudo apt-get install -y   virtualbox
 sudo apt-get install -y   virtualbox-ext-pack
