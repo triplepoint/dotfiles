@@ -79,7 +79,7 @@ sudo apt-get install -y   git-lfs
 # brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
 sudo apt-get install -y   mosquitto-clients
 # sudo apt-get install -u   postgresql-client
-sudo apt-get install -y   git-cola
+sudo apt-get install -y   gitg
 # brew_install      terraform
 # brew_install      terragrunt
 # brew_install      unison
