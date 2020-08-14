@@ -9,6 +9,7 @@ set -ev
 # Set up some additional package repositories
 apt-key list|grep "1C61 A265 6FB5 7B7E 4DE0  F4C1 FC91 8B33 5044 912E" || curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 apt-key list|grep "E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B" || curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+apt-key list|grep "3960 60CA DD8A 7522 0BFC  B369 B903 BF18 61A7 C71D" || curl -fsSL https://zoom.us/linux/download/pubkey | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 echo "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main" | sudo tee /etc/apt/sources.list.d/dropbox.list
 echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
@@ -42,6 +43,7 @@ sudo snap install         slack --classic
 sudo apt-get install -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt-get install -y   ubuntu-restricted-extras
+# sudo apt-get install -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
