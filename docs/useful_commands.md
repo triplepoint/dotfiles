@@ -70,3 +70,16 @@ brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $c
 
 # List all installed brew packages, and the packages that depend on them
 `brew_dep_parse.py`
+
+
+# Miscellaneous
+Renaming branches:
+```
+git branch -m master main
+git push -u origin main
+
+# If the old branch name was the default branch in Github, go to github and change the default branch to the new branch name
+
+git push origin --delete master
+git fetch --all --prune --tags
+```
