@@ -59,6 +59,7 @@ sudo apt-get install -y   htop
 sudo apt-get install -y   iperf3
 sudo apt-get install -y   nfs-common
 sudo apt-get install -y   nmap
+sudo apt-get install -y   sshpass
 sudo apt-get install -y   tree
 sudo apt-get install -y   tmux
 sudo apt-get install -y   vim
@@ -96,7 +97,6 @@ vagrant plugin update
 # brew_install      vault
 sudo snap install         code --classic  # visual-studio-code
 code --install-extension  shan.code-settings-sync # VS Code plugin, for storing settings in github gists
-        # brew_install      watch
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino
