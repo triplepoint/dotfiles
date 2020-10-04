@@ -40,7 +40,7 @@ source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 ### Upgrade all installed packages
 brew upgrade
-brew cask upgrade
+brew upgrade --cask
 
 ### Snapshot the names of installed packages in the various packaging tools
 cache_installed_packages
@@ -159,4 +159,4 @@ brew list --pinned || true
 
 
 ## Outdated cask packages (not super reliable):
-brew cask outdated || true
+brew outdated --cask || true

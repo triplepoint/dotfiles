@@ -14,7 +14,7 @@ cache_installed_packages () {
     brew_cask_installed_packages.txt
 
   brew list | tr " " "\n" | sort | uniq > brew_installed_packages.txt
-  brew cask list | tr " " "\n" | sort | uniq > brew_cask_installed_packages.txt
+  brew list --cask | tr " " "\n" | sort | uniq > brew_cask_installed_packages.txt
 
   popd
   set -v
