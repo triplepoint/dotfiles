@@ -10,7 +10,7 @@ set -e
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the version of python to use as the global version
-GLOBAL_PY3="3.8.5"
+GLOBAL_PY3="3.9.0"
 
 ### Ensure python is installed, and set as global
 pyenv install --skip-existing ${GLOBAL_PY3}
