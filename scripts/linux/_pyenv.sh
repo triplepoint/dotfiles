@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-
 set -ev
 
 # Needed for python to build
-sudo apt-get install -y \
+sudo apt-get install -y --no-install-recommends \
     make \
     build-essential \
     libssl-dev \
@@ -15,14 +14,12 @@ sudo apt-get install -y \
     curl \
     llvm \
     libncurses5-dev \
-    libncursesw5-dev \
     xz-utils \
     tk-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
     libffi-dev \
-    liblzma-dev \
-    python-openssl \
-    git
-
+    liblzma-dev
 
 [ -d "${HOME}/.pyenv" ] || curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 

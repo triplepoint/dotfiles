@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-
-# Stop on any error, print all commands
 set -ev
+
 # Copy standard dotfiles from this repo into the user's environment
 
 ## Setup
