@@ -27,7 +27,7 @@ def gen_map_dependencies_to_items(map_deps):
 
 
 def capture_brew_list_with_dependencies():
-    brew_cmd = '''brew list | while read cask; do /bin/echo -n $cask; brew deps $cask --installed | awk '{printf(" %s ", $0)}'; echo ""; done'''
+    brew_cmd = '''brew list --formula | while read cask; do /bin/echo -n $cask; brew deps $cask --installed | awk '{printf(" %s ", $0)}'; echo ""; done'''
     dep_str = subprocess.run(brew_cmd, shell=True, capture_output=True)
     return dep_str.stdout
 

@@ -66,7 +66,7 @@ cd .. && pipenv run molecule test'
 
 # Homebrew
 ## List all installed brew packages, with their dependency list
-brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask --installed | awk '{printf(" %s ", $0)}'; echo ""; done
+brew list --formula | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask --installed | awk '{printf(" %s ", $0)}'; echo ""; done
 
 # List all installed brew packages, and the packages that depend on them
 `brew_dep_parse.py`
