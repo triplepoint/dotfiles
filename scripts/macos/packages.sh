@@ -116,7 +116,7 @@ brew_cask_install docker
 brew_install      git
 brew_install      git-lfs
 brew_install      graphviz
-brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
+brew_install      kubernetes-helm  # kubernetes needs to be enabled in Docker manually
 brew_install      mosquitto
 brew_install      postgresql  # python's psycopg2 expects this to be here
 brew_cask_install sourcetree
@@ -131,7 +131,7 @@ vagrant_plugin_install vagrant-vbguest
 vagrant plugin update
 brew_install      vault
 brew_cask_install visual-studio-code
-code --install-extension shan.code-settings-sync # VS Code plugin, for storing settings in github gists
+code --install-extension shan.code-settings-sync --force  # VS Code plugin, for storing settings in github gists
 brew_install      watch
 
 ### Hardware Development Stuff

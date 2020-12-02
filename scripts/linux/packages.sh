@@ -82,7 +82,7 @@ sudo apt-get install -y   docker-compose
 sudo apt-get install -y   git
 sudo apt-get install -y   git-lfs
 # brew_install      graphviz
-# brew_install      kubernetes-helm # kubernetes needs to be enabled in Docker manually
+# brew_install      kubernetes-helm  # kubernetes needs to be enabled in Docker manually
 sudo apt-get install -y   mosquitto-clients
 # sudo apt-get install -u   postgresql-client
 sudo apt-get install -y   gitg
@@ -97,7 +97,7 @@ vagrant_plugin_install    vagrant-vbguest
 vagrant plugin update
 # brew_install      vault
 sudo snap install         code --classic  # visual-studio-code
-code --install-extension  shan.code-settings-sync # VS Code plugin, for storing settings in github gists
+code --install-extension  shan.code-settings-sync --force  # VS Code plugin, for storing settings in github gists
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino

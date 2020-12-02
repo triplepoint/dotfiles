@@ -91,7 +91,7 @@ while [[ $# -ge 1 ]]; do
             ;;
         -d | --directory)
             DIRECTORY=$2
-            shift # Since we're eating two parameters, shift past #2
+            shift  # Since we're eating two parameters, shift past #2
             ;;
         *)
             DIRECTORY=${PARAM}
