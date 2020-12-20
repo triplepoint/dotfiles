@@ -12,8 +12,7 @@ apt-key list|grep "E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B" || curl -
 apt-key list|grep "3960 60CA DD8A 7522 0BFC  B369 B903 BF18 61A7 C71D" || curl -fsSL https://zoom.us/linux/download/pubkey | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 echo "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main" | sudo tee /etc/apt/sources.list.d/dropbox.list
-#echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-echo "deb [arch=amd64] https://apt.releases.hashicorp.com focal main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 sudo apt-get update
 
