@@ -37,7 +37,7 @@ brew_cask_install () {
   if grep --quiet "${package_fullname##*/}" "${BASH_SOURCE%/*}/brew_cask_installed_packages.txt"; then
     echo $'    \e[4m''Notice'$'\e[0m'": brew cask package '$1' is already installed."
   else
-    brew cask install $1
+    brew install --cask $1
   fi
   set -v
 }
