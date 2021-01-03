@@ -14,12 +14,12 @@ echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sud
 echo "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main" | sudo tee /etc/apt/sources.list.d/dropbox.list
 echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
-sudo apt-get update
+sudo apt update
 
 ### Call the "remove" file, to remove previously installed packages
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
-sudo apt-get dist-upgrade
+sudo apt full-upgrade
 sudo snap refresh
 
 ### Snapshot the names of installed packages in the various packaging tools
@@ -28,69 +28,69 @@ cache_installed_packages
 # ## Install/Update Packages
 # ### General Computer Stuff
 # brew_cask_install android-file-transfer
-sudo apt-get install -y   fonts-inconsolata
+sudo apt install -y   fonts-inconsolata
 # brew_cask_install calibre
-sudo apt-get install -y   deluge
+sudo apt install -y   deluge
 sudo snap install         discord
-sudo apt-get install -y   dropbox
-sudo apt-get install -y   firefox
+sudo apt install -y   dropbox
+sudo apt install -y   firefox
 sudo snap install         gimp
-sudo apt-get install -y   gnome-tweak-tool
+sudo apt install -y   gnome-tweak-tool
 sudo snap install         keepassxc
-sudo apt-get install signal-desktop
+sudo apt install signal-desktop
 sudo snap install         skype --classic
 sudo snap install         slack --classic
-sudo apt-get install -y   thunderbird
+sudo apt install -y   thunderbird
 # brew_cask_install tor-browser
-sudo apt-get install -y   ubuntu-restricted-extras
-# sudo apt-get install -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
+sudo apt install -y   ubuntu-restricted-extras
+# sudo apt install -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
-sudo apt-get install -y   pianobar
-sudo apt-get install -y   steam
+sudo apt install -y   pianobar
+sudo apt install -y   steam
 # brew_cask_install vlc
         # brew_cask_install vox
 
 # ### Terminals, Shells, and Command Line Utilities
-sudo apt-get install -y   curl
-sudo apt-get install -y   guake
-sudo apt-get install -y   htop
-sudo apt-get install -y   iperf3
-sudo apt-get install -y   nfs-common
-sudo apt-get install -y   nmap
-sudo apt-get install -y   sshpass
-sudo apt-get install -y   tree
-sudo apt-get install -y   tmux
-sudo apt-get install -y   vim
-sudo apt-get install -y   whois
+sudo apt install -y   curl
+sudo apt install -y   guake
+sudo apt install -y   htop
+sudo apt install -y   iperf3
+sudo apt install -y   nfs-common
+sudo apt install -y   nmap
+sudo apt install -y   sshpass
+sudo apt install -y   tree
+sudo apt install -y   tmux
+sudo apt install -y   vim
+sudo apt install -y   whois
 source "${BASH_SOURCE%/*}/_zsh.sh"
 
 # ### Languages and Language Tools
-sudo apt-get install -y   openjdk-14-jdk       # Should be installed before JVM languages like scala and groovy
+sudo apt install -y   openjdk-14-jdk       # Should be installed before JVM languages like scala and groovy
 source "${BASH_SOURCE%/*}/_pyenv.sh"
 source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 # source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
 
 
 # ### Programming and Ops Stuff
-sudo apt-get install -y   awscli
+sudo apt install -y   awscli
 sudo snap install         dbeaver-ce
-sudo apt-get install -y   docker.io
-sudo apt-get install -y   docker-compose
-sudo apt-get install -y   git
-sudo apt-get install -y   git-lfs
+sudo apt install -y   docker.io
+sudo apt install -y   docker-compose
+sudo apt install -y   git
+sudo apt install -y   git-lfs
 # brew_install      graphviz
 # brew_install      kubernetes-helm  # kubernetes needs to be enabled in Docker manually
-sudo apt-get install -y   mosquitto-clients
-# sudo apt-get install -u   postgresql-client
-sudo apt-get install -y   gitg
-sudo apt-get install -y   terraform
+sudo apt install -y   mosquitto-clients
+# sudo apt install -y   postgresql-client
+sudo apt install -y   gitg
+sudo apt install -y   terraform
 sudo snap install         terragrunt
 # brew_install      unison
-sudo apt-get install -y   virtualbox
-sudo apt-get install -y   virtualbox-ext-pack
-sudo apt-get install -y   vagrant
+sudo apt install -y   virtualbox
+sudo apt install -y   virtualbox-ext-pack
+sudo apt install -y   vagrant
 vagrant_plugin_install    vagrant-hostmanager
 vagrant_plugin_install    vagrant-vbguest
 vagrant plugin update
@@ -104,7 +104,7 @@ code --install-extension  shan.code-settings-sync --force  # VS Code plugin, for
         # brew_cask_install autodesk-fusion360
 # sudo snap install blender --classic
 sudo snap install         freecad
-sudo apt-get install -y   kicad
+sudo apt install -y   kicad
 # brew_cask_install meshmixer
-sudo apt-get install -y   openscad
-# sudo apt-get install -y   prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
+sudo apt install -y   openscad
+# sudo apt install -y   prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead

@@ -3,4 +3,4 @@ set -e
 
 #### DONE ####
 
-sudo apt-get autoremove
+sudo apt autoremove

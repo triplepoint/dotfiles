@@ -2,7 +2,7 @@
 set -ev
 
 # Needed for python to build
-sudo apt-get install -y --no-install-recommends \
+sudo apt install -y --no-install-recommends \
     make \
     build-essential \
     libssl-dev \
