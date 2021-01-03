@@ -7,12 +7,19 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-apt-key list|grep "1C61 A265 6FB5 7B7E 4DE0  F4C1 FC91 8B33 5044 912E" || curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
-apt-key list|grep "E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B" || curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-apt-key list|grep "3960 60CA DD8A 7522 0BFC  B369 B903 BF18 61A7 C71D" || curl -fsSL https://zoom.us/linux/download/pubkey | sudo apt-key add -
-echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
-echo "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main" | sudo tee /etc/apt/sources.list.d/dropbox.list
-echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+add_pgp_key FC918B335044912E
+write_if_not_exists /etc/apt/sources.list.d/dropbox.list "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main"
+
+download_if_not_exists /etc/apt/trusted.gpg.d/hashicorp.asc https://apt.releases.hashicorp.com/gpg
+write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+download_if_not_exists /etc/apt/trusted.gpg.d/signal-desktop.asc https://updates.signal.org/desktop/apt/keys.asc
+write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+
+download_if_not_exists /etc/apt/trusted.gpg.d/syncthing.asc https://syncthing.net/release-key.txt
+write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb https://apt.syncthing.net/ syncthing stable"
+
+download_if_not_exists /etc/apt/trusted.gpg.d/zoom.asc https://zoom.us/linux/download/pubkey
 
 sudo apt update
 
@@ -28,69 +35,70 @@ cache_installed_packages
 # ## Install/Update Packages
 # ### General Computer Stuff
 # brew_cask_install android-file-transfer
-sudo apt install -y   fonts-inconsolata
+sudo apt install -q -y   fonts-inconsolata
 # brew_cask_install calibre
-sudo apt install -y   deluge
+sudo apt install -q -y   deluge
 sudo snap install         discord
-sudo apt install -y   dropbox
-sudo apt install -y   firefox
+sudo apt install -q -y   dropbox
+sudo apt install -q -y   firefox
 sudo snap install         gimp
-sudo apt install -y   gnome-tweak-tool
+sudo apt install -q -y   gnome-tweak-tool
 sudo snap install         keepassxc
 sudo apt install signal-desktop
 sudo snap install         skype --classic
 sudo snap install         slack --classic
-sudo apt install -y   thunderbird
+sudo apt install -q -y   syncthing
+sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
-sudo apt install -y   ubuntu-restricted-extras
-# sudo apt install -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
+sudo apt install -q -y   ubuntu-restricted-extras
+# sudo apt install -q -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
-sudo apt install -y   pianobar
-sudo apt install -y   steam
+sudo apt install -q -y   pianobar
+sudo apt install -q -y   steam
 # brew_cask_install vlc
         # brew_cask_install vox
 
 # ### Terminals, Shells, and Command Line Utilities
-sudo apt install -y   curl
-sudo apt install -y   guake
-sudo apt install -y   htop
-sudo apt install -y   iperf3
-sudo apt install -y   nfs-common
-sudo apt install -y   nmap
-sudo apt install -y   sshpass
-sudo apt install -y   tree
-sudo apt install -y   tmux
-sudo apt install -y   vim
-sudo apt install -y   whois
+sudo apt install -q -y   curl
+sudo apt install -q -y   guake
+sudo apt install -q -y   htop
+sudo apt install -q -y   iperf3
+sudo apt install -q -y   nfs-common
+sudo apt install -q -y   nmap
+sudo apt install -q -y   sshpass
+sudo apt install -q -y   tree
+sudo apt install -q -y   tmux
+sudo apt install -q -y   vim
+sudo apt install -q -y   whois
 source "${BASH_SOURCE%/*}/_zsh.sh"
 
 # ### Languages and Language Tools
-sudo apt install -y   openjdk-14-jdk       # Should be installed before JVM languages like scala and groovy
+sudo apt install -q -y   openjdk-14-jdk       # Should be installed before JVM languages like scala and groovy
 source "${BASH_SOURCE%/*}/_pyenv.sh"
 source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 # source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
 
 
 # ### Programming and Ops Stuff
-sudo apt install -y   awscli
+sudo apt install -q -y   awscli
 sudo snap install         dbeaver-ce
-sudo apt install -y   docker.io
-sudo apt install -y   docker-compose
-sudo apt install -y   git
-sudo apt install -y   git-lfs
+sudo apt install -q -y   docker.io
+sudo apt install -q -y   docker-compose
+sudo apt install -q -y   git
+sudo apt install -q -y   git-lfs
 # brew_install      graphviz
 # brew_install      kubernetes-helm  # kubernetes needs to be enabled in Docker manually
-sudo apt install -y   mosquitto-clients
-# sudo apt install -y   postgresql-client
-sudo apt install -y   gitg
-sudo apt install -y   terraform
+sudo apt install -q -y   mosquitto-clients
+# sudo apt install -q -y   postgresql-client
+sudo apt install -q -y   gitg
+sudo apt install -q -y   terraform
 sudo snap install         terragrunt
 # brew_install      unison
-sudo apt install -y   virtualbox
-sudo apt install -y   virtualbox-ext-pack
-sudo apt install -y   vagrant
+sudo apt install -q -y   virtualbox
+sudo apt install -q -y   virtualbox-ext-pack
+sudo apt install -q -y   vagrant
 vagrant_plugin_install    vagrant-hostmanager
 vagrant_plugin_install    vagrant-vbguest
 vagrant plugin update
@@ -104,7 +112,7 @@ code --install-extension  shan.code-settings-sync --force  # VS Code plugin, for
         # brew_cask_install autodesk-fusion360
 # sudo snap install blender --classic
 sudo snap install         freecad
-sudo apt install -y   kicad
+sudo apt install -q -y   kicad
 # brew_cask_install meshmixer
-sudo apt install -y   openscad
-# sudo apt install -y   prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
+sudo apt install -q -y   openscad
+# sudo apt install -q -y   prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
