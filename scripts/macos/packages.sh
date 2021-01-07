@@ -127,9 +127,6 @@ brew_install      unison
 brew_cask_install virtualbox
 brew_cask_install virtualbox-extension-pack
 brew_cask_install vagrant
-vagrant_plugin_install vagrant-hostmanager
-vagrant_plugin_install vagrant-vbguest
-vagrant plugin update
 brew_install      vault
 brew_cask_install visual-studio-code
 code --install-extension shan.code-settings-sync --force  # VS Code plugin, for storing settings in github gists

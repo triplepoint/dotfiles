@@ -4,7 +4,6 @@
 # so we can speed up the "do we need to reinstall this"
 # process.
 cache_installed_packages () {
-  cache_installed_vagrant_plugins
 }
 
 # If a file path doesn't exist, download it and install it

@@ -4,8 +4,6 @@
 # so we can speed up the "do we need to reinstall this"
 # process.
 cache_installed_packages () {
-  cache_installed_vagrant_plugins
-
   set +v
   pushd "${BASH_SOURCE%/*}"
 

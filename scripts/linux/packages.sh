@@ -99,9 +99,6 @@ sudo snap install         terragrunt
 sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
-vagrant_plugin_install    vagrant-hostmanager
-vagrant_plugin_install    vagrant-vbguest
-vagrant plugin update
 # brew_install      vault
 sudo snap install         code --classic  # visual-studio-code
 code --install-extension  shan.code-settings-sync --force  # VS Code plugin, for storing settings in github gists
