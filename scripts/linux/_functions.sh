@@ -4,6 +4,7 @@
 # so we can speed up the "do we need to reinstall this"
 # process.
 cache_installed_packages () {
+  return
 }
 
 # If a file path doesn't exist, download it and install it
