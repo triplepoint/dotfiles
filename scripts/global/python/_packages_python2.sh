@@ -25,7 +25,7 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-pip2 install pip setuptools wheel virtualenv --upgrade --progress-bar off
+python2 -m pip install pip setuptools wheel virtualenv --upgrade --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
@@ -35,7 +35,7 @@ rm -f Pipfile.py2.lock
 PIPENV_PIPFILE=Pipfile.py2 pipenv lock --python ${GLOBAL_PY2} -r > requirements_py2.txt
 
 ### Install packages
-pip2 install -r requirements_py2.txt --no-deps --progress-bar off
+python2 -m pip install pip install -r requirements_py2.txt --no-deps --progress-bar off
 
 pyenv rehash
 

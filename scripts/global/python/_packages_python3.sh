@@ -25,7 +25,7 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-pip3 install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
+python3 -m pip install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
@@ -35,7 +35,7 @@ rm -f Pipfile.py3.lock
 PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${GLOBAL_PY3} -r > requirements_py3.txt
 
 ### Install packages
-pip3 install -r requirements_py3.txt --no-deps --progress-bar off
+python3 -m pip install -r requirements_py3.txt --no-deps --progress-bar off
 
 pyenv rehash
 
