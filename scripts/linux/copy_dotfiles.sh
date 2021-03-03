@@ -14,6 +14,9 @@ cp -fp $GLOBAL_DF_HOME_PATH/.gitconfig ${HOME}
 cp -fp $GLOBAL_DF_HOME_PATH/.vimrc ${HOME}
 cp -fp $OS_DF_HOME_PATH/.zshrc ${HOME}
 
+mkdir -p ${HOME}/.oh-my-zsh/custom
+cp -fp $GLOBAL_DF_HOME_PATH/.oh-my-zsh/custom/* ${HOME}/.oh-my-zsh/custom/
+
 mkdir -p ${HOME}/.vagrant.d
 cp -fp $GLOBAL_DF_HOME_PATH/.vagrant.d/Vagrantfile ${HOME}/.vagrant.d/
 
