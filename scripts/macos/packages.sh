@@ -60,6 +60,7 @@ brew_cask_install keepassxc
 brew_cask_install libreoffice
 brew_install      openssl
 brew_cask_install rectangle
+brew_cask_install signal
 brew_cask_install skype
 brew_cask_install slack
 brew_install      tcl-tk
