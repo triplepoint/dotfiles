@@ -8,7 +8,5 @@ name = "pypi"
 
 
 [packages]
-python-language-server = {version="*", extras=["all"]}   # used by IDEs
-isort = "*"                                              # used by IDEs
-ansible = "*"                                            # used by IDEs
+ansible = "*"                                            # used by IDEs (CLI use is in separate virtualenvs)
 pre-commit = "*"                                         # used by git repositories
