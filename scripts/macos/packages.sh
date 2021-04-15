@@ -90,10 +90,12 @@ brew_install      htop
 brew_install      iperf3
 brew_cask_install iterm2
 brew_install      mtr
+brew_install      netcat
 brew_install      nmap
 brew_install      rename
 brew_install      rsync
 brew_install      ssh-copy-id
+brew_install      telnet
 brew_install      tree
 brew_install      tmux
 brew_install      vim
