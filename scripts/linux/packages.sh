@@ -109,6 +109,7 @@ code --install-extension  shan.code-settings-sync --force  # VS Code plugin, for
         # brew_cask_install autodesk-fusion360
 # sudo snap install blender --classic
 sudo snap install         freecad
+sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 # brew_cask_install meshmixer
 sudo apt install -q -y   openscad
