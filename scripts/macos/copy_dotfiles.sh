@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Stop on any error, print all commands
 set -ev
 # Copy standard dotfiles from this repo into the user's environment
 
@@ -14,6 +13,8 @@ cp -fp $GLOBAL_DF_HOME_PATH/.gitignore_global ${HOME}
 cp -fp $GLOBAL_DF_HOME_PATH/.gitconfig ${HOME}
 cp -fp $GLOBAL_DF_HOME_PATH/.vimrc ${HOME}
 cp -fp $OS_DF_HOME_PATH/.zshrc ${HOME}
+cp -fp $OS_DF_HOME_PATH/.zprofile ${HOME}
+cp -fp $OS_DF_HOME_PATH/.profile ${HOME}
 
 mkdir -p ${HOME}/.oh-my-zsh/custom
 cp -fp $GLOBAL_DF_HOME_PATH/.oh-my-zsh/custom/* ${HOME}/.oh-my-zsh/custom/
