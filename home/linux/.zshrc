@@ -132,3 +132,6 @@ export PATH="$HOME/Applications:$PATH"
 
 # Make sure LESS only gets involved if output is longer than a page
 export LESS="${LESS} -FX"
+
+# Initalize Pyenv
+eval "$(pyenv init -)"
