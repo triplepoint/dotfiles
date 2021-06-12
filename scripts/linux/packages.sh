@@ -19,8 +19,6 @@ write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64]
 download_if_not_exists /etc/apt/trusted.gpg.d/syncthing.asc https://syncthing.net/release-key.txt
 write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb https://apt.syncthing.net/ syncthing stable"
 
-download_if_not_exists /etc/apt/trusted.gpg.d/zoom.asc https://zoom.us/linux/download/pubkey
-
 sudo apt update
 
 ### Call the "remove" file, to remove previously installed packages
@@ -75,7 +73,7 @@ sudo apt install -q -y   whois
 source "${BASH_SOURCE%/*}/_zsh.sh"
 
 # ### Languages and Language Tools
-sudo apt install -q -y   openjdk-14-jdk       # Should be installed before JVM languages like scala and groovy
+sudo apt install -q -y   openjdk-17-jdk       # Should be installed before JVM languages like scala and groovy
 source "${BASH_SOURCE%/*}/_pyenv.sh"
 source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 # source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
