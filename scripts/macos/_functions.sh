@@ -20,7 +20,7 @@ cache_installed_packages () {
 
 brew_install () {
   set +v
-  package_fullname=$1
+  local package_fullname=$1
   if grep --quiet "^${package_fullname}$" "${BASH_SOURCE%/*}/brew_installed_packages.txt"; then
     echo $'    \e[4m''Notice'$'\e[0m'": brew package '$1' is already installed."
   else
@@ -31,7 +31,7 @@ brew_install () {
 
 brew_cask_install () {
   set +v
-  package_fullname=$1
+  local package_fullname=$1
   if grep --quiet "^${package_fullname}$" "${BASH_SOURCE%/*}/brew_cask_installed_packages.txt"; then
     echo $'    \e[4m''Notice'$'\e[0m'": brew cask package '$1' is already installed."
   else
