@@ -7,7 +7,7 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-add_pgp_key FC918B335044912E
+#add_pgp_key FC918B335044912E
 write_if_not_exists /etc/apt/sources.list.d/dropbox.list "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main"
 
 download_if_not_exists /etc/apt/trusted.gpg.d/hashicorp.asc https://apt.releases.hashicorp.com/gpg
@@ -87,7 +87,8 @@ sudo apt install -q -y   docker-compose
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
 # brew_install      graphviz
-# brew_install      kubernetes-helm  # kubernetes needs to be enabled in Docker manually
+sudo snap install helm  --classic
+sudo snap install kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
 # sudo apt install -q -y   postgresql-client
 sudo apt install -q -y   gitg
