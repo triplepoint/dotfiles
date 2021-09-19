@@ -52,3 +52,4 @@ set -e
 # brew uninstall --cask       homebrew/cask-fonts/font-muli           || true
 # brew uninstall --cask       homebrew/cask-fonts/font-inconsolata-dz || true
 # brew uninstall --cask       wireshark             || true
+brew uninstall              unison                || true

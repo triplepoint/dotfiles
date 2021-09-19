@@ -42,7 +42,7 @@ sudo apt install -q -y   firefox
 sudo snap install         gimp
 sudo apt install -q -y   gnome-tweak-tool
 sudo snap install         keepassxc
-sudo apt install signal-desktop
+sudo apt install -q -y   signal-desktop
 sudo snap install         skype --classic
 sudo snap install         slack --classic
 sudo apt install -q -y   syncthing
@@ -94,13 +94,11 @@ sudo apt install -q -y   mosquitto-clients
 sudo apt install -q -y   gitg
 sudo apt install -q -y   terraform
 sudo snap install         terragrunt
-# brew_install      unison
 sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
-# brew_install      vault
+sudo apt install -q -y   vault
 sudo snap install         code --classic  # visual-studio-code
-code --install-extension  shan.code-settings-sync --force  # VS Code plugin, for storing settings in github gists
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino
