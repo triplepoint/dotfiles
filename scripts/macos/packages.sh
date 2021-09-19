@@ -126,13 +126,11 @@ brew_install      postgresql  # python's psycopg2 expects this to be here
 brew_cask_install sourcetree
 brew_install      terraform
 brew_install      terragrunt
-brew_install      unison
 brew_cask_install virtualbox
 brew_cask_install virtualbox-extension-pack
 brew_cask_install vagrant
 brew_install      vault
 brew_cask_install visual-studio-code
-code --install-extension shan.code-settings-sync --force  # VS Code plugin, for storing settings in github gists
 brew_install      watch
 
 ### Hardware Development Stuff
