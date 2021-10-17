@@ -40,7 +40,6 @@ sudo snap install         discord
 sudo apt install -q -y   dropbox
 sudo apt install -q -y   firefox
 sudo snap install         gimp
-sudo apt install -q -y   gnome-tweak-tool
 sudo snap install         keepassxc
 sudo apt install -q -y   signal-desktop
 sudo snap install         skype --classic
