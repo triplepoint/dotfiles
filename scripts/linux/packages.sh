@@ -42,13 +42,12 @@ sudo apt install -q -y   firefox
 sudo snap install         gimp
 sudo snap install         keepassxc
 sudo apt install -q -y   signal-desktop
-sudo snap install         skype --classic
 sudo snap install         slack --classic
 sudo apt install -q -y   syncthing
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
-# sudo apt install -q -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
+which zoom || (sudo apt install -q -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb)
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
@@ -85,6 +84,8 @@ sudo apt install -q -y   docker.io
 sudo apt install -q -y   docker-compose
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
+sudo apt install -q -y   gitg
+sudo apt install -q -y   git-gui
 # brew_install      graphviz
 sudo snap install helm  --classic
 sudo snap install kubectl  --classic
@@ -97,7 +98,7 @@ sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
-sudo snap install         code --classic  # visual-studio-code
+which code || (wget https://go.microsoft.com/fwlink/?LinkID=760868 -O /tmp/vscode.deb && sudo apt install -q -y /tmp/vscode.deb && rm /tmp/vscode.deb)
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-#### DONE ####
+sudo snap remove code
+sudo snap remove skype
 
 sudo apt autoremove
