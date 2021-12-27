@@ -63,6 +63,7 @@ brew_cask_install rectangle
 brew_cask_install signal
 brew_cask_install skype
 brew_cask_install slack
+brew_cask_install syncthing
 brew_install      tcl-tk
 brew_cask_install thunderbird
 brew_cask_install tor-browser
