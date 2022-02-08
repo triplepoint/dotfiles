@@ -7,8 +7,8 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-#add_pgp_key FC918B335044912E
-write_if_not_exists /etc/apt/sources.list.d/dropbox.list "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main"
+# add_pgp_key FC918B335044912E
+# write_if_not_exists /etc/apt/sources.list.d/dropbox.list "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main"
 
 download_if_not_exists /etc/apt/trusted.gpg.d/hashicorp.asc https://apt.releases.hashicorp.com/gpg
 write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
@@ -37,7 +37,7 @@ sudo apt install -q -y   fonts-inconsolata
 # brew_cask_install calibre
 sudo apt install -q -y   deluge
 sudo snap install         discord
-sudo apt install -q -y   dropbox
+# sudo apt install -q -y   dropbox
 sudo apt install -q -y   firefox
 sudo snap install         gimp
 sudo snap install         keepassxc
