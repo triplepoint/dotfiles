@@ -47,7 +47,10 @@ sudo apt install -q -y   syncthing
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
-which zoom || (sudo apt install -q -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb)
+sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0  # Zoom dependencies
+install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
+install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
+
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
@@ -98,7 +101,8 @@ sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
-which code || (wget https://go.microsoft.com/fwlink/?LinkID=760868 -O /tmp/vscode.deb && sudo apt install -q -y /tmp/vscode.deb && rm /tmp/vscode.deb)
+install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
+install_app_image        https://github.com/logseq/logseq/releases/download/0.5.9/Logseq-linux-x64-0.5.9.AppImage
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino
@@ -110,4 +114,4 @@ sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 # brew_cask_install meshmixer
 sudo apt install -q -y   openscad
-# sudo apt install -q -y   prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
+install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_0.zip
