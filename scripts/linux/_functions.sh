@@ -32,3 +32,25 @@ add_pgp_key () {
   KEYRING_PATH="/etc/apt/trusted.gpg.d/assorted.gpg"
   sudo gpg --no-default-keyring --keyring gnupg-ring:${KEYRING_PATH} --keyserver ${KEYSERVER} --recv-keys ${KEY_ID}
 }
+
+# Fetch an .appimage file and "install" it into an appropriate path
+install_app_image () {
+  local FULL_URL=$1
+  local FILENAME="$(wget ${FULL_URL} --continue -P ~/Applications 2>&1)"
+  if [[ $FILENAME =~ "Saving to: .*.zip." ]]; then
+    unzip -j "${$FILENAME}" '*.AppImage'
+  fi
+}
+
+# Fetch a deb by url and install it.  Optionally skip the install if a given command is already present.
+install_deb () {
+  local FULL_URL=$1
+  local FILENAME=`mktemp --dry-run --suffix=.deb`
+  local EXECUTABLE_NAME=$2
+  if [ ! -z "${EXECUTABLE_NAME}" ] && which ${EXECUTABLE_NAME} &> /dev/null; then
+    echo "${EXECUTABLE_NAME} already installed, skipping install."
+    return
+  fi
+  wget ${FULL_URL} -O ${FILENAME} && sudo dpkg -i ${FILENAME}
+  rm ${FILENAME}
+}
