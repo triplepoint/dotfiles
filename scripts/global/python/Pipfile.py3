@@ -9,4 +9,7 @@ name = "pypi"
 
 [packages]
 ansible = "*"                                            # used by IDEs (CLI use is in separate virtualenvs)
+ansible-lint = "*"
 pre-commit = "*"                                         # used by git repositories
+pylint = "*"
+mypy = "*"

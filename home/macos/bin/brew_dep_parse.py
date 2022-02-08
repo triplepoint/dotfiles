@@ -3,21 +3,22 @@
 import json
 import re
 import subprocess
+import typing as T
 
 
-def get_map_items_depedencies(str):
+def get_map_items_depedencies(str: bytes) -> T.Dict[str, T.List[str]]:
     ret = {}
     for x in str.splitlines():
-        x = re.sub(r'\s+', ' ', x.decode('cp437'))
-        items = x.strip().split(" ")
+        y = re.sub(r'\s+', ' ', x.decode('cp437'))
+        items = y.strip().split(" ")
         if items[0]:
             item = items.pop(0)
             ret[item] = items
     return ret
 
 
-def gen_map_dependencies_to_items(map_deps):
-    ret = {}
+def gen_map_dependencies_to_items(map_deps: T.Dict[str, T.List[str]]) -> T.Dict[str, T.List[str]]:
+    ret: T.Dict[str, T.List[str]] = {}
     for item, deps in map_deps.items():
         ret[item] = []
         for item2, deps2 in map_deps.items():
@@ -26,7 +27,7 @@ def gen_map_dependencies_to_items(map_deps):
     return ret
 
 
-def capture_brew_list_with_dependencies():
+def capture_brew_list_with_dependencies() -> bytes:
     brew_cmd = '''brew list --formula | while read cask; do /bin/echo -n $cask; brew deps $cask --installed | awk '{printf(" %s ", $0)}'; echo ""; done'''
     dep_str = subprocess.run(brew_cmd, shell=True, capture_output=True)
     return dep_str.stdout
@@ -40,7 +41,7 @@ def main():
     map_items_to_deps = get_map_items_depedencies(dep_str)
     map_deps_to_items = gen_map_dependencies_to_items(map_items_to_deps)
 
-    not_dependencies = []
+    not_dependencies: T.List[str] = []
     print("\n\nInstalled Item: Packages that Depend on It")
     for item, deps in map_deps_to_items.items():
         print("{}: {}".format(item, deps))
