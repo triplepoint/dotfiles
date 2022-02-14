@@ -25,6 +25,7 @@ sudo apt update
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 sudo apt full-upgrade
+sudo snap set system refresh.retain=2
 sudo snap refresh
 
 ### Snapshot the names of installed packages in the various packaging tools
