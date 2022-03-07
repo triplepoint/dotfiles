@@ -25,6 +25,7 @@ sudo apt update
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
 sudo apt full-upgrade
+sudo snap set system refresh.retain=2
 sudo snap refresh
 
 ### Snapshot the names of installed packages in the various packaging tools
@@ -102,7 +103,7 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
-install_app_image        https://github.com/logseq/logseq/releases/download/0.5.9/Logseq-linux-x64-0.5.9.AppImage
+install_app_image        https://github.com/logseq/logseq/releases/download/0.6.1/Logseq-linux-x64-0.6.1.AppImage
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino
@@ -110,6 +111,7 @@ install_app_image        https://github.com/logseq/logseq/releases/download/0.5.
         # brew_cask_install autodesk-fusion360
 # sudo snap install blender --classic
 sudo snap install         freecad
+sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 # brew_cask_install meshmixer
 sudo apt install -q -y   openscad

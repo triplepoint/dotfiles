@@ -36,10 +36,13 @@ add_pgp_key () {
 # Fetch an .appimage file and "install" it into an appropriate path
 install_app_image () {
   local FULL_URL=$1
-  local FILENAME="$(wget ${FULL_URL} --continue -P ~/Applications 2>&1)"
-  if [[ $FILENAME =~ "Saving to: .*.zip." ]]; then
-    unzip -j "${$FILENAME}" '*.AppImage'
+  echo "Fetching ${FULL_URL} to ~/Applications..."
+  local FILENAME=`wget --continue -nv -P ~/Applications "${FULL_URL}" 2>&1 | cut -d\" -f2`
+  if [[ ${FILENAME} =~ ^.*\.zip$ ]]; then
+    echo "Unpacking AppImage files from archive ${FILENAME}..."
+    unzip -d ~/Applications -j "${FILENAME}" '*.AppImage'
   fi
+  echo "Done."
 }
 
 # Fetch a deb by url and install it.  Optionally skip the install if a given command is already present.
@@ -51,6 +54,11 @@ install_deb () {
     echo "${EXECUTABLE_NAME} already installed, skipping install."
     return
   fi
-  wget ${FULL_URL} -O ${FILENAME} && sudo dpkg -i ${FILENAME}
+  echo "Fetching ${FULL_URL} to ${FILENAME}..."
+  wget ${FULL_URL} -O ${FILENAME}
+  echo "Installing ${FILENAME}..."
+  sudo dpkg -i ${FILENAME}
+  echo "Deleting ${FILENAME}..."
   rm ${FILENAME}
+  echo "Done."
 }
