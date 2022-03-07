@@ -40,7 +40,7 @@ install_app_image () {
   local FILENAME=`wget --continue -nv -P ~/Applications "${FULL_URL}" 2>&1 | cut -d\" -f2`
   if [[ ${FILENAME} =~ ^.*\.zip$ ]]; then
     echo "Unpacking AppImage files from archive ${FILENAME}..."
-    unzip -d ~/Applications -j "${FILENAME}" '*.AppImage'
+    unzip -o -d ~/Applications -j "${FILENAME}" '*.AppImage'
   fi
   echo "Done."
 }
