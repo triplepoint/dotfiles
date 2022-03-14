@@ -103,7 +103,8 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
-install_app_image        https://github.com/logseq/logseq/releases/download/0.6.1/Logseq-linux-x64-0.6.1.AppImage
+install_app_image        https://github.com/logseq/logseq/releases/download/0.6.3/Logseq-linux-x64-0.6.3.AppImage
+install_app_image        https://github.com/laurent22/joplin/releases/download/v2.7.14/Joplin-2.7.14.AppImage
 
 # ### Hardware Development Stuff
 # brew_cask_install arduino
@@ -115,4 +116,4 @@ sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 # brew_cask_install meshmixer
 sudo apt install -q -y   openscad
-install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_0.zip
+install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_1.zip

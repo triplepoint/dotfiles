@@ -13,7 +13,7 @@ sudo apt install -q -y --no-install-recommends \
     wget \
     curl \
     llvm \
-    libncurses5-dev \
+    libncursesw5-dev \
     xz-utils \
     tk-dev \
     libxml2-dev \
