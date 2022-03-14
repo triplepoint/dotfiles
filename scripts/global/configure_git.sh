@@ -15,3 +15,5 @@ git config --global pull.rebase false                       # Do a merge on git 
 git config --global init.defaultBranch main                 # Make 'main' the default branch name on new repositories
 git config --global diff.renameLimit 30000                  # Allow rename detection to track very large diffs
 git config --global diff.tool meld                          # Use meld for 'git difftoool whatever'
+
+git config --global alias.graph "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"

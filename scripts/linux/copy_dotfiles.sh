@@ -10,7 +10,6 @@ OS_DF_HOME_PATH=$(dirname $0)/../../home/linux
 
 ## Copy Over Standard Environment Files
 cp -fp $GLOBAL_DF_HOME_PATH/.gitignore_global ${HOME}
-cp -fp $GLOBAL_DF_HOME_PATH/.gitconfig ${HOME}
 cp -fp $GLOBAL_DF_HOME_PATH/.vimrc ${HOME}
 cp -fp $OS_DF_HOME_PATH/.zshrc ${HOME}
 cp -fp $OS_DF_HOME_PATH/.zprofile ${HOME}
