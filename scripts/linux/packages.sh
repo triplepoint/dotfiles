@@ -37,20 +37,19 @@ cache_installed_packages
 sudo apt install -q -y   fonts-inconsolata
 # brew_cask_install calibre
 sudo apt install -q -y   deluge
-sudo snap install         discord
-# sudo apt install -q -y   dropbox
+sudo snap install        discord
 sudo apt install -q -y   firefox
-sudo snap install         gimp
-sudo snap install         keepassxc
+sudo snap install        gimp
+sudo snap install        keepassxc
 sudo apt install -q -y   signal-desktop
-sudo snap install         slack --classic
+sudo snap install        slack --classic
 sudo apt install -q -y   syncthing
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
 sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0  # Zoom dependencies
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
-install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
+install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
 
 
 # ### Recreational Stuff
@@ -83,7 +82,7 @@ source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 
 # ### Programming and Ops Stuff
 sudo apt install -q -y   awscli
-sudo snap install         dbeaver-ce
+sudo snap install        dbeaver-ce
 sudo apt install -q -y   docker.io
 sudo apt install -q -y   docker-compose
 sudo apt install -q -y   git
@@ -91,28 +90,24 @@ sudo apt install -q -y   git-lfs
 sudo apt install -q -y   gitg
 sudo apt install -q -y   git-gui
 # brew_install      graphviz
-sudo snap install helm  --classic
-sudo snap install kubectl  --classic
+sudo snap install        helm  --classic
+sudo snap install        kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
 # sudo apt install -q -y   postgresql-client
 sudo apt install -q -y   gitg
 sudo apt install -q -y   terraform
-sudo snap install         terragrunt
+sudo snap install        terragrunt
 sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.2/Obsidian-0.14.2.AppImage
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.6/Obsidian-0.14.6.AppImage
 
 # ### Hardware Development Stuff
-# brew_cask_install arduino
-# brew_install arduino-cli
-        # brew_cask_install autodesk-fusion360
-# sudo snap install blender --classic
-sudo snap install         freecad
+# sudo snap install        blender --classic
+# sudo snap install        freecad
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
-# brew_cask_install meshmixer
 sudo apt install -q -y   openscad
 install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_1.zip
