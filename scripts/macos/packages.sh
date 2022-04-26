@@ -47,6 +47,7 @@ cache_installed_packages
 
 ## Install/Update Packages
 ### General Computer Stuff
+brew_install      mas
 brew_cask_install android-file-transfer
 brew_cask_install homebrew/cask-fonts/font-inconsolata
 brew_cask_install calibre
@@ -68,6 +69,7 @@ brew_install      tcl-tk
 brew_cask_install thunderbird
 brew_cask_install tor-browser
 brew_cask_install xscreensaver
+# mas install       1451685025  # Wireguard
 
 ### Recreational Stuff
 brew_cask_install battle-net
@@ -102,7 +104,7 @@ brew_install      tmux
 brew_install      vim
 brew_install      wget
 brew_install      whois
-brew_install      wireguard-tools
+# brew_install      wireguard-tools
 brew_install      zsh
 
 ### Languages and Language Tools
@@ -140,7 +142,7 @@ brew_install arduino-cli
 brew_cask_install autodesk-fusion360
 brew_cask_install blender
 brew_cask_install freecad
-brew_cask_install kicad
+# brew_cask_install kicad
 brew_cask_install meshmixer
 brew_cask_install openscad
 brew_cask_install prusaslicer
