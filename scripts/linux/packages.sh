@@ -110,4 +110,4 @@ install_app_image        https://github.com/obsidianmd/obsidian-releases/release
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
-install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_1.zip
+install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_2.zip
