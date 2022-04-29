@@ -59,6 +59,7 @@ brew_cask_install gimp
 brew_cask_install google-chrome
 brew_cask_install keepassxc
 brew_cask_install libreoffice
+brew_cask_install obsidian
 brew_install      openssl
 brew_cask_install rectangle
 brew_cask_install signal
