@@ -1,6 +1,12 @@
 Vagrant.configure("2") do |config|
+  # I'll keep these up to date myself and safe the startup time
   config.vm.box_check_update = false
-  if Vagrant.has_plugin?("vagrant-vbguest")
-    config.vbguest.auto_update = false
-  end
+
+  # Turn off vbguest autoupdate
+  # 2022.04.30, I don't know why this was turned off before, but having out of
+  # date vbguests was giving me closed ports for some reason on vb 6.1, so I'm
+  # turning this back on
+  # if Vagrant.has_plugin?("vagrant-vbguest")
+  #   config.vbguest.auto_update = false
+  # end
 end
