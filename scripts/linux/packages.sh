@@ -12,16 +12,15 @@ set -ev
 
 download_if_not_exists /etc/apt/trusted.gpg.d/hashicorp.asc https://apt.releases.hashicorp.com/gpg
 write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
+Pin: origin apt.releases.hashicorp.com
+Pin-Priority: 900"
 
 download_if_not_exists /etc/apt/trusted.gpg.d/signal-desktop.asc https://updates.signal.org/desktop/apt/keys.asc
 write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
 
 download_if_not_exists /etc/apt/trusted.gpg.d/syncthing.asc https://syncthing.net/release-key.txt
 write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb https://apt.syncthing.net/ syncthing stable"
-write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
-Pin: origin apt.releases.hashicorp.com
-Pin-Priority: 900
-"
 
 sudo apt update
 
