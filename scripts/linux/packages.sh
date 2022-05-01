@@ -18,6 +18,10 @@ write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64]
 
 download_if_not_exists /etc/apt/trusted.gpg.d/syncthing.asc https://syncthing.net/release-key.txt
 write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb https://apt.syncthing.net/ syncthing stable"
+write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
+Pin: origin apt.releases.hashicorp.com
+Pin-Priority: 900
+"
 
 sudo apt update
 

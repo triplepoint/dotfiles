@@ -21,7 +21,7 @@ write_if_not_exists () {
   local FILEPATH=$1
   local CONTENT=$2
   if [ ! -f "${FILEPATH}" ]; then
-    echo ${CONTENT} | sudo tee ${FILEPATH}
+    echo -e "${CONTENT}" | sudo tee ${FILEPATH}
   fi
 }
 
