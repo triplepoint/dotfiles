@@ -10,7 +10,7 @@ set -e
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the versions of python to use as the global versions (space separated)
-GLOBAL_PY="3.10.4 3.9.12"
+GLOBAL_PY="3.10.5 3.9.13"
 
 ### Define the Python that we'll consider the dominant one
 PRIMARY_PY=$(echo ${GLOBAL_PY} | cut -d ' ' -f1)
