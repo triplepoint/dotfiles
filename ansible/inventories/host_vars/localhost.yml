@@ -1,0 +1,96 @@
+---
+apt_package_repositories:
+  # Hashicorp
+  - gpg_key_url: https://apt.releases.hashicorp.com/gpg
+    repository: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+  # Signal
+  - gpg_key_url: https://updates.signal.org/desktop/apt/keys.asc
+    repository: "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+  # Syncthing
+  - gpg_key_url: https://syncthing.net/release-key.txt
+    repository: "deb https://apt.syncthing.net/ syncthing stable"
+
+apt_present_packages:
+  # General Computer Stuff
+  - fonts-inconsolata
+  - deluge
+  - dropbox
+  - firefox
+  - gnome-tweak-tool
+  - signal-desktop
+  - syncthing
+  - thunderbird
+  - ubuntu-restricted-extras
+  # sudo apt install -q -y libegl1-mesa libgl1-mesa-glx libxcb-xtest0 && wget https://zoom.us/client/latest/zoom_amd64.deb && sudo dpkg -i zoom_amd64.deb && rm zoom_amd64.deb
+
+  # Recreational Stuff
+  - pianobar
+  - steam
+
+  # Terminals, Shells, and Command Line Utilities
+  - curl
+  - guake
+  - htop
+  - iperf3
+  - nfs-common
+  - nmap
+  - sshpass
+  - tree
+  - tmux
+  - vim
+  - whois
+
+  # Languages and Language Tools
+  - openjdk-17-jdk       # Should be installed before JVM languages like scala and groovy
+  # source "${BASH_SOURCE%/*}/_pyenv.sh"
+  # source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
+  # source "${BASH_SOURCE%/*}/../global/_packages_rust.sh"
+
+
+  # Programming and Ops Stuff
+  - awscli
+  - docker.io
+  - docker-compose
+  - git
+  - git-lfs
+  - mosquitto-clients
+  - gitg
+  - terraform
+  - virtualbox
+  - virtualbox-ext-pack
+  - vagrant
+  - vault
+
+  # ### Hardware Development Stuff
+  - kicad
+  - openscad
+  #   - prusa-slicer  # This was out of date in the apt repos.  Use the .appimage from the https://www.prusa3d.com/drivers/ site instead
+
+# a list of objects with a required "name" field, and an optional "classic" boolean field
+snap_present_packages:
+  # General Computer Stuff
+  - name: discord
+  - name: gimp
+  - name: keepassxc
+  - name: skype
+    classic: yes
+  - name: slack
+    classic: yes
+
+  # Programming and OPS Stuff
+  - name: dbeaver-ce
+  - name: helm
+    classic: yes
+  - name: kubectl
+    classic: yes
+  - name: terragrunt
+  - name: code
+    classic: yes
+
+  # Hardware Development Stuff
+  # - name: blender
+  - name: freecad
+
+apt_absent_packages: []
+
+snap_absent_packages: []

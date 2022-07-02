@@ -1,0 +1,43 @@
+---
+- hosts: localhost
+  connection: local
+  pre_tasks:
+    - name: "Include the OS-specific pre-tasks"
+      include_tasks: "{{ playbook_item }}"
+      with_first_found:
+        - files:
+            - "{{ ansible_facts['distribution'] | lower }}/pre_tasks.yml"
+          skip: true
+      loop_control:
+        loop_var: playbook_item
+
+  tasks:
+    - name: "Load the OS-specific variables"
+      include_vars:
+        file: "{{ ansible_facts['distribution'] | lower }}/vars.yml"
+
+    - name: "Include the OS-specific roles"
+      include_role:
+        name: "{{ playbook_item }}"
+      with_items: "{{ included_roles }}"
+      loop_control:
+        loop_var: playbook_item
+
+    - name: "Include the OS-specific tasks"
+      include_tasks: "{{ playbook_item }}"
+      with_first_found:
+        - files:
+            - "{{ ansible_facts['distribution'] | lower }}/tasks.yml"
+          skip: true
+      loop_control:
+        loop_var: playbook_item
+
+  post_tasks:
+    - name: "Include the OS-specific post-tasks"
+      include_tasks: "{{ playbook_item }}"
+      with_first_found:
+        - files:
+            - "{{ ansible_facts['distribution'] | lower  }}/post_tasks.yml"
+          skip: true
+      loop_control:
+        loop_var: playbook_item

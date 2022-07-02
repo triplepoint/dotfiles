@@ -1,0 +1,5 @@
+---
+included_roles:
+  - apt_packages
+  - ohmyzsh
+  - snap_packages

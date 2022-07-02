@@ -1,0 +1,13 @@
+---
+- name: Ensure the specified snaps aren't present
+  community.general.snap:
+    name: "{{ item.name }}"
+    state: absent
+  with_items: "{{ snap_absent_packages }}"
+
+- name: Ensure the specified snaps are present
+  community.general.snap:
+    name: "{{ item.name }}"
+    classic: "{{ item.classic is defined and item.classic is true }}"
+    state: present
+  with_items: "{{ snap_present_packages }}"

@@ -1,0 +1,20 @@
+---
+- name: Ensure the zsh package is installed
+  ansible.builtin.package:
+    name: zsh
+    state: present
+  become: true
+
+- name: Check whether ohmyzsh has already been installed
+  stat: path="{{ ansible_env.HOME }}/.oh-my-zsh"
+  register: _ohmyzsh_install_dir_stat
+
+- name: Download the ohmyzsh installer if it isn't already installed
+  ansible.builtin.get_url:
+    url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/ohmyzsh_install.sh
+  when: not _ohmyzsh_install_dir_stat.stat.exists
+
+- name: Ensure that ohmyzsh is installed
+  ansible.builtin.shell: /tmp/ohmyzsh_install.sh
+  when: not _ohmyzsh_install_dir_stat.stat.exists
