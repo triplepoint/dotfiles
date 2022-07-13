@@ -134,4 +134,4 @@ export PATH="$HOME/Applications:$PATH"
 export LESS="${LESS} -FX"
 
 # Initalize Pyenv
-eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

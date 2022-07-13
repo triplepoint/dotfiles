@@ -98,6 +98,7 @@ sudo snap install        kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
 # sudo apt install -q -y   postgresql-client
 sudo apt install -q -y   gitg
+sudo snap install        postman
 sudo apt install -q -y   terraform
 sudo snap install        terragrunt
 sudo apt install -q -y   virtualbox
@@ -105,7 +106,7 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.15/Obsidian-0.14.15.AppImage
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.6/Obsidian-0.15.6.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
