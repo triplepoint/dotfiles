@@ -106,7 +106,7 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.6/Obsidian-0.15.6.AppImage
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.9/Obsidian-0.15.9.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
