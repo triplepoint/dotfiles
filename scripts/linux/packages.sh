@@ -16,6 +16,9 @@ write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
 Pin: origin apt.releases.hashicorp.com
 Pin-Priority: 900"
 
+download_if_not_exists /etc/apt/trusted.gpg.d/docker.asc https://download.docker.com/linux/ubuntu/gpg
+write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu focal stable"
+
 download_if_not_exists /etc/apt/trusted.gpg.d/signal-desktop.asc https://updates.signal.org/desktop/apt/keys.asc
 write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
 
@@ -86,8 +89,7 @@ source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 # ### Programming and Ops Stuff
 sudo apt install -q -y   awscli
 sudo snap install        dbeaver-ce
-sudo apt install -q -y   docker.io
-sudo apt install -q -y   docker-compose
+sudo apt install -q -y   docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
 sudo apt install -q -y   gitg
