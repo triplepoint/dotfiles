@@ -93,13 +93,11 @@ sudo apt install -q -y   docker-ce docker-ce-cli containerd.io docker-compose-pl
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
 sudo apt install -q -y   gitg
-sudo apt install -q -y   git-gui
 # brew_install      graphviz
 sudo snap install        helm  --classic
 sudo snap install        kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
 # sudo apt install -q -y   postgresql-client
-sudo apt install -q -y   gitg
 sudo snap install        postman
 sudo apt install -q -y   terraform
 sudo snap install        terragrunt
