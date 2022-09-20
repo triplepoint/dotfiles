@@ -36,8 +36,8 @@ pushd "${BASH_SOURCE%/*}"
 
 ### Generate intermediate requirements.txt file
 PIPENV_PIPFILE=Pipfile.py3 pipenv --rm || true
-rm -f Pipfile.py3.lock
-PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${PRIMARY_PY} -r > requirements_py3.txt
+PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${PRIMARY_PY}
+PIPENV_PIPFILE=Pipfile.py3 pipenv requirements > requirements_py3.txt
 
 ### Install packages
 python3 -m pip install -r requirements_py3.txt --no-deps --progress-bar off
