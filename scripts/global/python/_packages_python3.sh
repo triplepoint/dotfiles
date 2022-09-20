@@ -30,8 +30,7 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-# 2022.05.01 we're temporarily pinning pipenv here, to get around a bug that should be fixed soon
-python3 -m pip install pip setuptools wheel virtualenv "pipenv==2022.4.21" --upgrade --progress-bar off
+python3 -m pip install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
