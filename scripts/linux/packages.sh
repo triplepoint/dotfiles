@@ -117,4 +117,4 @@ sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
 sudo apt install -q -y   picocom
-install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_2.zip
+install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_2_5_0.zip
