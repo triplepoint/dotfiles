@@ -7,23 +7,25 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-# add_pgp_key FC918B335044912E
-# write_if_not_exists /etc/apt/sources.list.d/dropbox.list "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main"
+sudo mkdir -p /etc/apt/keyrings
 
-download_if_not_exists /etc/apt/trusted.gpg.d/hashicorp.asc https://apt.releases.hashicorp.com/gpg
-write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
+write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
+write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
 Pin: origin apt.releases.hashicorp.com
 Pin-Priority: 900"
 
-download_if_not_exists /etc/apt/trusted.gpg.d/docker.asc https://download.docker.com/linux/ubuntu/gpg
-write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu focal stable"
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
+write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64 signed-by=/etc/apt/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
 
-download_if_not_exists /etc/apt/trusted.gpg.d/signal-desktop.asc https://updates.signal.org/desktop/apt/keys.asc
-write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+download_if_not_exists /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
 
-download_if_not_exists /etc/apt/trusted.gpg.d/syncthing.asc https://syncthing.net/release-key.txt
-write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb https://apt.syncthing.net/ syncthing stable"
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
+write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main"
 
 sudo apt update
 
@@ -105,7 +107,7 @@ sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
-install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
+sudo apt install -q -y   code
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.0.0/Obsidian-1.0.0.AppImage
 
 # ### Hardware Development Stuff

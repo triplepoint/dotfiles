@@ -16,6 +16,16 @@ download_if_not_exists () {
   fi
 }
 
+# If a file path doesn't exist, download it, gpg --dearmor it, and install it
+download_if_not_exists_with_gpg_dearmor () {
+  local FILEPATH=$1
+  local URL=$2
+  if [ ! -f "${FILEPATH}" ]; then
+    curl -fsSL ${URL} | sudo gpg --dearmor -o ${FILEPATH}
+  fi
+}
+
+
 # Write the given string to the given file, if the file doesn't already exist
 write_if_not_exists () {
   local FILEPATH=$1
