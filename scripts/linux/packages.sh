@@ -52,6 +52,8 @@ sudo snap install        keepassxc
 sudo apt install -q -y   signal-desktop
 sudo snap install        slack --classic
 sudo apt install -q -y   syncthing
+sudo systemctl           enable syncthing@username.service
+sudo systemctl           start syncthing@username.service
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
