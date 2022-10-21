@@ -25,7 +25,7 @@ download_if_not_exists /etc/apt/keyrings/syncthing-archive-keyring.gpg https://s
 write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
 
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
-write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main"
+write_if_not_exists /etc/apt/sources.list.d/vscode.list "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main"
 
 sudo apt update
 
