@@ -104,34 +104,16 @@ fi
 
 
 # ### CUSTOM DEFINES ###
-# Some useful custom environment variables
-export WORKSPACE_ROOT="$HOME/workspace"
-
-# export GOPATH="$WORKSPACE_ROOT/gocode"
-
-# export JAVA_HOME=$(/usr/libexec/java_home)
-
-# export PATH="/usr/local/sbin:$PATH"
-# export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-# export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-# export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/Applications:$PATH"
 
-# xcode's libraries need to be shown to command-line compilers
-# export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
-
-# Some python libraries (like psycopg2) have compiler
-# trouble finding the openssl libraries.
-# export LDFLAGS="-L/usr/local/opt/openssl/lib"
-# export CPPFLAGS="-I/usr/local/opt/openssl/include"
-
-# Add binutils for building
-# export LDFLAGS="$LDFLAGS -L/usr/local/opt/binutils/lib"
-# export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/binutils/include"
+# Some useful custom environment variables
+export WORKSPACE_ROOT="$HOME/workspace"
 
 # Make sure LESS only gets involved if output is longer than a page
 export LESS="${LESS} -FX"
 
 # Initalize Pyenv
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

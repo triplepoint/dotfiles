@@ -7,7 +7,7 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-sudo mkdir -p /etc/apt/keyrings
+[ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
 
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
 write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
