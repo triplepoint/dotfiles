@@ -111,10 +111,12 @@ sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 sudo apt install -q -y   code
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.1.9/Obsidian-1.1.9.AppImage
+install_app_image        https://github.com/balena-io/etcher/releases/download/v1.13.0/balenaEtcher-1.13.0-x64.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
 # sudo snap install        freecad
+install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.0.3_Linux_64bit.AppImage
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
