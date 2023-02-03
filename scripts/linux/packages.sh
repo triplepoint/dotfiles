@@ -60,12 +60,12 @@ sudo apt install -q -y   ubuntu-restricted-extras
 sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0  # Zoom dependencies
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
 install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
-install_deb              https://dl4jz3rbrsfum.cloudfront.net/software/PPL_64bit_v1.4.1.deb pwrstat
 # sudo apt install -q -y   xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy 
-sudo pwrstat -alarm off
-sudo pwrstat -hibernate off
-sudo pwrstat -pwrfail -active on -delay 60 -cmd /etc/pwrstatd-powerfail.sh -duration 0 -shutdown off
-sudo pwrstat -lowbatt -active on -runtime 300 -capacity 35 -cmd /etc/pwrstatd-lowbatt.sh -duration 0 -shutdown on
+# install_deb              https://dl4jz3rbrsfum.cloudfront.net/software/PPL_64bit_v1.4.1.deb pwrstat
+# sudo pwrstat -alarm off
+# sudo pwrstat -hibernate off
+# sudo pwrstat -pwrfail -active on -delay 60 -cmd /etc/pwrstatd-powerfail.sh -duration 0 -shutdown off
+# sudo pwrstat -lowbatt -active on -runtime 300 -capacity 35 -cmd /etc/pwrstatd-lowbatt.sh -duration 0 -shutdown on
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
