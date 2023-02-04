@@ -13,3 +13,4 @@ ansible-lint = "*"
 pre-commit = "*"                                         # used by git repositories
 pylint = "*"
 mypy = "*"
+poetry = "*"
