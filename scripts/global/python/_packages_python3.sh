@@ -30,17 +30,19 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-python3 -m pip install pip setuptools wheel virtualenv pipenv --upgrade --progress-bar off
+# Minimum packages necessary to run the requirements-handling behavior below
+# Everything else is in the Pipfile, for pipenv to install
+python3 -m pip install pip setuptools wheel virtualenv pipenv --isolated --disable-pip-version-check --upgrade --upgrade-strategy eager --progress-bar off
 
 pushd "${BASH_SOURCE%/*}"
 
 ### Generate intermediate requirements.txt file
 PIPENV_PIPFILE=Pipfile.py3 pipenv --rm || true
 PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${PRIMARY_PY}
-PIPENV_PIPFILE=Pipfile.py3 pipenv requirements > requirements_py3.txt
+PIPENV_PIPFILE=Pipfile.py3 pipenv requirements --hash > requirements_py3.txt
 
-### Install packages
-python3 -m pip install -r requirements_py3.txt --no-deps --progress-bar off
+### Install global packages
+python3 -m pip install -r requirements_py3.txt --isolated --disable-pip-version-check --no-deps --progress-bar off
 
 pyenv rehash
 

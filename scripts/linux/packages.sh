@@ -36,9 +36,6 @@ sudo apt full-upgrade
 sudo snap set system refresh.retain=2
 sudo snap refresh
 
-### Snapshot the names of installed packages in the various packaging tools
-cache_installed_packages
-
 # ## Install/Update Packages
 # ### General Computer Stuff
 # brew_cask_install android-file-transfer

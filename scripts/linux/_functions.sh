@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# Dump the list of installed packages to a few files,
-# so we can speed up the "do we need to reinstall this"
-# process.
-cache_installed_packages () {
-  return
-}
-
 # If a file path doesn't exist, download it and install it
 download_if_not_exists () {
   local FILEPATH=$1
