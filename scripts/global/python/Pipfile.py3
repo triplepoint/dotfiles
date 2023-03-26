@@ -7,3 +7,4 @@ name = "pypi"
 [packages]
 pre-commit = "*"                                         # used by git repositories
 poetry = "*"
+ansible ="*"
