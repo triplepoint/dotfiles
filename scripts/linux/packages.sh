@@ -27,6 +27,9 @@ write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb [signed-by=/etc/
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
 write_if_not_exists /etc/apt/sources.list.d/vscode.list "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main"
 
+# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
+# write_if_not_exists /etc/apt/sources.list.d/pgadmin.list "deb [signed-by=/etc/apt/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main"
+
 sudo apt update
 
 ### Call the "remove" file, to remove previously installed packages
@@ -49,15 +52,15 @@ sudo snap install        keepassxc
 sudo apt install -q -y   signal-desktop
 sudo snap install        slack --classic
 sudo apt install -q -y   syncthing
-sudo systemctl           enable syncthing@username.service
-sudo systemctl           start syncthing@username.service
+systemctl                --user enable syncthing.service
+systemctl                --user start syncthing.service
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
 sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0  # Zoom dependencies
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
 install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
-# sudo apt install -q -y   xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy
+source "${BASH_SOURCE%/*}/_xscreensaver.sh"
 # install_deb              https://dl4jz3rbrsfum.cloudfront.net/software/PPL_64bit_v1.4.1.deb pwrstat  # See: https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/
 # sudo pwrstat -alarm off
 # sudo pwrstat -hibernate off
@@ -105,6 +108,7 @@ sudo snap install        kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
 # sudo apt install -q -y   postgresql-client
 sudo snap install        postman
+# sudo apt install -q -y   pgadmin4-desktop
 sudo apt install -q -y   terraform
 sudo snap install        terragrunt
 sudo apt install -q -y   virtualbox
