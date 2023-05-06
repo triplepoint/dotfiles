@@ -106,6 +106,7 @@ fi
 # ### CUSTOM DEFINES ###
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/Applications:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Some useful custom environment variables
 export WORKSPACE_ROOT="$HOME/workspace"

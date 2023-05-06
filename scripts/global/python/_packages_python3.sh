@@ -10,7 +10,7 @@ set -e
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the versions of python to use as the global versions (space separated)
-GLOBAL_PY="3.11.2"
+GLOBAL_PY="3.11.3"
 
 ### Define the Python that we'll consider the dominant one
 PRIMARY_PY=$(echo ${GLOBAL_PY} | cut -d ' ' -f1)
@@ -30,20 +30,18 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-# Minimum packages necessary to run the requirements-handling behavior below
-# Everything else is in the Pipfile, for pipenv to install
-python3 -m pip install pip setuptools wheel virtualenv pipenv --isolated --disable-pip-version-check --upgrade --upgrade-strategy eager --progress-bar off
-
-pushd "${BASH_SOURCE%/*}"
-
-### Generate intermediate requirements.txt file
-PIPENV_PIPFILE=Pipfile.py3 pipenv --rm || true
-PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${PRIMARY_PY}
-PIPENV_PIPFILE=Pipfile.py3 pipenv requirements --hash > requirements_py3.txt
-
-### Install global packages
-python3 -m pip install -r requirements_py3.txt --isolated --disable-pip-version-check --no-deps --progress-bar off
-
+python3 -m pip install pip setuptools wheel virtualenv pipx --isolated --disable-pip-version-check --upgrade --upgrade-strategy eager --progress-bar off
 pyenv rehash
+python3 -m pipx ensurepath
+pipx upgrade-all
 
-popd
+### Install global command-line tools
+pipx install ansible-base
+pipx install ansible-lint
+pipx install black
+pipx install isort
+pipx install mypy
+pipx install pipenv
+pipx install poetry
+pipx install pre-commit
+pipx install pylint
