@@ -116,15 +116,15 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 sudo apt install -q -y   code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.7/Obsidian-1.2.7.AppImage
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.4/Obsidian-1.3.4.AppImage
 install_app_image        https://github.com/balena-io/etcher/releases/download/v1.18.4/balenaEtcher-1.18.4-x64.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
 # sudo snap install        freecad
-install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.0.4_Linux_64bit.AppImage
+install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.1.0_Linux_64bit.AppImage
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
 sudo apt install -q -y   picocom
-install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_2_5_0.zip
+install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_2_5_2.zip
