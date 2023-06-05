@@ -116,7 +116,7 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 sudo apt install -q -y   code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.4/Obsidian-1.3.4.AppImage
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage
 install_app_image        https://github.com/balena-io/etcher/releases/download/v1.18.4/balenaEtcher-1.18.4-x64.AppImage
 
 # ### Hardware Development Stuff
