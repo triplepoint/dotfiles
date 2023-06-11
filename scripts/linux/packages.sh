@@ -9,26 +9,44 @@ set -ev
 # Set up some additional package repositories
 [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
 
+# Dbeaver
+sudo add-apt-repository -y -n ppa:serge-rider/dbeaver-ce
+
+# Docker
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
 write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
+# Hashicorp / Terraform, etc
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
 write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
 Pin: origin apt.releases.hashicorp.com
 Pin-Priority: 900"
 
+# KeepassXC
+sudo add-apt-repository -y -n ppa:phoerious/keepassxc
+
+# Mozilla / Firefox
+sudo add-apt-repository -y -n ppa:mozillateam/ppa
+write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001"
+
+# # Postgresql
+# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
+# write_if_not_exists /etc/apt/sources.list.d/pgadmin.list "deb [signed-by=/etc/apt/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main"
+
+# Signal
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
 write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64 signed-by=/etc/apt/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
 
+# Syncthing
 download_if_not_exists /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
 write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
 
+# Microsoft / VSCode
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
 write_if_not_exists /etc/apt/sources.list.d/vscode.list "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main"
-
-# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
-# write_if_not_exists /etc/apt/sources.list.d/pgadmin.list "deb [signed-by=/etc/apt/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main"
 
 sudo apt update
 
@@ -48,9 +66,9 @@ sudo apt install -q -y   deluge
 sudo snap install        discord
 sudo apt install -q -y   firefox
 sudo snap install        gimp
-sudo snap install        keepassxc
+sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
-sudo snap install        slack --classic
+install_deb              https://downloads.slack-edge.com/releases/linux/4.32.122/prod/x64/slack-desktop-4.32.122-amd64.deb slack
 sudo apt install -q -y   syncthing
 systemctl                --user enable syncthing.service
 systemctl                --user start syncthing.service
@@ -97,7 +115,7 @@ source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 
 # ### Programming and Ops Stuff
 sudo apt install -q -y   awscli
-sudo snap install        dbeaver-ce
+sudo apt install -q -y   dbeaver-ce
 sudo apt install -q -y   docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
