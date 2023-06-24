@@ -78,7 +78,7 @@ systemctl                --user start syncthing.service
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
-sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0  # Zoom dependencies
+sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0 libxcb-cursor0  # Zoom dependencies
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
 install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
 # source "${BASH_SOURCE%/*}/_xscreensaver.sh"
