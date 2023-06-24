@@ -56,7 +56,7 @@ install_deb () {
   local FULL_URL=$1
   local FILENAME=`mktemp --dry-run --suffix=.deb`
   local EXECUTABLE_NAME=$2
-  if [ ! -z "${EXECUTABLE_NAME}" ] && which ${EXECUTABLE_NAME} &> /dev/null; then
+  if { [ ! -z "${EXECUTABLE_NAME}" ] && which ${EXECUTABLE_NAME} &> /dev/null; } && [[ -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     echo "${EXECUTABLE_NAME} already installed, skipping install."
     return
   fi
