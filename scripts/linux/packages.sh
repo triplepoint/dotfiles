@@ -22,7 +22,7 @@ sudo add-apt-repository -y -n ppa:linuxuprising/guake
 # Hashicorp / Terraform, etc
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
 write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
+write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant terraform
 Pin: origin apt.releases.hashicorp.com
 Pin-Priority: 900"
 

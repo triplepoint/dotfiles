@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+# Note: All the "if not exists" behavior of these functions can be forced by setting a
+# PACKAGES_FORCE_OVERWRITE=1 environment variable.
+
 # If a file path doesn't exist, download it and install it
 download_if_not_exists () {
   local FILEPATH=$1
   local URL=$2
-  if [ ! -f "${FILEPATH}" ]; then
+  if [ ! -f "${FILEPATH}" ] || [[ ! -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     sudo curl -fsSL ${URL} --output ${FILEPATH}
   fi
 }
@@ -13,7 +16,7 @@ download_if_not_exists () {
 download_if_not_exists_with_gpg_dearmor () {
   local FILEPATH=$1
   local URL=$2
-  if [ ! -f "${FILEPATH}" ]; then
+  if [ ! -f "${FILEPATH}" ] || [[ ! -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     curl -fsSL ${URL} | sudo gpg --dearmor -o ${FILEPATH}
   fi
 }
@@ -23,7 +26,7 @@ download_if_not_exists_with_gpg_dearmor () {
 write_if_not_exists () {
   local FILEPATH=$1
   local CONTENT=$2
-  if [ ! -f "${FILEPATH}" ]; then
+  if [ ! -f "${FILEPATH}" ] || [[ ! -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     echo -e "${CONTENT}" | sudo tee ${FILEPATH}
   fi
 }
