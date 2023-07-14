@@ -71,7 +71,7 @@ sudo apt install -q -y   firefox
 sudo snap install        gimp
 sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
-install_deb              https://downloads.slack-edge.com/releases/linux/4.32.127/prod/x64/slack-desktop-4.32.127-amd64.deb slack
+install_deb              https://downloads.slack-edge.com/releases/linux/4.33.73/prod/x64/slack-desktop-4.33.73-amd64.deb slack
 sudo apt install -q -y   syncthing
 systemctl                --user enable syncthing.service
 systemctl                --user start syncthing.service
@@ -138,12 +138,12 @@ sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 sudo apt install -q -y   code
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage
-install_app_image        https://github.com/balena-io/etcher/releases/download/v1.18.8/balenaEtcher-1.18.8-x64.AppImage
+install_app_image        https://github.com/balena-io/etcher/releases/download/v1.18.11/balenaEtcher-1.18.11-x64.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
 # sudo snap install        freecad
-install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.1.0_Linux_64bit.AppImage
+install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.1.1_Linux_64bit.AppImage
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
