@@ -74,7 +74,11 @@ sudo apt install -q -y   firefox
 sudo snap install        gimp
 sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
-install_deb              https://downloads.slack-edge.com/releases/linux/4.33.73/prod/x64/slack-desktop-4.33.73-amd64.deb slack
+
+# see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
+SLACK_VER=4.33.84
+install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
+
 sudo apt install -q -y   syncthing
 systemctl                --user enable syncthing.service
 systemctl                --user start syncthing.service
@@ -83,13 +87,13 @@ sudo apt install -q -y   thunderbird
 sudo apt install -q -y   ubuntu-restricted-extras
 sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0 libxcb-cursor0  # Zoom dependencies
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
+
+# see: https://github.com/TheAssassin/AppImageLauncher/releases, find "amd64.deb"
 install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
+
 # source "${BASH_SOURCE%/*}/_xscreensaver.sh"
-# install_deb              https://dl4jz3rbrsfum.cloudfront.net/software/PPL_64bit_v1.4.1.deb pwrstat  # See: https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/
-# sudo pwrstat -alarm off
-# sudo pwrstat -hibernate off
-# sudo pwrstat -pwrfail -active on -delay 60 -cmd /etc/pwrstatd-powerfail.sh -duration 0 -shutdown off
-# sudo pwrstat -lowbatt -active on -runtime 300 -capacity 35 -cmd /etc/pwrstatd-lowbatt.sh -duration 0 -shutdown on
+
+# source "${BASH_SOURCE%/*}/_cyberpower.sh"
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
@@ -140,13 +144,23 @@ sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
 sudo apt install -q -y   code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.7/Obsidian-1.3.7.AppImage
-install_app_image        https://github.com/balena-io/etcher/releases/download/v1.18.11/balenaEtcher-1.18.11-x64.AppImage
+
+# see: https://obsidian.md/download
+OBSIDIAN_VER=1.3.7
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
+
+
+# see: https://etcher.balena.io/#download-etcher
+BALENA_VER=1.18.11
+install_app_image        https://github.com/balena-io/etcher/releases/download/v${BALENA_VER}/balenaEtcher-${BALENA_VER}-x64.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
 # sudo snap install        freecad
+
+# see: https://www.arduino.cc/en/software
 install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.1.1_Linux_64bit.AppImage
+
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
