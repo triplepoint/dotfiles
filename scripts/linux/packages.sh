@@ -76,7 +76,7 @@ sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
 
 # see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
-SLACK_VER=4.33.84
+SLACK_VER=4.33.90
 install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt install -q -y   syncthing
@@ -146,7 +146,7 @@ sudo apt install -q -y   vault
 sudo apt install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.3.7
+OBSIDIAN_VER=1.4.5
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
@@ -159,10 +159,12 @@ install_app_image        https://github.com/balena-io/etcher/releases/download/v
 # sudo snap install        freecad
 
 # see: https://www.arduino.cc/en/software
-install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_2.1.1_Linux_64bit.AppImage
+ARDUINO_VER=2.2.1
+install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_${ARDUINO_VER}_Linux_64bit.AppImage
 
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
 sudo apt install -q -y   picocom
-install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_2_6_0.zip
+PRUSA_VER=2_6_0
+install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
