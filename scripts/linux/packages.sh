@@ -76,7 +76,7 @@ sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
 
 # see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
-SLACK_VER=4.33.90
+SLACK_VER=4.34.120
 install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt install -q -y   syncthing
@@ -146,7 +146,7 @@ sudo apt install -q -y   vault
 sudo apt install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.4.5
+OBSIDIAN_VER=1.4.14
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
@@ -166,5 +166,7 @@ sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
 sudo apt install -q -y   picocom
-PRUSA_VER=2_6_0
+
+# See: https://help.prusa3d.com/downloads under MK2.5S
+PRUSA_VER=2_6_1
 install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
