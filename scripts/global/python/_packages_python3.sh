@@ -43,7 +43,7 @@ pipx install black
 pipx install isort
 pipx install mypy
 pipx install pipenv
-pipx inject poetry "poetry-dynamic-versioning[plugin]>=1.0.1,<2.0.0"
 pipx install poetry
+pipx inject poetry "poetry-dynamic-versioning[plugin]>=1.0.1,<2.0.0"
 pipx install pre-commit
 pipx install pylint
