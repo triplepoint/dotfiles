@@ -11,7 +11,7 @@ set -e
 
 ### Define the versions of python to use as the global versions (space separated)
 # see: https://www.python.org/downloads/
-GLOBAL_PY="3.11.5"
+GLOBAL_PY="3.11.6"
 
 ### Define the Python that we'll consider the dominant one
 PRIMARY_PY=$(echo ${GLOBAL_PY} | cut -d ' ' -f1)
@@ -43,6 +43,7 @@ pipx install black
 pipx install isort
 pipx install mypy
 pipx install pipenv
+pipx inject poetry "poetry-dynamic-versioning[plugin]>=1.0.1,<2.0.0"
 pipx install poetry
 pipx install pre-commit
 pipx install pylint
