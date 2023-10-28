@@ -58,7 +58,7 @@ download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages.microsoft.g
 sudo add-apt-repository -y -n deb https://packages.microsoft.com/repos/code stable main
 sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages.microsoft.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_code-mantic.list
 
-sudo apt update
+sudo apt update || true
 
 ### Call the "remove" file, to remove previously installed packages
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
@@ -80,7 +80,7 @@ sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
 
 # see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
-SLACK_VER=4.34.120
+SLACK_VER=4.34.121
 install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt install -q -y   syncthing
@@ -150,7 +150,7 @@ sudo apt install -q -y   vault
 sudo apt install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.4.14
+OBSIDIAN_VER=1.4.16
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
