@@ -7,14 +7,8 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-[ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
-
 # Dbeaver
 sudo add-apt-repository -y -n ppa:serge-rider/dbeaver-ce
-
-# Docker
-download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
-write_if_not_exists /etc/apt/sources.list.d/docker.list "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 # Git
 sudo add-apt-repository -y -n ppa:git-core/ppa
@@ -22,37 +16,47 @@ sudo add-apt-repository -y -n ppa:git-core/ppa
 # Guake
 sudo add-apt-repository -y -n ppa:linuxuprising/guake
 
-# Hashicorp / Terraform, etc
-download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
-write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant terraform
-Pin: origin apt.releases.hashicorp.com
-Pin-Priority: 900"
-
 # KeepassXC
 sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 
-# Mozilla / Firefox
+# Mozilla / Firefox (and prioritize over the ubuntu 1st party Snap trojan package)
 sudo add-apt-repository -y -n ppa:mozillateam/ppa
 write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
 Pin: release o=LP-PPA-mozillateam
 Pin-Priority: 1001"
 
+# Docker
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
+sudo add-apt-repository -y -n -U https://download.docker.com/linux/ubuntu -c stable
+sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/docker.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-mantic.list
+
+# Hashicorp / Terraform, etc
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
+sudo add-apt-repository -y -n -U https://apt.releases.hashicorp.com -c main
+sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/hashicorp-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_releases_hashicorp_com-mantic.list
+write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant terraform
+Pin: origin apt.releases.hashicorp.com
+Pin-Priority: 900"
+
 # # Postgresql
-# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
-# write_if_not_exists /etc/apt/sources.list.d/pgadmin.list "deb [signed-by=/etc/apt/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main"
+# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
+# sudo add-apt-repository -y -n deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main
+# sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages-pgadmin-org.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_postgresql_org_pub_repos_apt-mantic.list
 
 # Signal
-download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
-write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64 signed-by=/etc/apt/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
+sudo add-apt-repository -y -n deb https://updates.signal.org/desktop/apt xenial main
+sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/signal-desktop-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_updates_signal_org_desktop_apt-mantic.list
 
 # Syncthing
-download_if_not_exists /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
-write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
+download_if_not_exists /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+sudo add-apt-repository -y -n deb https://apt.syncthing.net/ syncthing stable
+sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/syncthing-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net_-mantic.list
 
 # Microsoft / VSCode
-download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
-write_if_not_exists /etc/apt/sources.list.d/vscode.list "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main"
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
+sudo add-apt-repository -y -n deb https://packages.microsoft.com/repos/code stable main
+sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages.microsoft.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_code-mantic.list
 
 sudo apt update
 
