@@ -150,7 +150,7 @@ sudo apt install -q -y   vault
 sudo apt install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.4.16
+OBSIDIAN_VER=1.5.3
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
