@@ -37,7 +37,13 @@ python3 -m pipx ensurepath
 pipx upgrade-all
 
 ### Install global command-line tools
+# pipx install ansible-base
+# pipx install ansible-lint
+# pipx install black
+# pipx install flake8
+# pipx install isort
+# pipx install mypy
 pipx install pipenv
 pipx install poetry
-pipx inject poetry "poetry-dynamic-versioning[plugin]>=1.0.1,<2.0.0"
+pipx inject poetry "poetry-dynamic-versioning[plugin]>=1.0.1,<2.0.0" --include-apps
 pipx install pre-commit
