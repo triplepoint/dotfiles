@@ -20,10 +20,12 @@ sudo add-apt-repository -y -n ppa:linuxuprising/guake
 sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 
 # Mozilla / Firefox (and prioritize over the ubuntu 1st party Snap trojan package)
-sudo add-apt-repository -y -n ppa:mozillateam/ppa
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/mozilla.gpg https://packages.mozilla.org/apt/repo-signing-key.gpg
+sudo add-apt-repository -y -n deb https://packages.mozilla.org/apt mozilla main
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/mozilla.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list
 write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 1001"
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000"
 
 # Docker
 download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
