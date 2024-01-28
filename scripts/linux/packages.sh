@@ -13,8 +13,8 @@ sudo add-apt-repository -y -n ppa:serge-rider/dbeaver-ce
 # Git
 sudo add-apt-repository -y -n ppa:git-core/ppa
 
-# Guake
-sudo add-apt-repository -y -n ppa:linuxuprising/guake
+# Guake - Not needed as of Mantic 23.10
+# sudo add-apt-repository -y -n ppa:linuxuprising/guake
 
 # KeepassXC
 sudo add-apt-repository -y -n ppa:phoerious/keepassxc
