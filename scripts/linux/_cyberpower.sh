@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-# See: https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/, click download
+# see: https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/, click download
 install_deb              https://dl4jz3rbrsfum.cloudfront.net/software/PPL_64bit_v1.4.1.deb pwrstat
 sudo pwrstat -alarm off
 sudo pwrstat -hibernate off

@@ -4,16 +4,13 @@ set -ev
 # Needed for python to build
 # see: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 sudo apt install -q -y --no-install-recommends \
-    make \
     build-essential \
     libssl-dev \
     zlib1g-dev \
     libbz2-dev \
     libreadline-dev \
     libsqlite3-dev \
-    wget \
     curl \
-    llvm \
     libncursesw5-dev \
     xz-utils \
     tk-dev \
