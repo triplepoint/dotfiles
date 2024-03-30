@@ -1,0 +1,16 @@
+---
+- name: Localhost deployment
+  hosts: localhost
+  become: true
+
+  roles:
+    # - role: derp
+    #   tags: [derpity, derp]
+
+  # post_tasks:
+    # - name: Ensure some useful miscellaneous tools are available
+    #   ansible.builtin.package:
+    #     name: "{{ item }}"
+    #     state: present
+    #   with_items:
+    #     - iperf3

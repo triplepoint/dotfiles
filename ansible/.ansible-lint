@@ -1,0 +1,5 @@
+---
+exclude_paths:
+  - "roles/vendor/"
+
+warn_list: []

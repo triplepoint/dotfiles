@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+##
+# By default, ansible-vault will error out if you ask it to view
+# a file that isn't currently encrypted.  This causes issues for
+# scripts that just want the plaintext of the file, regardless of its
+# encrypted state.  Specifically, I have a git diff configuration
+# that attempts to diff ansible vault files as their plaintext.
+# this was failing in the case where the file is decrypted.
+#
+# For what it's worth, that git config looks like this, in a repo's
+# .git/config file:
+# [diff "ansible-vault-view"]
+#	textconv = ansible/scripts/ansible_vault_view
+#	cachetextconv = false
+##
+
+# Try to decrypt and view the vaulted file
+RESULT="$(ansible-vault view $1 2>&1)"
+retval=$?
+
+# If nothing went wrong that's fine, echo the result and we're done.
+if [ $retval -eq 0 ]; then
+    echo -e "${RESULT}"
+    exit $retval
+
+else
+    # If the vault error was that the file wasn't encrypted, just cat the file.
+    # Otherwise, yea, it's a legit error, just print the error message to stdout
+    if [[ $RESULT == *"ERROR! input is not vault encrypted"* ]]; then
+        cat $1
+        exit 0
+    else
+        >&2 echo -e "${RESULT}"
+        exit $retval
+    fi
+fi
