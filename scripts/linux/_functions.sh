@@ -1,26 +1,32 @@
 #!/usr/bin/env bash
 
-# Dump the list of installed packages to a few files,
-# so we can speed up the "do we need to reinstall this"
-# process.
-cache_installed_packages () {
-  return
-}
+# Note: All the "if not exists" behavior of these functions can be forced by setting a
+# PACKAGES_FORCE_OVERWRITE=1 environment variable.
 
 # If a file path doesn't exist, download it and install it
 download_if_not_exists () {
   local FILEPATH=$1
   local URL=$2
-  if [ ! -f "${FILEPATH}" ]; then
+  if [ ! -f "${FILEPATH}" ] || [[ ! -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     sudo curl -fsSL ${URL} --output ${FILEPATH}
   fi
 }
+
+# If a file path doesn't exist, download it, gpg --dearmor it, and install it
+download_if_not_exists_with_gpg_dearmor () {
+  local FILEPATH=$1
+  local URL=$2
+  if [ ! -f "${FILEPATH}" ] || [[ ! -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
+    curl -fsSL ${URL} | sudo gpg --dearmor -o ${FILEPATH}
+  fi
+}
+
 
 # Write the given string to the given file, if the file doesn't already exist
 write_if_not_exists () {
   local FILEPATH=$1
   local CONTENT=$2
-  if [ ! -f "${FILEPATH}" ]; then
+  if [ ! -f "${FILEPATH}" ] || [[ ! -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     echo -e "${CONTENT}" | sudo tee ${FILEPATH}
   fi
 }
@@ -50,7 +56,7 @@ install_deb () {
   local FULL_URL=$1
   local FILENAME=`mktemp --dry-run --suffix=.deb`
   local EXECUTABLE_NAME=$2
-  if [ ! -z "${EXECUTABLE_NAME}" ] && which ${EXECUTABLE_NAME} &> /dev/null; then
+  if { [ ! -z "${EXECUTABLE_NAME}" ] && which ${EXECUTABLE_NAME} &> /dev/null; } && [[ -z "${PACKAGES_FORCE_OVERWRITE}" ]]; then
     echo "${EXECUTABLE_NAME} already installed, skipping install."
     return
   fi

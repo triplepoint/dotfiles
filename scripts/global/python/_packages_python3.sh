@@ -10,7 +10,8 @@ set -e
 # export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 ### Define the versions of python to use as the global versions (space separated)
-GLOBAL_PY="3.10.5 3.9.13"
+# see: https://www.python.org/downloads/
+GLOBAL_PY="3.12.2"
 
 ### Define the Python that we'll consider the dominant one
 PRIMARY_PY=$(echo ${GLOBAL_PY} | cut -d ' ' -f1)
@@ -30,19 +31,19 @@ eval "$(pyenv init -)"
 set -v
 
 ### Python support packages
-# 2022.05.01 we're temporarily pinning pipenv here, to get around a bug that should be fixed soon
-python3 -m pip install pip setuptools wheel virtualenv "pipenv==2022.4.21" --upgrade --progress-bar off
-
-pushd "${BASH_SOURCE%/*}"
-
-### Generate intermediate requirements.txt file
-PIPENV_PIPFILE=Pipfile.py3 pipenv --rm || true
-rm -f Pipfile.py3.lock
-PIPENV_PIPFILE=Pipfile.py3 pipenv lock --python ${PRIMARY_PY} -r > requirements_py3.txt
-
-### Install packages
-python3 -m pip install -r requirements_py3.txt --no-deps --progress-bar off
-
+python3 -m pip install pip setuptools wheel virtualenv pipx --isolated --disable-pip-version-check --upgrade --upgrade-strategy eager --progress-bar off
 pyenv rehash
+python3 -m pipx ensurepath
+pipx upgrade-all
 
-popd
+### Install global command-line tools
+# pipx install ansible-base
+# pipx install ansible-lint
+# pipx install black
+# pipx install flake8
+# pipx install isort
+# pipx install mypy
+pipx install pipenv
+pipx install poetry
+pipx inject poetry "poetry-dynamic-versioning[plugin]>=1.0.1,<2.0.0" --include-apps
+pipx install pre-commit

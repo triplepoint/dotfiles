@@ -7,22 +7,60 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 set -ev
 
 # Set up some additional package repositories
-# add_pgp_key FC918B335044912E
-# write_if_not_exists /etc/apt/sources.list.d/dropbox.list "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu disco main"
+# Dbeaver
+sudo add-apt-repository -y -n ppa:serge-rider/dbeaver-ce
 
-download_if_not_exists /etc/apt/trusted.gpg.d/hashicorp.asc https://apt.releases.hashicorp.com/gpg
-write_if_not_exists /etc/apt/sources.list.d/hashicorp.list "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant
+# Git
+sudo add-apt-repository -y -n ppa:git-core/ppa
+
+# Guake - Not needed as of Mantic 23.10
+# sudo add-apt-repository -y -n ppa:linuxuprising/guake
+
+# KeepassXC
+sudo add-apt-repository -y -n ppa:phoerious/keepassxc
+
+# Mozilla / Firefox (and prioritize over the ubuntu 1st party Snap trojan package)
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/mozilla.gpg https://packages.mozilla.org/apt/repo-signing-key.gpg
+sudo add-apt-repository -y -n deb https://packages.mozilla.org/apt mozilla main
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/mozilla.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list
+write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000"
+
+# Docker
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
+sudo add-apt-repository -y -n -U https://download.docker.com/linux/ubuntu -c stable
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/docker.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-$(lsb_release -cs).list
+
+# Hashicorp / Terraform, etc
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
+sudo add-apt-repository -y -n -U https://apt.releases.hashicorp.com -c main
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/hashicorp-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_releases_hashicorp_com-$(lsb_release -cs).list
+write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant terraform
 Pin: origin apt.releases.hashicorp.com
-Pin-Priority: 900"
+Pin-Priority: 1000"
 
-download_if_not_exists /etc/apt/trusted.gpg.d/signal-desktop.asc https://updates.signal.org/desktop/apt/keys.asc
-write_if_not_exists /etc/apt/sources.list.d/signal-xenial.list "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+# # Postgresql
+# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
+# sudo add-apt-repository -y -n deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main
+# sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages-pgadmin-org.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_postgresql_org_pub_repos_apt-$(lsb_release -cs).list
 
-download_if_not_exists /etc/apt/trusted.gpg.d/syncthing.asc https://syncthing.net/release-key.txt
-write_if_not_exists /etc/apt/sources.list.d/syncthing.list "deb https://apt.syncthing.net/ syncthing stable"
+# Signal
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
+sudo add-apt-repository -y -n deb https://updates.signal.org/desktop/apt xenial main
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/signal-desktop-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_updates_signal_org_desktop_apt-$(lsb_release -cs).list
 
-sudo apt update
+# Syncthing
+download_if_not_exists /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+sudo add-apt-repository -y -n deb https://apt.syncthing.net/ syncthing stable
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/syncthing-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net_-$(lsb_release -cs).list
+
+# Microsoft / VSCode
+download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
+sudo add-apt-repository -y -n deb https://packages.microsoft.com/repos/code stable main
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages.microsoft.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_code-$(lsb_release -cs).list
+
+sudo apt update || true
 
 ### Call the "remove" file, to remove previously installed packages
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
@@ -30,9 +68,6 @@ source "${BASH_SOURCE%/*}/_packages_clean.sh"
 sudo apt full-upgrade
 sudo snap set system refresh.retain=2
 sudo snap refresh
-
-### Snapshot the names of installed packages in the various packaging tools
-cache_installed_packages
 
 # ## Install/Update Packages
 # ### General Computer Stuff
@@ -43,17 +78,28 @@ sudo apt install -q -y   deluge
 sudo snap install        discord
 sudo apt install -q -y   firefox
 sudo snap install        gimp
-sudo snap install        keepassxc
+sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
-sudo snap install        slack --classic
+
+# see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
+SLACK_VER=4.36.140
+install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
+
 sudo apt install -q -y   syncthing
+systemctl                --user enable syncthing.service
+systemctl                --user start syncthing.service
 sudo apt install -q -y   thunderbird
 # brew_cask_install tor-browser
 sudo apt install -q -y   ubuntu-restricted-extras
-sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0  # Zoom dependencies
+sudo apt install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0 libxcb-cursor0 xdg-desktop-portal-gnome # Zoom dependencies
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
+
+# see: https://github.com/TheAssassin/AppImageLauncher/releases, find "amd64.deb"
 install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
 
+# source "${BASH_SOURCE%/*}/_xscreensaver.sh"
+
+# source "${BASH_SOURCE%/*}/_cyberpower.sh"
 
 # ### Recreational Stuff
 # brew_cask_install battle-net
@@ -85,32 +131,48 @@ source "${BASH_SOURCE%/*}/../global/python/_packages_python3.sh"
 
 # ### Programming and Ops Stuff
 sudo apt install -q -y   awscli
-sudo snap install        dbeaver-ce
-sudo apt install -q -y   docker.io
-sudo apt install -q -y   docker-compose
+sudo apt install -q -y   dbeaver-ce
+sudo apt install -q -y   docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
 sudo apt install -q -y   gitg
-sudo apt install -q -y   git-gui
 # brew_install      graphviz
 sudo snap install        helm  --classic
 sudo snap install        kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
 # sudo apt install -q -y   postgresql-client
-sudo apt install -q -y   gitg
+sudo snap install        postman
+# sudo apt install -q -y   pgadmin4-desktop
 sudo apt install -q -y   terraform
 sudo snap install        terragrunt
 sudo apt install -q -y   virtualbox
 sudo apt install -q -y   virtualbox-ext-pack
 sudo apt install -q -y   vagrant
 sudo apt install -q -y   vault
-install_deb              https://go.microsoft.com/fwlink/?LinkID=760868 code
-install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.15/Obsidian-0.14.15.AppImage
+sudo apt install -q -y   code
+
+# see: https://obsidian.md/download
+OBSIDIAN_VER=1.5.11
+install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
+
+
+# see: https://etcher.balena.io/#download-etcher
+BALENA_VER=1.18.11
+install_app_image        https://github.com/balena-io/etcher/releases/download/v${BALENA_VER}/balenaEtcher-${BALENA_VER}-x64.AppImage
 
 # ### Hardware Development Stuff
 # sudo snap install        blender --classic
 # sudo snap install        freecad
+
+# see: https://www.arduino.cc/en/software
+ARDUINO_VER=2.3.2
+install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_${ARDUINO_VER}_Linux_64bit.AppImage
+
 sudo apt install -q -y   gnuradio
 sudo apt install -q -y   kicad
 sudo apt install -q -y   openscad
-install_app_image        https://www.prusa3d.com/downloads/drivers/prusa3d_linux_2_4_2.zip
+sudo apt install -q -y   picocom
+
+# see: https://help.prusa3d.com/downloads under MK2.5S
+PRUSA_VER=2_7_1
+install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
