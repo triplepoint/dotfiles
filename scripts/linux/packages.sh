@@ -82,7 +82,7 @@ sudo apt install -q -y   keepassxc
 sudo apt install -q -y   signal-desktop
 
 # see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
-SLACK_VER=4.37.94
+SLACK_VER=4.37.101
 install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt install -q -y   syncthing
@@ -174,5 +174,5 @@ sudo apt install -q -y   openscad
 sudo apt install -q -y   picocom
 
 # see: https://help.prusa3d.com/downloads under MK2.5S
-PRUSA_VER=2_7_3
+PRUSA_VER=2_7_4
 install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
