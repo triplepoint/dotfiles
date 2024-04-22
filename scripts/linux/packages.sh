@@ -32,6 +32,11 @@ download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/docker.gpg https://d
 sudo add-apt-repository -y -n -U https://download.docker.com/linux/ubuntu -c stable
 sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/docker.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-$(lsb_release -cs).list
 
+# # Google Chrome
+# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/google-chrome.gpg https://dl.google.com/linux/linux_signing_key.pub
+# sudo add-apt-repository -y -n deb http://dl.google.com/linux/chrome/deb stable main
+# sudo sed -i 's/deb h/deb [arch=amd64 signed-by=\/usr\/share\/keyrings\/google-chrome.gpg] h/g' /etc/apt/sources.list.d/archive_uri-http_dl_google_com_linux_chrome_deb-$(lsb_release -cs).list
+
 # Hashicorp / Terraform, etc
 download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
 sudo add-apt-repository -y -n -U https://apt.releases.hashicorp.com -c main
@@ -52,8 +57,8 @@ sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/signal-desktop-keyri
 
 # Syncthing
 download_if_not_exists /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
-sudo add-apt-repository -y -n deb https://apt.syncthing.net/ syncthing stable
-sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/syncthing-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net_-$(lsb_release -cs).list
+sudo add-apt-repository -y -n deb https://apt.syncthing.net syncthing stable
+sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/syncthing-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net-$(lsb_release -cs).list
 
 # Microsoft / VSCode
 download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
@@ -176,3 +181,6 @@ sudo apt install -q -y   picocom
 # see: https://help.prusa3d.com/downloads under MK2.5S
 PRUSA_VER=2_7_4
 install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
+
+### Let's clean again, just to be sure
+source "${BASH_SOURCE%/*}/_packages_clean.sh"
