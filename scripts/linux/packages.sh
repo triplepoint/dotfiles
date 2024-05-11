@@ -6,7 +6,11 @@ source "${BASH_SOURCE%/*}/_functions.sh"
 # Stop on any error, print all commands
 set -ev
 
-# Set up some additional package repositories
+### Set up some additional package repositories
+# A note on keyrings: https://askubuntu.com/a/1307181
+#   TL;DR: don't set up universally trusted keys in /etc/apt/trusted.gpg*,
+#   instead have a PPA explicitly trust a file in /etc/apt/keyrings/
+
 # Dbeaver
 # sudo add-apt-repository -y -n ppa:serge-rider/dbeaver-ce
 
@@ -20,51 +24,46 @@ sudo add-apt-repository -y -n ppa:git-core/ppa
 sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 
 # Mozilla / Firefox (and prioritize over the ubuntu 1st party Snap trojan package)
-# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/mozilla.gpg https://packages.mozilla.org/apt/repo-signing-key.gpg
-# sudo add-apt-repository -y -n deb https://packages.mozilla.org/apt mozilla main
-# sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/mozilla.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list
+# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.mozilla.org.asc https://packages.mozilla.org/apt/repo-signing-key.gpg
+# write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list \
+#   "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] httpshttps://packages.mozilla.org/apt mozilla main"
 # write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
 # Pin: origin packages.mozilla.org
 # Pin-Priority: 1000"
 
 # Docker
-download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg
-sudo add-apt-repository -y -n -U https://download.docker.com/linux/ubuntu -c stable
-sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/docker.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-$(lsb_release -cs).list
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
+write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-$(lsb_release -cs).list \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable"
 
-# # Google Chrome
-# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/google-chrome.gpg https://dl.google.com/linux/linux_signing_key.pub
-# sudo add-apt-repository -y -n deb http://dl.google.com/linux/chrome/deb stable main
-# sudo sed -i 's/deb h/deb [arch=amd64 signed-by=\/usr\/share\/keyrings\/google-chrome.gpg] h/g' /etc/apt/sources.list.d/archive_uri-http_dl_google_com_linux_chrome_deb-$(lsb_release -cs).list
+# Google Chrome
+# The first tiem download and install the deb manually from https://www.google.com/chrome - it'll install its own ppa
 
 # Hashicorp / Terraform, etc
-download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
-sudo add-apt-repository -y -n -U https://apt.releases.hashicorp.com -c main
-sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/hashicorp-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_releases_hashicorp_com-$(lsb_release -cs).list
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
+write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_apt_releases_hashicorp_com-$(lsb_release -cs).list \
+  "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant terraform
 Pin: origin apt.releases.hashicorp.com
 Pin-Priority: 1000"
 
 # # Postgresql
-# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages-pgadmin-org.gpg https://www.pgadmin.org/static/packages_pgadmin_org.pub
-# sudo add-apt-repository -y -n deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main
-# sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages-pgadmin-org.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_postgresql_org_pub_repos_apt-$(lsb_release -cs).list
+# download_if_not_exists /etc/apt/keyrings/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+# write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_apt_postgresql_org_pub_repos_apt-$(lsb_release -cs).list \
+#   "deb [signed-by=/etc/apt/keyrings/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main"
 
 # Signal
-# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
-# sudo add-apt-repository -y -n deb https://updates.signal.org/desktop/apt xenial main
-# sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/signal-desktop-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_updates_signal_org_desktop_apt-$(lsb_release -cs).list
+# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/signal-desktop-keyring.gpg https://updates.signal.org/desktop/apt/keys.asc
+# write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_updates_signal_org_desktop_apt-$(lsb_release -cs).list \
+#   "deb [arch=amd64 signed-by=/etc/apt/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
 
 # Syncthing
-download_if_not_exists /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
-sudo add-apt-repository -y -n deb https://apt.syncthing.net syncthing stable
-sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/syncthing-archive-keyring.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net-$(lsb_release -cs).list
+download_if_not_exists /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net-$(lsb_release -cs).list \
+  "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
 
 # Microsoft / VSCode
 # The first time, download and install the deb manually from https://code.visualstudio.com/ - it'll install its own ppa
-# download_if_not_exists_with_gpg_dearmor /usr/share/keyrings/packages.microsoft.gpg https://packages.microsoft.com/keys/microsoft.asc
-# sudo add-apt-repository -y -n deb https://packages.microsoft.com/repos/code stable main
-# sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages.microsoft.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_code-$(lsb_release -cs).list
 
 sudo apt-get update || true
 
