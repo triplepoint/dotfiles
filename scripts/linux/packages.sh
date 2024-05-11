@@ -37,7 +37,7 @@ write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_download_docker_co
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable"
 
 # Google Chrome
-# The first tiem download and install the deb manually from https://www.google.com/chrome - it'll install its own ppa
+# The first time download and install the deb manually from https://www.google.com/chrome - it'll install its own ppa
 
 # Hashicorp / Terraform, etc
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
