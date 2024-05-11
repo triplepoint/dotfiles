@@ -32,7 +32,7 @@ sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 # Pin-Priority: 1000"
 
 # Docker
-download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
+download_if_not_exists /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
 write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-$(lsb_release -cs).list \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable"
 
