@@ -66,12 +66,12 @@ sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/syncthing-archive-ke
 # sudo add-apt-repository -y -n deb https://packages.microsoft.com/repos/code stable main
 # sudo sed -i 's/deb h/deb [signed-by=\/usr\/share\/keyrings\/packages.microsoft.gpg] h/g' /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_code-$(lsb_release -cs).list
 
-sudo apt update || true
+sudo apt-get update || true
 
 ### Call the "remove" file, to remove previously installed packages
 source "${BASH_SOURCE%/*}/_packages_clean.sh"
 
-sudo apt full-upgrade
+sudo apt-get dist-upgrade
 # sudo snap set system refresh.retain=2
 # sudo snap refresh
 
