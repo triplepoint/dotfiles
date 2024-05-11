@@ -24,10 +24,11 @@ sudo add-apt-repository -y -n ppa:git-core/ppa
 sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 
 # Mozilla / Firefox (and prioritize over the ubuntu 1st party Snap trojan package)
-# download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.mozilla.org.asc https://packages.mozilla.org/apt/repo-signing-key.gpg
+# download_if_not_exists /etc/apt/keyrings/packages.mozilla.org.asc https://packages.mozilla.org/apt/repo-signing-key.gpg
 # write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list \
 #   "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main"
-# write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
+# write_if_not_exists /etc/apt/preferences.d/mozilla-firefox \
+# "Package: *
 # Pin: origin packages.mozilla.org
 # Pin-Priority: 1000"
 
@@ -43,7 +44,8 @@ write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_download_docker_co
 download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/hashicorp-archive-keyring.gpg https://apt.releases.hashicorp.com/gpg
 write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_apt_releases_hashicorp_com-$(lsb_release -cs).list \
   "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant "Package: vagrant terraform
+write_if_not_exists /etc/apt/preferences.d/99hashicorp-vagrant \
+"Package: vagrant terraform
 Pin: origin apt.releases.hashicorp.com
 Pin-Priority: 1000"
 
