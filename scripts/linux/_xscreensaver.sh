@@ -3,4 +3,4 @@ set -e
 
 # see: https://manpages.ubuntu.com/manpages/focal/man1/xscreensaver.1.html
 sudo apt remove gnome-screensaver
-sudo apt install -q -y   xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy
+sudo apt-get install -q -y   xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy

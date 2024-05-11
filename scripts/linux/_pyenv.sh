@@ -3,7 +3,7 @@ set -ev
 
 # Needed for python to build
 # see: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-sudo apt install -q -y --no-install-recommends \
+sudo apt-get install -q -y --no-install-recommends \
     build-essential \
     libssl-dev \
     zlib1g-dev \
