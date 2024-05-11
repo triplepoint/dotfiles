@@ -26,7 +26,7 @@ sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 # Mozilla / Firefox (and prioritize over the ubuntu 1st party Snap trojan package)
 # download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/packages.mozilla.org.asc https://packages.mozilla.org/apt/repo-signing-key.gpg
 # write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list \
-#   "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] httpshttps://packages.mozilla.org/apt mozilla main"
+#   "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main"
 # write_if_not_exists /etc/apt/preferences.d/mozilla-firefox "Package: *
 # Pin: origin packages.mozilla.org
 # Pin-Priority: 1000"
