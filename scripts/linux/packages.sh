@@ -79,6 +79,7 @@ sudo apt full-upgrade
 # ### General Computer Stuff
 sudo apt install -q -y   fonts-inconsolata
 sudo apt install -q -y   deluge
+sudo apt install -q -y   deja-dup
 # sudo apt install        discord
 sudo apt install -q -y   firefox
 sudo apt install        gimp
@@ -110,7 +111,7 @@ sudo apt install -q -y   steam
 
 # ### Terminals, Shells, and Command Line Utilities
 sudo apt install -q -y   curl
-# sudo apt install -q -y   guake
+sudo apt install -q -y   guake
 sudo apt install -q -y   htop
 sudo apt install -q -y   iperf3
 sudo apt install -q -y   nfs-common
@@ -135,7 +136,7 @@ sudo apt install -q -y   awscli
 sudo apt install -q -y   docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install -q -y   git
 sudo apt install -q -y   git-lfs
-# sudo apt install -q -y   gitg
+sudo apt install -q -y   gitg
 # sudo apt install        helm  --classic
 # sudo apt install        kubectl  --classic
 sudo apt install -q -y   mosquitto-clients
