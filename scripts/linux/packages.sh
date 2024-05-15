@@ -28,9 +28,9 @@ sudo add-apt-repository -y -n ppa:phoerious/keepassxc
 # write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_packages_mozilla_org_apt-$(lsb_release -cs).list \
 #   "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main"
 # write_if_not_exists /etc/apt/preferences.d/mozilla-firefox \
-# "Package: *
-# Pin: origin packages.mozilla.org
-# Pin-Priority: 1000"
+# "Package: firefox*
+# Pin: release o=Ubuntu*
+# Pin-Priority: -1"
 
 # Docker
 download_if_not_exists /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
