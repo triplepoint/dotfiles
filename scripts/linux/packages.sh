@@ -87,9 +87,9 @@ sudo apt-get install        gimp
 sudo apt-get install -q -y   keepassxc
 # sudo apt-get install -q -y   signal-desktop
 
-# see: https://slack.com/intl/en-in/downloads/instructions/ubuntu, see the Try Again link
-SLACK_VER=4.37.101
-install_deb              https://downloads.slack-edge.com/releases/linux/${SLACK_VER}/prod/x64/slack-desktop-${SLACK_VER}-amd64.deb slack
+# see: https://slack.com/downloads/instructions/linux?build=deb, see the Try Again link
+SLACK_VER=4.38.125
+install_deb              https://downloads.slack-edge.com/desktop-releases/linux/x64/${SLACK_VER}/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt-get install -q -y   syncthing
 systemctl                --user enable syncthing.service
@@ -153,12 +153,12 @@ sudo apt-get install -q -y   vagrant
 sudo apt-get install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.5.12
+OBSIDIAN_VER=1.6.3
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
 # see: https://etcher.balena.io/#download-etcher
-BALENA_VER=1.18.11
+BALENA_VER=1.19.21
 install_app_image        https://github.com/balena-io/etcher/releases/download/v${BALENA_VER}/balenaEtcher-${BALENA_VER}-x64.AppImage
 
 # ### Hardware Development Stuff
