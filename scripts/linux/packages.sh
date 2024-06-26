@@ -153,7 +153,7 @@ sudo apt-get install -q -y   vagrant
 sudo apt-get install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.6.3
+OBSIDIAN_VER=1.6.5
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
