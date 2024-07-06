@@ -146,8 +146,7 @@ sudo apt-get install -q -y   mosquitto-clients
 # sudo apt-get install -q -y   pgadmin4-desktop
 sudo apt-get install -q -y   terraform
 # sudo apt-get install        terragrunt
-sudo apt-get install -q -y   virtualbox
-sudo apt-get install -q -y   virtualbox-ext-pack
+sudo apt-get install -q -y   virtualbox virtualbox-ext-pack
 sudo apt-get install -q -y   vagrant
 # sudo apt-get install -q -y   vault
 sudo apt-get install -q -y   code
