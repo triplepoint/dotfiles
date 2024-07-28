@@ -88,7 +88,7 @@ sudo apt-get install -q -y   keepassxc
 # sudo apt-get install -q -y   signal-desktop
 
 # see: https://slack.com/downloads/instructions/linux?build=deb, see the Try Again link
-SLACK_VER=4.38.125
+SLACK_VER=4.39.88
 install_deb              https://downloads.slack-edge.com/desktop-releases/linux/x64/${SLACK_VER}/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt-get install -q -y   syncthing
@@ -152,7 +152,7 @@ sudo apt-get install -q -y   vagrant
 sudo apt-get install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.6.5
+OBSIDIAN_VER=1.6.7
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
@@ -174,7 +174,7 @@ ARDUINO_VER=2.3.2
 # sudo apt-get install -q -y   picocom
 
 # see: https://help.prusa3d.com/downloads under MK2.5S
-PRUSA_VER=2_7_4
+PRUSA_VER=2_8_0
 install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
 
 ### Let's clean again, just to be sure
