@@ -118,3 +118,6 @@ export LESS="${LESS} -FX"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Make poetry always use an in-project virtualenv
+export POETRY_VIRTUALENVS_IN_PROJECT=1
