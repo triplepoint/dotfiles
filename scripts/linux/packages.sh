@@ -88,7 +88,7 @@ sudo apt-get install -q -y   keepassxc
 # sudo apt-get install -q -y   signal-desktop
 
 # see: https://slack.com/downloads/instructions/linux?build=deb, see the Try Again link
-SLACK_VER=4.39.88
+SLACK_VER=4.39.95
 install_deb              https://downloads.slack-edge.com/desktop-releases/linux/x64/${SLACK_VER}/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt-get install -q -y   syncthing
