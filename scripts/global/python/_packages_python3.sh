@@ -11,7 +11,7 @@ set -e
 
 ### Define the versions of python to use as the global versions (space separated)
 # see: https://www.python.org/downloads/
-GLOBAL_PY="3.12.5"
+GLOBAL_PY="3.12.6"
 
 ### Define the Python that we'll consider the dominant one
 PRIMARY_PY=$(echo ${GLOBAL_PY} | cut -d ' ' -f1)
