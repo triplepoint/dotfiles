@@ -64,6 +64,11 @@ download_if_not_exists /etc/apt/keyrings/syncthing-archive-keyring.gpg https://s
 write_if_not_exists /etc/apt/sources.list.d/archive_uri-https_apt_syncthing_net-$(lsb_release -cs).list \
   "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
 
+# Virtualbox
+download_if_not_exists_with_gpg_dearmor /etc/apt/keyrings/oracle-virtualbox-2016.gpg https://www.virtualbox.org/download/oracle_vbox_2016.asc
+write_if_not_exists /etc/apt/sources.list.d/virtualbox.list \
+  "deb [arch=amd64 signed-by=/etc/apt/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
+
 # Microsoft / VSCode
 # The first time, download and install the deb manually from https://code.visualstudio.com/ - it'll install its own ppa
 
@@ -146,7 +151,7 @@ sudo apt-get install -q -y   mosquitto-clients
 # sudo apt-get install -q -y   pgadmin4-desktop
 sudo apt-get install -q -y   terraform
 # sudo apt-get install        terragrunt
-sudo apt-get install -q -y   virtualbox virtualbox-ext-pack
+sudo apt-get install -q -y   virtualbox-7.1
 sudo apt-get install -q -y   vagrant
 # sudo apt-get install -q -y   vault
 sudo apt-get install -q -y   code

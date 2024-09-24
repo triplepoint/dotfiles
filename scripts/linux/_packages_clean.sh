@@ -16,6 +16,7 @@ set -e
 #sudo snap remove   slack
 
 sudo apt-get remove -y docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc  # Old docker packages
+sudo apt-get remove -y virtualbox virtualbox-qt virtualbox-ext-pack
 
 sudo apt-get autoremove
 sudo apt-get autoclean
