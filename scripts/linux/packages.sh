@@ -105,7 +105,7 @@ sudo apt-get install -q -y   libegl1-mesa libgl1-mesa-glx libxcb-xtest0 libxcb-c
 install_deb              https://zoom.us/client/latest/zoom_amd64.deb zoom
 
 # see: https://github.com/TheAssassin/AppImageLauncher/releases, find "amd64.deb"
-install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb  # AppImage Launcher
+install_deb              https://github.com/TheAssassin/AppImageLauncher/releases/download/continuous/appimagelauncher_2.2.0-gha111.d9d4c73+bionic_amd64.deb  # AppImage Launcher
 
 # source "${BASH_SOURCE%/*}/_xscreensaver.sh"
 
