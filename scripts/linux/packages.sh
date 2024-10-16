@@ -93,7 +93,7 @@ sudo apt-get install -q -y   keepassxc
 # sudo apt-get install -q -y   signal-desktop
 
 # see: https://slack.com/downloads/instructions/linux?build=deb, see the Try Again link
-SLACK_VER=4.39.95
+SLACK_VER=4.40.133
 install_deb              https://downloads.slack-edge.com/desktop-releases/linux/x64/${SLACK_VER}/slack-desktop-${SLACK_VER}-amd64.deb slack
 
 sudo apt-get install -q -y   syncthing
@@ -157,12 +157,12 @@ sudo apt-get install -q -y   vagrant
 sudo apt-get install -q -y   code
 
 # see: https://obsidian.md/download
-OBSIDIAN_VER=1.6.7
+OBSIDIAN_VER=1.7.4
 install_app_image        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VER}/Obsidian-${OBSIDIAN_VER}.AppImage
 
 
 # see: https://etcher.balena.io/#download-etcher
-BALENA_VER=1.19.21
+BALENA_VER=1.19.25
 install_app_image        https://github.com/balena-io/etcher/releases/download/v${BALENA_VER}/balenaEtcher-${BALENA_VER}-x64.AppImage
 
 # ### Hardware Development Stuff
@@ -170,7 +170,7 @@ install_app_image        https://github.com/balena-io/etcher/releases/download/v
 # sudo apt-get install        freecad
 
 # see: https://www.arduino.cc/en/software
-ARDUINO_VER=2.3.2
+ARDUINO_VER=2.3.3
 # install_app_image        https://downloads.arduino.cc/arduino-ide/arduino-ide_${ARDUINO_VER}_Linux_64bit.AppImage
 
 # sudo apt-get install -q -y   gnuradio
@@ -179,7 +179,7 @@ ARDUINO_VER=2.3.2
 # sudo apt-get install -q -y   picocom
 
 # see: https://help.prusa3d.com/downloads under MK2.5S
-PRUSA_VER=2_8_0
+PRUSA_VER=2_8_1
 install_app_image        https://cdn.prusa3d.com/downloads/drivers/prusa3d_linux_${PRUSA_VER}.zip
 
 ### Let's clean again, just to be sure
